@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector, batch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { API_URL } from 'utils/utils'
+import { FormContainer, Form } from 'components/Styles'
 
 import user from 'reducer/user'
 
@@ -12,6 +13,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import Button from "@mui/material/Button";
 import Alert from '@mui/material/Alert';
+
 
 const Login = () => {
     const [username, setUsername] = useState('')
@@ -28,8 +30,9 @@ const Login = () => {
     useEffect (() => {
         if(accessToken) {
             navigate('/posts')
+            // localStorage.setItem('token', accessToken)
         }
-    }, [accessToken])
+    }, [accessToken, navigate])
 
     const onFormSubmit = (event) => {
         event.preventDefault()
@@ -53,6 +56,7 @@ const Login = () => {
                     dispatch(user.actions.setAccessToken(data.accessToken))
                     dispatch(user.actions.setError(null))
                     setErrorMessage(null)
+
                 })
             } else {
                 batch (() => {
@@ -68,13 +72,14 @@ const Login = () => {
     }
 
     return (
-        <>
-            <form onSubmit={onFormSubmit}>
+        <FormContainer>
+            <Form onSubmit={onFormSubmit}>
                 <TextField
                     id="outlined-basic"
                     label="Username"
                     variant="outlined"
                     value={username}
+                    minlength={8}
                     onChange={(e)=>setUsername(e.target.value)}
                     required/>
                 <TextField
@@ -91,7 +96,8 @@ const Login = () => {
                     variant="outlined"
                     value={password}
                     onChange={(e)=>setPassword(e.target.value)} 
-                    required/>
+                    required
+                 />
                 <FormControl>
                     <RadioGroup
                         aria-labelledby="demo-radio-buttons-group-label"
@@ -123,11 +129,11 @@ const Login = () => {
                 >
                     Submit
                 </Button>
-        </form>
+        </Form>
         {errorMessage !== null && (
             <Alert severity="error">{errorMessage}</Alert>
-        )}
-    </>
+        )} 
+    </FormContainer>
     )
 }
 

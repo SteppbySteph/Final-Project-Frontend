@@ -2,16 +2,20 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { API_URL } from 'utils/utils'
+import { FormContainer } from 'components/Styles'
+
 
 import user from 'reducer/user'
 import posts from 'reducer/posts'
 
-import Button from "@mui/material/Button";
+import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
 
 
 const Posts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
     const postItems = useSelector((store) => store.posts.items)
+    // const token = localStorage.getItem('token', accessToken)
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -19,14 +23,15 @@ const Posts = () => {
         if(!accessToken) {
             navigate('/')
         }
-    }, [accessToken])
+    }, [accessToken, navigate])
 
     useEffect(() => {
         const options = {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': accessToken,
+                'Authorization': accessToken
+                // 'Token': token
             }
         }
 
@@ -45,17 +50,29 @@ const Posts = () => {
 
     return (
         <div>
-            {postItems.map((item) => {
-                    return <div key={item._id}>
-                        {item.message}
-                        </div>
-                })}
-                <Button variant="contained" onClick={() => {
-                    dispatch(user.actions.setAccessToken(null))
-                }}
-                >
-                    Log out
-                </Button>
+            <FormContainer>
+                <TextField
+                    id="outlined-multiline-static"
+                    label="Message"
+                    multiline
+                    rows={10}
+                    defaultValue="Add your inspiring SUP experience"
+                />
+            </FormContainer>
+            <FormContainer>
+                {postItems.map((item) => {
+                        return <div key={item._id}>
+                            {item.message}
+                            </div>
+                    })}
+            </FormContainer>
+                    <Button variant="contained" onClick={() => {
+                        dispatch(user.actions.setAccessToken(null))
+                        // localStorage.removeItem('token')
+                    }}
+                    >
+                        Log out
+                    </Button>
         </div>
     )
 }
