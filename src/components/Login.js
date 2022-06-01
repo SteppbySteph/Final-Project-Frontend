@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector, batch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { API_URL } from 'utils/utils'
-import { FormContainer, Form } from 'components/Styles'
+import { Container, Form } from 'components/Styles'
 
 import user from 'reducer/user'
 
@@ -72,7 +72,7 @@ const Login = () => {
     }
 
     return (
-        <FormContainer>
+        <Container>
             <Form onSubmit={onFormSubmit}>
                 <TextField
                     id="outlined-basic"
@@ -133,7 +133,7 @@ const Login = () => {
         {errorMessage !== null && (
             <Alert severity="error">{errorMessage}</Alert>
         )} 
-    </FormContainer>
+    </Container>
     )
 }
 
