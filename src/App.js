@@ -13,7 +13,20 @@ const reducer = combineReducers({
   posts: posts.reducer
 })
 
-const store = configureStore({reducer})
+// const store = configureStore({reducer})
+
+const persistedStateJSON = localStorage.getItem("state")
+let persistedState = {}
+
+if (persistedStateJSON) {
+  persistedState = JSON.parse(persistedStateJSON)
+}
+
+const store = configureStore({ reducer, preloadedState: persistedState })
+
+store.subscribe(() => {
+  localStorage.setItem("state", JSON.stringify(store.getState()))
+})
 
 
 export const App = () => {
