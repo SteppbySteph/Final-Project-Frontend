@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { API_URL, API_LIKES } from 'utils/utils'
 import moment from 'moment'
-import { Container, CardContainer, BottomCardContainer } from 'components/Styles'
+import { Container, CardContainer, BottomCardContainer, LikeContainer, LikeButton } from 'components/Styles'
 
 
 import user from 'reducer/user'
@@ -126,15 +126,15 @@ const Posts = () => {
                                   <p>{item.message}</p>
                                 </div>
                                 <BottomCardContainer>
-                                    <div>
-                                        <button
-                                            className={item.likes > 0 ? 'likes-button clicked' : 'likes-button'}
+                                    <LikeContainer>
+                                        <LikeButton
+                                            // className={item.likes > 0 ? 'likes-button clicked' : 'likes-button'}
                                             onClick={() => handlePostLikes(item._id)}
                                         >
-                                            <span className='heart-icon' role='img' aria-label='heart emoji'>❤️</span>
-                                        </button>
+                                            <span className='like-icon' role='img' aria-label='like emoji'>👍</span>
+                                        </LikeButton>
                                         <p>x {item.likes}</p>
-                                    </div>
+                                    </LikeContainer>
                                     <p>{moment.utc(item.createdAt).format('MMM Do YY')}</p>
                                 </BottomCardContainer>
                             </CardContainer>

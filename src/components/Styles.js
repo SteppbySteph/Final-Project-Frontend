@@ -37,3 +37,19 @@ export const BottomCardContainer = styled.div`
     padding-top: 2vw;
     margin-top: auto;
 `
+export const LikeContainer = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+`
+export const LikeButton = styled.button`
+    display: flex;
+    background-color: #EFEFEF;
+    border-radius: 50%;
+    margin-bottom: 1vw;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    width: 7vw;
+    height: 7vw;
+`
