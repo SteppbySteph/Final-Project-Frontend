@@ -10,13 +10,15 @@ import { TextField, Button  } from '@mui/material'
 import posts from 'reducer/posts'
 
 import PostMenu from 'components/PostMenu'
+// import LoadingPage from 'components/LoadinPage'
 
 const Posts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
     const userEmail = useSelector((store) => store.user.email)
     const displayName = useSelector((store) => store.user.username)
     const postItems = useSelector((store) => store.posts.items)
-    const [newPost, setNewPost] = useState ('')
+    const [newPost, setNewPost] = useState('')
+    // const [loading, setLoading] = useState(true)
     // const token = JSON.parse(localStorage).getItem('token', accessToken)
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -43,6 +45,7 @@ const Posts = () => {
         }
 
         fetch(API_URL("posts"), options)
+        setLoading(true)
         .then(res => res.json())
         .then(data => {
             if (data.success) {
