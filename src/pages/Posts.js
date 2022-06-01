@@ -4,20 +4,20 @@ import { useNavigate } from 'react-router-dom'
 import { API_URL, API_LIKES } from 'utils/utils'
 import moment from 'moment'
 import { Container, CardContainer, BottomCardContainer, LikeContainer, LikeButton } from 'components/Styles'
+import { TextField, Button  } from '@mui/material'
 
-
-import user from 'reducer/user'
+// import user from 'reducer/user'
 import posts from 'reducer/posts'
 
-import TextField from '@mui/material/TextField'
-import Button from '@mui/material/Button'
-
+import PostMenu from 'components/PostMenu'
 
 const Posts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
+    const userEmail = useSelector((store) => store.user.email)
+    const displayName = useSelector((store) => store.user.username)
     const postItems = useSelector((store) => store.posts.items)
     const [newPost, setNewPost] = useState ('')
-    // const token = localStorage.getItem('token', accessToken)
+    // const token = JSON.parse(localStorage).getItem('token', accessToken)
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -29,6 +29,8 @@ const Posts = () => {
 
     useEffect(() => {
         fetchPosts()
+        // JSON.parse(localStorage.getItem('token'))
+        // console.log('token', accessToken)
     }, [])
 
     const fetchPosts = () => {
@@ -36,8 +38,7 @@ const Posts = () => {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': accessToken
-                // 'Token': token
+                'Authorization': accessToken,
             }
         }
 
@@ -47,6 +48,7 @@ const Posts = () => {
             if (data.success) {
                 dispatch(posts.actions.setItems(data.response));
                 dispatch(posts.actions.setError(null));
+                // JSON.parse(localStorage.getItem('token'))
             } else {
                 dispatch(posts.actions.setError(data.response));
                 dispatch(posts.actions.setItems([]));
@@ -98,6 +100,7 @@ const Posts = () => {
 
     return (
         <>
+            <PostMenu/>
             <Container>
                 <form onSubmit={handleFormSubmit}>
                     <TextField
@@ -118,8 +121,8 @@ const Posts = () => {
                     </div>
                 </form>
             </Container>
-
-            <div>
+            
+            <div>   
                 {postItems.map((item) => {
                         return <CardContainer key={item._id}>
                                 <div>
@@ -137,16 +140,11 @@ const Posts = () => {
                                     </LikeContainer>
                                     <p>{moment.utc(item.createdAt).format('MMM Do YY')}</p>
                                 </BottomCardContainer>
+                                <p>{displayName} {userEmail}</p>
                             </CardContainer>
                     })}
             </div>
-                    <Button variant="contained" onClick={() => {
-                        dispatch(user.actions.setAccessToken(null))
-                        // localStorage.removeItem('token')
-                    }}
-                    >
-                        Log out
-                    </Button>
+                 
         </>
     )
 }

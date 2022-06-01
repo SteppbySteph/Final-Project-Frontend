@@ -29,10 +29,13 @@ const Login = () => {
 
     useEffect (() => {
         if(accessToken) {
+            // localStorage.setItem('token', JSON.stringify(accessToken))
             navigate('/posts')
-            // localStorage.setItem('token', accessToken)
+            // console.log(accessToken)
         }
     }, [accessToken, navigate])
+
+    
 
     const onFormSubmit = (event) => {
         event.preventDefault()
@@ -56,6 +59,7 @@ const Login = () => {
                     dispatch(user.actions.setAccessToken(data.accessToken))
                     dispatch(user.actions.setError(null))
                     setErrorMessage(null)
+                    // localStorage.setItem('token', JSON.stringify(accessToken))
 
                 })
             } else {

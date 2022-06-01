@@ -53,3 +53,19 @@ export const LikeButton = styled.button`
     width: 7vw;
     height: 7vw;
 `
+
+//PostMenu
+
+export const HeaderContainer = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+margin: 2vh 3vh;
+`;
+
+// export const LogoImage = styled.img`
+// width: 60px;
+// height: 60px;
+// filter: drop-shadow(0 0 22px #fff);
+// `;

@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
-import Posts from 'components/Posts'
-import Login from 'components/Login'
+import Posts from 'pages/Posts'
+import Login from 'pages/Login'
 import user from 'reducer/user'
 import posts from 'reducer/posts'
 
