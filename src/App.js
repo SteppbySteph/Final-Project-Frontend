@@ -5,6 +5,9 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
 import Posts from 'pages/Posts'
 import Login from 'pages/Login'
+import Home from 'pages/Home'
+import LandingPage from 'pages/LandingPage'
+import Contact from 'pages/Contact'
 import user from 'reducer/user'
 import posts from 'reducer/posts'
 
@@ -34,8 +37,11 @@ export const App = () => {
     <Provider store ={store}>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Login/>}></Route>
+          <Route path='/' element={<LandingPage/>}></Route>
+          <Route path='/home' element={<Home/>}></Route>
+          <Route path='/login' element={<Login/>}></Route>
           <Route path='/posts' element={<Posts/>}></Route>
+          <Route path='/contact' element={<Contact/>}></Route>
          </Routes>
       </BrowserRouter>
     </Provider> 

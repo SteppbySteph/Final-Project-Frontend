@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { Button, Menu, MenuItem } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
-import  user from 'reducer/user'
 
+import user from 'reducer/user'
 import { HeaderContainer } from './Styles'
+
+// import { API_DELETE } from 'utils/utils'
 
 const PostMenu = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const openNav = Boolean(anchorEl);
-    const displayName = useSelector((store) => store.user.username);
+    const currentUser = useSelector((store) => store.user.username);
+    // const accessToken = useSelector((store) => store.user.accessToken)
     const dispatch = useDispatch();
   
     const openNavigation = (event) => {
@@ -18,12 +21,21 @@ const PostMenu = () => {
     const handleClose = () => {
       setAnchorEl(null);
     };
-  
+  //Hur kommer det sig att logout går vidare till login sidan utan navigate?
     const logout = () => {
-        dispatch(user.actions.setAccessToken(null))
-            // localStorage.removeItem('token')
-      //localStorage.removeItem(accessToken)
+      dispatch(user.actions.setAccessToken(null))
     };
+
+    //  const onDelete = (id) => {
+    //     // dispatch(user.actions.setAccessToken(null))
+    //     // console.log(`${displayName} has been deleted`)
+
+    //     if (createdBy === currentUser) {
+          
+    //       deleteUser({
+    //         method: "DELETE",
+    //       });
+    //     } 
   
     return (
       <HeaderContainer>
@@ -36,7 +48,7 @@ const PostMenu = () => {
           onClick={openNavigation}
           color="secondary"
         >
-          {displayName}
+          {currentUser}
         </Button>
         <Menu
           id="nav-menu"
@@ -56,7 +68,7 @@ const PostMenu = () => {
           }}
         >
           <MenuItem onClick={logout}>Logout</MenuItem>
-          <MenuItem>Delete account</MenuItem>
+          <MenuItem>Delete</MenuItem>
         </Menu>
       </HeaderContainer>
     );

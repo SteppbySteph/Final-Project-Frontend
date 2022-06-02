@@ -10,7 +10,6 @@ import { TextField, Button  } from '@mui/material'
 import posts from 'reducer/posts'
 
 import PostMenu from 'components/PostMenu'
-// import LoadingPage from 'components/LoadinPage'
 
 const Posts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
@@ -18,8 +17,6 @@ const Posts = () => {
     const displayName = useSelector((store) => store.user.username)
     const postItems = useSelector((store) => store.posts.items)
     const [newPost, setNewPost] = useState('')
-    // const [loading, setLoading] = useState(true)
-    // const token = JSON.parse(localStorage).getItem('token', accessToken)
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -31,8 +28,6 @@ const Posts = () => {
 
     useEffect(() => {
         fetchPosts()
-        // JSON.parse(localStorage.getItem('token'))
-        // console.log('token', accessToken)
     }, [])
 
     const fetchPosts = () => {
@@ -45,13 +40,11 @@ const Posts = () => {
         }
 
         fetch(API_URL("posts"), options)
-        setLoading(true)
         .then(res => res.json())
         .then(data => {
             if (data.success) {
                 dispatch(posts.actions.setItems(data.response));
                 dispatch(posts.actions.setError(null));
-                // JSON.parse(localStorage.getItem('token'))
             } else {
                 dispatch(posts.actions.setError(data.response));
                 dispatch(posts.actions.setItems([]));
@@ -99,8 +92,6 @@ const Posts = () => {
           })
       }   
     
-
-
     return (
         <>
             <PostMenu/>
@@ -111,6 +102,7 @@ const Posts = () => {
                         label="Message"
                         multiline
                         rows={10}
+                        column={10}
                         value={newPost}
                         onChange={handleNewPost}
                     />
@@ -124,7 +116,6 @@ const Posts = () => {
                     </div>
                 </form>
             </Container>
-            
             <div>   
                 {postItems.map((item) => {
                         return <CardContainer key={item._id}>
