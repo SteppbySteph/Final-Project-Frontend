@@ -3,13 +3,15 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { API_URL, API_LIKES } from 'utils/utils'
 import moment from 'moment'
-import { Container, CardContainer, BottomCardContainer, LikeContainer, LikeButton } from 'components/Styles'
+import { Container, CardContainer, BottomCardContainer, LikeContainer, LikeButton, PostHeader } from 'components/Styles'
 import { TextField, Button  } from '@mui/material'
 
 // import user from 'reducer/user'
 import posts from 'reducer/posts'
 
 import PostMenu from 'components/PostMenu'
+import Header from 'components/Header'
+import { ElementWrapper } from 'components/Styles'
 
 const Posts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
@@ -93,8 +95,15 @@ const Posts = () => {
       }   
     
     return (
-        <>
-            <PostMenu/>
+        <>        
+            <PostHeader>
+                <p>JS-SUP</p>
+                <ElementWrapper>
+                    <Header />
+                    <PostMenu/>
+                </ElementWrapper>   
+            </PostHeader>
+            
             <Container>
                 <form onSubmit={handleFormSubmit}>
                     <TextField

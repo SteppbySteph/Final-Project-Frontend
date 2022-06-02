@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
     const navigate = useNavigate()
 
-    const handleOnHome = () => {
+    const handleHomeButton = () => {
         navigate('/home')
     }
 
@@ -15,8 +15,8 @@ const Header = () => {
     }
 
     return (
-        <Stack spacing={2} direction="row">
-          <Button variant="text" onClick={handleOnHome}>Home</Button>
+        <Stack spacing={0} direction="row">
+          <Button variant="text" onClick={handleHomeButton}>Home</Button>
           <Button variant="text" onClick={handleOnContact}>Contact</Button>
         </Stack>
       )

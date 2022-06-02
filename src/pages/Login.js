@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector, batch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { API_URL } from 'utils/utils'
-import { Container, Form, StyledBackButton } from 'components/Styles'
+import { Container, Form, StyledBackButton, HeaderContainer } from 'components/Styles'
 
 import user from 'reducer/user'
 import BackButton from 'components/Backbutton'
+import Header from 'components/Header'
 
 import { TextField, Radio, RadioGroup, FormControlLabel, FormControl, Button, Alert }  from '@mui/material'
 
@@ -66,6 +67,10 @@ const Login = () => {
 
     return (
         <>
+            <HeaderContainer>
+                JS-SUP
+                <Header />
+            </HeaderContainer>
             <StyledBackButton>
                 <BackButton />
             </StyledBackButton>

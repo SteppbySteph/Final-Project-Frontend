@@ -1,12 +1,17 @@
 import React from 'react'
 
-import { StyledButton } from 'components/Styles';
+import { StyledButton, HeaderContainer } from 'components/Styles'
+import Header from 'components/Header'
+
 
 
 const Home = () => {
     return (
         <>
-            <h1>HOME PAGE</h1>
+            <HeaderContainer>
+                JS-SUP
+                <Header />
+            </HeaderContainer>
             <StyledButton/>
         </>
     )

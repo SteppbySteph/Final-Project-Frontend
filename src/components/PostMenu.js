@@ -38,7 +38,7 @@ const PostMenu = () => {
     //     } 
   
     return (
-      <HeaderContainer>
+      <>
         {/* <LogoImage src={Logo} alt="logo navigation." /> */}
         <Button
           id="nav-button"
@@ -46,10 +46,10 @@ const PostMenu = () => {
           aria-haspopup="true"
           aria-expanded={openNav ? "true" : undefined}
           onClick={openNavigation}
-          color="secondary"
         >
           {currentUser}
         </Button>
+        <HeaderContainer>
         <Menu
           id="nav-menu"
           anchorEl={anchorEl}
@@ -71,7 +71,9 @@ const PostMenu = () => {
           <MenuItem>Delete</MenuItem>
         </Menu>
       </HeaderContainer>
+      </>
     );
+    
   };
   
   export default PostMenu;

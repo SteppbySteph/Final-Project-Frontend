@@ -61,6 +61,7 @@ export const StyledBackButton = styled.form`
 `
 
 //Post component
+
 export const CardContainer = styled.div`
     width: 80%;
     max-width: 600px;
@@ -97,15 +98,29 @@ export const LikeButton = styled.button`
     // height: 5vw;
     padding: 3vw;
 `
+export const PostHeader = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: space-between;
+    padding-left: 1.5em;
+`
+
+export const ElementWrapper = styled.div`
+    display: flex;
+    margin-left: 1em;
+`
 
 //PostMenu
 
 export const HeaderContainer = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-between;
-margin: 2vh 3vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2vh 3vh;
+    padding-left: 0.5em;
+    background-color: rgba(0, 0, 0, 0.16);
 `;
 
 //Home

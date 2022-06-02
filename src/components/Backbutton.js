@@ -11,7 +11,7 @@ const BackButton = () => {
 
   return (
     <Stack direction="row" spacing={2}>
-        <Button onClick={onBackButtonClick}>Back</Button>
+      <Button variant='outlined' onClick={onBackButtonClick}>Back</Button>
     </Stack>
   );
 }

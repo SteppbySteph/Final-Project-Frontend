@@ -1,10 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import Header from 'components/Header'
 import { WrapperLanding, HeaderContainer, NextButton, StyledGreeting } from 'components/Styles';
 
 
 const LandingPage = () => {
+    const navigate = useNavigate()
+
+    const handleOnClick = () => {
+        navigate('/home')
+    }
+
     return (
         <>  
             <HeaderContainer>
@@ -13,7 +20,7 @@ const LandingPage = () => {
             </HeaderContainer>
             <WrapperLanding>
                 <StyledGreeting>Finding your SUP INSPIRATION</StyledGreeting>
-                <NextButton>View our homepage</NextButton>
+                <NextButton onClick={handleOnClick}>View our homepage</NextButton>
             </WrapperLanding>
         </>
     )
