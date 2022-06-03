@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
-import { Button, Menu, MenuItem } from '@mui/material'
+import { Button, Menu, MenuItem, Alert } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
 
 import user from 'reducer/user'
 import { HeaderContainer } from './Styles'
 
-// import { API_DELETE } from 'utils/utils'
+import { API_DELETE } from 'utils/utils'
+import { Identity } from '@mui/base'
 
 const PostMenu = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const openNav = Boolean(anchorEl);
     const currentUser = useSelector((store) => store.user.username);
-    // const accessToken = useSelector((store) => store.user.accessToken)
+    const accessToken = useSelector((store) => store.user.accessToken)
+    const userId = useSelector((store) => store.user.userId)
+    const [statusMessage, setStatusMessage] = useState(null)
     const dispatch = useDispatch();
   
     const openNavigation = (event) => {
@@ -25,6 +28,31 @@ const PostMenu = () => {
     const logout = () => {
       dispatch(user.actions.setAccessToken(null))
     };
+    
+    const onDelete = () => {
+      const options = {
+        method: 'DELETE',
+        headers: {
+          'Authorization': accessToken,
+          'Content-Type': 'application/json',
+        },
+      }
+      
+
+      // fetch(API_URL(`users/${userId}`), options)
+      fetch(API_DELETE(userId), options)
+      .then(res => res.json())
+      .then(data => {
+        setStatusMessage(data.response)
+        console.log(setStatusMessage(data.response))
+        dispatch(user.actions.setAccessToken(null))
+        
+        // alert(data.response)
+      })
+      
+  }   
+    
+
 
     //  const onDelete = (id) => {
     //     // dispatch(user.actions.setAccessToken(null))
@@ -68,13 +96,15 @@ const PostMenu = () => {
           }}
         >
           <MenuItem onClick={logout}>Logout</MenuItem>
-          <MenuItem>Delete</MenuItem>
+          <MenuItem onClick={onDelete}>Delete</MenuItem>
         </Menu>
+        {statusMessage !== null && (
+          <Alert severity="info">{statusMessage}</Alert>
+      )} 
       </HeaderContainer>
+     
       </>
     );
-    
   };
   
   export default PostMenu;
-
