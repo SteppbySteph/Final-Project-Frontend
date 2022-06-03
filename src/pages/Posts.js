@@ -12,6 +12,7 @@ import posts from 'reducer/posts'
 import PostMenu from 'components/PostMenu'
 import Header from 'components/Header'
 import { ElementWrapper } from 'components/Styles'
+import { Identity } from '@mui/base'
 
 const Posts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
@@ -90,6 +91,7 @@ const Posts = () => {
         fetch(API_LIKES(id), options)
           .then((res) => res.json())
           .then(() => {
+              console.log(id)
             fetchPosts()
           })
       }   
