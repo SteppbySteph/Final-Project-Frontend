@@ -7,6 +7,7 @@ import Posts from 'pages/Posts'
 import Login from 'pages/Login'
 import Home from 'pages/Home'
 import LandingPage from 'pages/LandingPage'
+import Sweden from 'pages/Sweden'
 import Contact from 'pages/Contact'
 import user from 'reducer/user'
 import posts from 'reducer/posts'
@@ -41,6 +42,7 @@ export const App = () => {
           <Route path='/home' element={<Home/>}></Route>
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/posts' element={<Posts/>}></Route>
+          <Route path='/sweden' element={<Sweden/>}></Route>
           <Route path='/contact' element={<Contact/>}></Route>
          </Routes>
       </BrowserRouter>
