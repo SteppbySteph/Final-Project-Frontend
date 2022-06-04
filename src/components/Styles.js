@@ -7,9 +7,8 @@ export const StyledGreeting = styled.div`
     font-size: 24px;
     border-radius: 4px;
     margin: 40vw 5vw; 
-    //&:hover {
-    //    color: #fff
-    }
+    /* //&:hover 
+    //color: #fff */
 `
 export const NextButton = styled.button`
     padding: 1rem;
@@ -33,7 +32,7 @@ export const WrapperLanding = styled.div`
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
-    //box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    /* //box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
 `
 
 
@@ -55,13 +54,11 @@ export const Form = styled.form`
 `
 
 //Login component
-
 export const StyledBackButton = styled.form`
     margin: 2vh 3vh; 
 `
 
 //Post component
-
 export const CardContainer = styled.div`
     width: 80%;
     max-width: 600px;
@@ -71,6 +68,7 @@ export const CardContainer = styled.div`
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     word-break: break-word;
+    position: relative;
 `
 export const BottomCardContainer = styled.div`
     width: 100%;
@@ -94,8 +92,8 @@ export const LikeButton = styled.button`
     align-items: center;
     justify-content: center;
     border: none;
-    // width: 5vw;
-    // height: 5vw;
+    /* // width: 5vw;
+    // height: 5vw; */
     padding: 3vw;
 `
 export const PostHeader = styled.div`
@@ -112,7 +110,6 @@ export const ElementWrapper = styled.div`
 `
 
 //PostMenu
-
 export const HeaderContainer = styled.div`
     display: flex;
     flex-direction: row;
@@ -132,7 +129,6 @@ export const StyledButton = styled.button`
   background: transparent;
   border: none;
   font-size:1rem;
-  color: 
   border: 3px solid white;
   border-radius: 2rem;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -140,6 +136,20 @@ export const StyledButton = styled.button`
   &:hover{
    border: 2px solid white;
   }
+`
+//Sweden
+export const Image = styled.img`
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    position: relative;
+    object-fit: cover;
+    /* margin: 20px auto; */
+    /* background-color: #fff; */
+    /* padding: 20px; */
+`
+export const Description = styled.p`
+    /* position: absolute; */
 `
 
 // export const LogoImage = styled.img`
