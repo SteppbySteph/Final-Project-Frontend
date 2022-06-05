@@ -137,7 +137,39 @@ export const StyledButton = styled.button`
    border: 2px solid white;
   }
 `
-//Sweden
+export const StyledSection = styled.section`
+    display: flex;
+    flex-direction: column;
+`
+export const ImageContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+`
+export const ButtonImage = styled.img`
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+`
+export const ButtonImageButton = styled.button`
+    position: absolute;
+    padding: 1rem;
+    background-color: hotpink;
+    opacity: 0.9;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+        color: #fff;
+    }
+`
+
+//Sweden, Europe, Worldwide
 export const Image = styled.img`
     width: 100%;
     max-width: 600px;

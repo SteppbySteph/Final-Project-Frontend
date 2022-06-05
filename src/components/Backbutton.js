@@ -6,7 +6,7 @@ const BackButton = () => {
     const navigate = useNavigate()
 
     const onBackButtonClick = () => {
-      navigate('/home')
+      navigate(-1)
     }
 
   return (
