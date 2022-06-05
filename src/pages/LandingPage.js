@@ -19,7 +19,7 @@ const LandingPage = () => {
                 <Header />
             </HeaderContainer>
             <WrapperLanding>
-                <StyledGreeting>Finding your SUP INSPIRATION</StyledGreeting>
+                <StyledGreeting>Finding your SUP inspiration</StyledGreeting>
                 <NextButton onClick={handleOnClick}>View our homepage</NextButton>
             </WrapperLanding>
         </>
