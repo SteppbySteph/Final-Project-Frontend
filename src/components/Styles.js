@@ -16,13 +16,20 @@ export const HeaderStyling = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100vw;
-    padding-left: 0.5em;
+    // padding: 1em;
     // background-color: rgba(0, 0, 0, 0);
     background-color: #fff;
     opacity: 0.75;
     font-weight: bold;
 
 `;
+
+export const LogoLanding = styled.h4`
+    font-size: 1em;
+    font-weight: bold;
+    color: #000;
+    padding-left: 0.5em;
+`
 
 export const StyledGreeting = styled.h1`
     display: flex;
@@ -239,7 +246,7 @@ export const Description = styled.p`
 // filter: drop-shadow(0 0 22px #fff);
 // `;
 
-//contact component
+//Contact component
 export const WrapperContact = styled.div`
     // display: flex;
     // flex-direction: column;
@@ -259,8 +266,8 @@ export const ContactBox = styled.div`
     align-items: center;
     // width: 80vw;
     // max-width: 600px;
-    margin: 20px;
-    // padding: 2rem;
+    margin: 2rem;
+    padding: 1.5rem;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     opacity: 0.85;
