@@ -37,9 +37,11 @@ export const StyledGreeting = styled.h1`
 
 export const NextButton = styled.button`
     padding: 1rem;
-    background-color: hotpink;
-    opacity: 0.9;
+    background-color: #FF007F;
+    opacity: 0.85;
     font-size: 1rem;
+    color: #fff;
+    font-weight: 700;
     border-radius: 4px;
     margin: 0 10vw 10vw; 
     &:hover {
@@ -146,9 +148,9 @@ export const HeaderContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 2vh 3vh;
+    // margin: 2vh 3vh;
     padding-left: 0.5em;
-    background-color: rgba(0, 0, 0, 0.16);
+    background-color: rgba(0, 0, 0, 0);
 `;
 
 //Home
@@ -190,9 +192,11 @@ export const ButtonImage = styled.img`
 export const ButtonImageButton = styled.button`
     position: absolute;
     padding: 1rem;
-    background-color: hotpink;
-    opacity: 0.9;
+    background-color: #FF007F;
+    opacity: 0.85;
     font-size: 1rem;
+    font-weight: bold;
+    color: #fff; 
     border-radius: 4px;
     cursor: pointer;
     &:hover {

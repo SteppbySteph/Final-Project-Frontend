@@ -15,10 +15,12 @@ const Header = () => {
     }
 
     return (
+      <>
         <Stack spacing={0} direction="row">
           <Button variant="text" onClick={handleHomeButton}>Home</Button>
           <Button variant="text" onClick={handleOnContact}>Contact</Button>
         </Stack>
+      </>  
       )
 }
 
