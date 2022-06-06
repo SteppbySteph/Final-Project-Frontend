@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import Header from 'components/Header'
 import Footer from 'components/Footer';
-import { WrapperLanding, HeaderStyling, NextButton, StyledGreeting } from 'components/Styles';
+import { FooterStyling, HeaderStyling, NextButton, StyledContent, StyledGreeting, WrapperLanding, } from 'components/Styles';
 
 
 const LandingPage = () => {
@@ -26,10 +26,15 @@ const LandingPage = () => {
                     JS-SUP
                     <Header />
                 </HeaderStyling>
-                <StyledGreeting>Finding your SUP inspiration</StyledGreeting>
-                <NextButton onClick={handleOnClick}>View our homepage</NextButton>
+                <StyledContent>
+                    <StyledGreeting>Finding your SUP inspiration</StyledGreeting>
+                    <NextButton onClick={handleOnClick}>View our homepage</NextButton>
+                </StyledContent>
+                <FooterStyling>
+                    <Footer />
+                </FooterStyling>
             </WrapperLanding>
-            <Footer />
+            
             
         </>
     )

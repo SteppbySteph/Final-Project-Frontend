@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { StyledBackButton, HeaderContainer, StyledSection, ImageContainer, ButtonImage, ButtonImageButton } from 'components/Styles'
+import { ButtonImage, ButtonImageButton, FooterStyling, HeaderContainer, ImageContainer, StyledBackButton, StyledSection } from 'components/Styles'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 import BackButton from 'components/Backbutton'
@@ -49,8 +49,11 @@ const Home = () => {
                     <ButtonImage src="https://images.unsplash.com/photo-1601283261983-543e77949437?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhbmQlMjB1cCUyMHBhZGRsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60" alt="paddle in the sunset"/>
                     <ButtonImageButton onClick={handleOnClickWorldwide}>Worldwide top SUP destinations</ButtonImageButton>
                 </ImageContainer>
+                <FooterStyling>
+                    <Footer />
+                </FooterStyling>
             </StyledSection>
-            <Footer />
+            
         </>
 
     )

@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react"
 import data from '../data.json'
 import Header from 'components/Header'
 import BackButton from 'components/Backbutton'
-import { HeaderContainer, StyledBackButton, CardContainer, Image, Description } from 'components/Styles'
+import Footer from 'components/Footer'
+import { CardContainer, Description, FooterStyling, HeaderContainer, Image, StyledBackButton } from 'components/Styles'
 // import { API_SWEDEN } from "utils/utils"
 
 const Sweden = () => {
@@ -40,6 +41,9 @@ const Sweden = () => {
             <img src={item.image} key={item.image} alt="place"/>
         </>
           ))} */}
+        <FooterStyling>
+          <Footer/>
+        </FooterStyling>
     </div>
   )
 }

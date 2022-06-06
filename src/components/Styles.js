@@ -79,7 +79,7 @@ export const WrapperLanding = styled.div`
     max-width: 600px; */
     /* margin: 15px auto; */
     /* background-color: #fff; */
-    padding: 0 20px 20px;
+    // padding: 0 20px 20px;
     /* border-radius: 5px; */
     background-image: url("https://images.unsplash.com/photo-1509233725247-49e657c54213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhY2tncm91bmQlMjBpbWFnZXMlMjBiZWFjaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
     /* background-image: url("https://images.unsplash.com/photo-1626358033353-b5f5a3ca1067?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA0fHxiYWNrZ3JvdW5kJTIwaW1hZ2VzJTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"); */
@@ -89,6 +89,13 @@ export const WrapperLanding = styled.div`
     /* //box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
 `
 
+export const StyledContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+`;
 
 //Login component + Post component
 export const Container = styled.div`
@@ -271,12 +278,27 @@ export const ContactBox = styled.div`
     margin: 20px;
     padding: 1.5rem;
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     opacity: 0.85;
     background-color: #fff;
 
     //red border added just for a better visual
-    border: 3px solid red;
+    // border: 3px solid red;
     // margin-bottom: rem; 
 
 `
+//Footer
+export const FooterStyling = styled.div`
+    // display: flex;
+    // flex-direction: row;
+    // align-items: center;
+    // justify-content: space-between;
+    // width: 100vw;
+    text-align: center;
+    padding: 1em;
+    // background-color: rgba(0, 0, 0, 0);
+    background-color: #fff;
+    opacity: 0.75;
+    font-weight: lighter;
+
+`;
