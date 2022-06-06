@@ -2,6 +2,7 @@ import React from 'react'
 
 import { StyledBackButton, HeaderContainer, StyledSection, ImageContainer, ButtonImage, ButtonImageButton } from 'components/Styles'
 import Header from 'components/Header'
+import Footer from 'components/Footer'
 import BackButton from 'components/Backbutton'
 import { useNavigate } from 'react-router-dom'
 
@@ -49,6 +50,7 @@ const Home = () => {
                     <ButtonImageButton onClick={handleOnClickWorldwide}>Worldwide top SUP destinations</ButtonImageButton>
                 </ImageContainer>
             </StyledSection>
+            <Footer />
         </>
 
     )

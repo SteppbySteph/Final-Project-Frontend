@@ -2,6 +2,7 @@ import React from "react"
 
 import { ButtonImage, ContactBox, HeaderStyling, LogoLanding, WrapperContact } from 'components/Styles'
 import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 const Contact = () => {
     return(
@@ -28,7 +29,9 @@ const Contact = () => {
                         <p>LinkedIn: Stephannie@email.com</p>
                     </div>
                 </ContactBox>
-            </WrapperContact>   
+            </WrapperContact>
+            <Footer />
+               
         </>
     )
 }
