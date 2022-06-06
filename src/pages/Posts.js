@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { API_URL, API_LIKES } from 'utils/utils'
 import moment from 'moment'
-import { Container, CardContainer, BottomCardContainer, LikeContainer, LikeButton, PostHeader } from 'components/Styles'
-import { TextField, Button  } from '@mui/material'
+import { Container, Form, Textarea, CardContainer, MessageContainer, BottomCardContainer, LikeContainer, LikeButton, PostHeader } from 'components/Styles'
+import { Button  } from '@mui/material'
 
 // import user from 'reducer/user'
 import posts from 'reducer/posts'
@@ -22,6 +22,7 @@ const Posts = () => {
     const [newPost, setNewPost] = useState('')
     const navigate = useNavigate()
     const dispatch = useDispatch()
+
 
     useEffect(()=> {
         if(!accessToken) {
@@ -107,45 +108,45 @@ const Posts = () => {
             </PostHeader>
             
             <Container>
-                <form onSubmit={handleFormSubmit}>
-                    <TextField
-                        id="outlined-multiline-static"
-                        label="Message"
-                        multiline
-                        rows={10}
-                        column={10}
-                        value={newPost}
-                        onChange={handleNewPost}
+                <Form onSubmit={handleFormSubmit}>
+                    <Textarea 
+                        aria-label='newPost'
+                        value={newPost} 
+                        onChange={handleNewPost} 
+                        placeholder ='Share your SUP recommendation...'
                     />
                     <div>
                         <Button 
                             variant="contained"
                             type='submit'
+                            disabled={newPost.length < 5 || newPost.length > 1500}
                             >
                                 Submit
                         </Button>
                     </div>
-                </form>
+                </Form>
             </Container>
             <div>   
                 {postItems.map((item) => {
                         return <CardContainer key={item._id}>
-                                <div>
-                                  <p>{item.message}</p>
-                                </div>
+                                <MessageContainer>
+                                    {item.message}
+                                </MessageContainer>
+                                    <p>{displayName}</p>
+                                    <p>{userEmail}</p>
                                 <BottomCardContainer>
                                     <LikeContainer>
                                         <LikeButton
                                             // className={item.likes > 0 ? 'likes-button clicked' : 'likes-button'}
                                             onClick={() => handlePostLikes(item._id)}
                                         >
-                                            <span className='like-icon' role='img' aria-label='like emoji'>👍</span>
-                                        </LikeButton>
+                                            <Button variant="text">LIKES</Button>
+                                            {/* <span className='like-icon' role='img' aria-label='like emoji'>👍</span> */}
+                                        </LikeButton>                                     
                                         <p>x {item.likes}</p>
                                     </LikeContainer>
                                     <p>{moment.utc(item.createdAt).format('MMM Do YY')}</p>
                                 </BottomCardContainer>
-                                <p>{displayName} {userEmail}</p>
                             </CardContainer>
                     })}
             </div>
