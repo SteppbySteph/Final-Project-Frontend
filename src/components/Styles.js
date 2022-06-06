@@ -258,18 +258,25 @@ export const WrapperContact = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
+    
 `
 export const ContactBox = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    // height: 80vh;
     // width: 80vw;
     // max-width: 600px;
-    margin: 2rem;
+    margin: 20px;
     padding: 1.5rem;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     opacity: 0.85;
     background-color: #fff;
+
+    //red border added just for a better visual
+    border: 3px solid red;
+    // margin-bottom: rem; 
+
 `
