@@ -1,10 +1,20 @@
 import React from 'react'
-
-import { ButtonImage, ButtonImageButton, FooterStyling, HeaderContainer, ImageContainer, StyledBackButton, StyledSection } from 'components/Styles'
-import Header from 'components/Header'
-import Footer from 'components/Footer'
-import BackButton from 'components/Backbutton'
 import { useNavigate } from 'react-router-dom'
+
+import { 
+    ButtonImage, 
+    ButtonImageButton, 
+    FooterStyling, 
+    HeaderContainer, 
+    ImageContainer, 
+    LogoLanding, 
+    StyledBackButton, 
+    StyledSection
+} from 'components/Styles'
+
+import BackButton from 'components/Backbutton'
+import Footer from 'components/Footer'
+import Header from 'components/Header'
 
 
 const Home = () => {
@@ -25,7 +35,7 @@ const Home = () => {
     return (
         <>
             <HeaderContainer>
-                JS-SUP
+                <LogoLanding>JS-SUP</LogoLanding>
                 <Header />
             </HeaderContainer>
             <StyledBackButton>

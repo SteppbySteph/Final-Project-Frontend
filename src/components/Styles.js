@@ -279,7 +279,7 @@ export const ContactBox = styled.div`
     padding: 1.5rem;
     border-radius: 5px;
     // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    opacity: 0.85;
+    opacity: 0.9;
     background-color: #fff;
 
     //red border added just for a better visual

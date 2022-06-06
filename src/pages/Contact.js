@@ -1,9 +1,18 @@
 import React from "react"
-
 import { Button } from "@mui/material"
-import { ButtonImage, ContactBox, FooterStyling, HeaderStyling, LogoLanding, WrapperContact } from 'components/Styles'
-import Header from 'components/Header'
+
+import { 
+    ButtonImage, 
+    ContactBox, 
+    FooterStyling, 
+    HeaderStyling, 
+    LogoLanding, 
+    WrapperContact
+} from 'components/Styles'
+
 import Footer from 'components/Footer'
+import Header from 'components/Header'
+
 
 const Contact = () => {
     return(

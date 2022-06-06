@@ -1,10 +1,18 @@
 import React from "react"
 import data from '../data.json'
 
+import { 
+  CardContainer, 
+  Description, 
+  FooterStyling, 
+  HeaderContainer, 
+  Image, 
+  StyledBackButton 
+} from 'components/Styles'
+
 import BackButton from 'components/Backbutton'
 import Footer from 'components/Footer'
 import Header from 'components/Header'
-import { CardContainer, Description, FooterStyling, HeaderContainer, Image, StyledBackButton } from 'components/Styles'
 
 const Worldwide = () => {
 
