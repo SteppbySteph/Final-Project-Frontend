@@ -101,7 +101,7 @@ export const StyledContent = styled.div`
 export const Container = styled.div`
     width: 80%;
     max-width: 600px;
-    margin: 100px auto;
+    margin: 50px auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -131,31 +131,40 @@ export const CardContainer = styled.div`
     word-break: break-word;
     position: relative;
 `
+export const Textarea = styled.textarea`
+    height: 30vh;
+    font-size: 20px;
+    outline-color: #FF007F;
+`
+export const MessageContainer = styled.p`
+    margin-bottom: 12vw;
+`
+
 export const BottomCardContainer = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-top: 2vw;
+    padding-top: 1vw;
     margin-top: auto;
 `
 export const LikeContainer = styled.div`
     display: flex;
     align-items: center;
-    gap: 0.5vw;
+    /* gap: 0.5vw; */
 `
 export const LikeButton = styled.button`
     display: flex;
-    background-color: #EFEFEF;
-    border-radius: 50%;
-    margin-bottom: 1vw;
+    /* background-color: #EFEFEF; */
+    /* border-radius: 50%; */
+    background-color: #fff;
     align-items: center;
     justify-content: center;
     border: none;
+    padding: 0;
     /* // width: 5vw;
     // height: 5vw; */
-    padding: 3vw;
 `
 export const PostHeader = styled.div`
     display: flex;
