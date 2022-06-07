@@ -16,10 +16,12 @@ import { Identity } from '@mui/base'
 
 const Posts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
-    const userEmail = useSelector((store) => store.user.email)
+    // const userEmail = useSelector((store) => store.user.email)
     const displayName = useSelector((store) => store.user.username)
     const postItems = useSelector((store) => store.posts.items)
+    const newEmail = useSelector((store) => store.posts.email)
     const [newPost, setNewPost] = useState('')
+    // const [newEmail, setNewEmail] = useState('')
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -67,10 +69,11 @@ const Posts = () => {
         const options = {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Authorization': accessToken,
             },
             body: JSON.stringify({
-                message: newPost
+                message: newPost            
             })
           }
   
@@ -78,7 +81,9 @@ const Posts = () => {
             .then(res =>res.json())
             .then(() => fetchPosts())
             .finally(() => setNewPost(''))
+            // .finally(() => console.log(newPost))
       }
+    //   console.log(newPost)
 
     //Update likes via post id
     const handlePostLikes = (id) => {
@@ -96,7 +101,6 @@ const Posts = () => {
             fetchPosts()
           })
       }   
-    
     return (
         <>        
             <PostHeader>
@@ -126,31 +130,31 @@ const Posts = () => {
                     </div>
                 </Form>
             </Container>
-            <div>   
+            <div>  
                 {postItems.map((item) => {
-                        return <CardContainer key={item._id}>
-                                <MessageContainer>
-                                    {item.message}
-                                </MessageContainer>
-                                    <p>{displayName}</p>
-                                    <p>{userEmail}</p>
-                                <BottomCardContainer>
-                                    <LikeContainer>
-                                        <LikeButton
-                                            // className={item.likes > 0 ? 'likes-button clicked' : 'likes-button'}
-                                            onClick={() => handlePostLikes(item._id)}
-                                        >
-                                            <Button variant="text">LIKES</Button>
-                                            {/* <span className='like-icon' role='img' aria-label='like emoji'>👍</span> */}
-                                        </LikeButton>                                     
-                                        <p>x {item.likes}</p>
-                                    </LikeContainer>
-                                    <p>{moment.utc(item.createdAt).format('MMM Do YY')}</p>
-                                </BottomCardContainer>
-                            </CardContainer>
+                    // console.log(item.creator.email)
+                    return <CardContainer key={item._id}>
+                            <MessageContainer>
+                                {item.message}
+                            </MessageContainer>
+                                <p>{displayName}</p>
+                                {/* <p key={item.creator.email}>{item.creator.email}</p> */}
+                            <BottomCardContainer>
+                                <LikeContainer>
+                                    <LikeButton
+                                        // className={item.likes > 0 ? 'likes-button clicked' : 'likes-button'}
+                                        onClick={() => handlePostLikes(item._id)}
+                                    >
+                                        <Button variant="text">LIKES</Button>
+                                        {/* <span className='like-icon' role='img' aria-label='like emoji'>👍</span> */}
+                                    </LikeButton>                                     
+                                    <p>x {item.likes}</p>
+                                </LikeContainer>
+                                <p>{moment.utc(item.createdAt).format('MMM Do YY')}</p>
+                            </BottomCardContainer>
+                        </CardContainer>     
                     })}
-            </div>
-                 
+            </div>   
         </>
     )
 }
