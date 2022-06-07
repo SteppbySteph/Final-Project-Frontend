@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { API_URL } from 'utils/utils'
+import { API_URL, API_DELETE_MSG } from 'utils/utils'
 import posts from 'reducer/posts'
 
 
@@ -43,6 +43,22 @@ const YourPosts = () => {
         })
     }
 
+    const handleDeleteMsg = (id) => {
+        const options = {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+    
+        fetch(API_DELETE_MSG(id), options)
+          .then((res) => res.json())
+          .then(() => {
+              console.log(id)
+            fetchPosts()
+          })
+      } 
+
     return (
         <>        
             <PostHeader>
@@ -57,7 +73,7 @@ const YourPosts = () => {
             </StyledBackButton>
 
             {postItems.map((item) => {
-                if (currentUser === item.creator.name) {
+                // if (currentUser === item.creator.name) {
                     return (
                         <CardContainer key={item._id}>
                             <MessageContainer>
@@ -65,10 +81,11 @@ const YourPosts = () => {
                             </MessageContainer>
                             <BottomCardContainer>
                                 <Button variant="text"size='large'>EDIT</Button>                                    
-                                <Button variant="text"size='large'>DELETE</Button>
+                                <Button onClick={()=> handleDeleteMsg(item._id)}variant="text"size='large'>DELETE</Button>
                             </BottomCardContainer>
                         </CardContainer>  
-                 )}   
+                //  )}  
+                    ) 
             })}
                     
         </>

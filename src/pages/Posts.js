@@ -148,8 +148,8 @@ const Posts = () => {
                             <MessageContainer>
                                 {item.message}
                             </MessageContainer>
-                                <p>{item.creator.name}</p>
-                                <p>{item.creator.email}</p>
+                                {/* <p>{item.creator.name}</p> */}
+                                {/* <p>{item.creator.email}</p> */}
                             <BottomCardContainer>
                                 <LikeContainer>
                                     <LikeButton
