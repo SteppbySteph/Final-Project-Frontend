@@ -1,20 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { API_URL, API_DELETE_MSG } from 'utils/utils'
+import { API_URL, API_DELETE_MSG, API_UPDATE } from 'utils/utils'
 import posts from 'reducer/posts'
 
 
 import PostMenu from 'components/PostMenu'
 import Header from 'components/Header'
 import BackButton from 'components/Backbutton'
-import { StyledBackButton, PostHeader, ElementWrapper, CardContainer, MessageContainer, BottomCardContainer } from 'components/Styles'
+import { StyledBackButton, Textarea, PostHeader, ElementWrapper, CardContainer, MessageContainer, BottomCardContainer } from 'components/Styles'
 import { Button  } from '@mui/material'
 
 
 const YourPosts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
-    const currentUser = useSelector((store) => store.user.username)
+    const currentUser = useSelector((store) => store.user.userId)
     const postItems = useSelector((store) => store.posts.items)
+    const [updatedMessage, setUpdatedMessage] = useState('')
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -57,7 +58,25 @@ const YourPosts = () => {
               console.log(id)
             fetchPosts()
           })
-      } 
+      }
+      
+    const handleUpdateMsg = (id) => {
+    const options = {
+        method: 'PATCH',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            message: updatedMessage,
+        })
+    }
+
+    fetch(API_UPDATE(id), options)
+        .then((res) => res.json())
+        .then(() => fetchPosts())
+        .finally(() => setUpdatedMessage(''))
+            // console.log(id)
+    } 
 
     return (
         <>        
@@ -73,19 +92,25 @@ const YourPosts = () => {
             </StyledBackButton>
 
             {postItems.map((item) => {
-                // if (currentUser === item.creator.name) {
+                 if (currentUser === item.creator.creatorId) {
                     return (
                         <CardContainer key={item._id}>
+                            {/* <Textarea 
+                            aria-label='updatedMessage'
+                            value={updatedMessage}
+                            onChange={(e) => setUpdatedMessage(e.target.value)} 
+                            // placeholder ='Share your SUP recommendation...'
+                            placeholder={item.message}
+                            /> */}
                             <MessageContainer>
                                 {item.message}
                             </MessageContainer>
                             <BottomCardContainer>
-                                <Button variant="text"size='large'>EDIT</Button>                                    
+                                <Button onClick={()=> handleUpdateMsg(item._id)}variant="text"size='large'>EDIT</Button>                                    
                                 <Button onClick={()=> handleDeleteMsg(item._id)}variant="text"size='large'>DELETE</Button>
                             </BottomCardContainer>
                         </CardContainer>  
-                //  )}  
-                    ) 
+                 )}
             })}
                     
         </>
