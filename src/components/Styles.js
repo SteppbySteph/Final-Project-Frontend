@@ -136,6 +136,9 @@ export const Textarea = styled.textarea`
     font-size: 20px;
     outline-color: #FF007F;
 `
+export const YourPostButton = styled.div`
+    margin-top: 4vw;
+`
 export const MessageContainer = styled.p`
     margin-bottom: 12vw;
 `

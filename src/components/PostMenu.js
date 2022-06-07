@@ -6,7 +6,7 @@ import user from 'reducer/user'
 import { HeaderContainer } from './Styles'
 
 import { API_DELETE } from 'utils/utils'
-import { Identity } from '@mui/base'
+// import { Identity } from '@mui/base'
 
 const PostMenu = () => {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -70,6 +70,7 @@ const PostMenu = () => {
         {/* <LogoImage src={Logo} alt="logo navigation." /> */}
         <Button
           id="nav-button"
+          size='large'
           aria-controls={openNav ? "nav-menu" : undefined}
           aria-haspopup="true"
           aria-expanded={openNav ? "true" : undefined}

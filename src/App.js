@@ -3,10 +3,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
-import Posts from 'pages/Posts'
 import Login from 'pages/Login'
 import Home from 'pages/Home'
 import LandingPage from 'pages/LandingPage'
+import Posts from 'pages/Posts'
+import YourPosts from 'pages/YourPosts'
 import Sweden from 'pages/Sweden'
 import Europe from 'pages/Europe'
 import Worldwide from 'pages/Worldwide'
@@ -44,6 +45,7 @@ export const App = () => {
           <Route path='/home' element={<Home/>}></Route>
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/posts' element={<Posts/>}></Route>
+          <Route path='/yourposts' element={<YourPosts/>}></Route>
           <Route path='/sweden' element={<Sweden/>}></Route>
           <Route path='/europe' element={<Europe/>}></Route>
           <Route path='/worldwide' element={<Worldwide/>}></Route>
