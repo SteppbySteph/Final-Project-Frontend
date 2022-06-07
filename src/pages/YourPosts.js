@@ -7,7 +7,8 @@ import posts from 'reducer/posts'
 import PostMenu from 'components/PostMenu'
 import Header from 'components/Header'
 import BackButton from 'components/Backbutton'
-import { StyledBackButton, PostHeader, ElementWrapper } from 'components/Styles'
+import { StyledBackButton, PostHeader, ElementWrapper, CardContainer, MessageContainer, BottomCardContainer } from 'components/Styles'
+import { Button  } from '@mui/material'
 
 
 const YourPosts = () => {
@@ -54,6 +55,22 @@ const YourPosts = () => {
             <StyledBackButton>
                 <BackButton />
             </StyledBackButton>
+
+            {postItems.map((item) => {
+                if (currentUser === item.creator.name) {
+                    return (
+                        <CardContainer key={item._id}>
+                            <MessageContainer>
+                                {item.message}
+                            </MessageContainer>
+                            <BottomCardContainer>
+                                <Button variant="text"size='large'>EDIT</Button>                                    
+                                <Button variant="text"size='large'>DELETE</Button>
+                            </BottomCardContainer>
+                        </CardContainer>  
+                 )}   
+            })}
+                    
         </>
 
 
