@@ -19,7 +19,6 @@ const BackButton = () => {
           // p: 2,
           minWidth: 100,
         }}
-        // variant='outlined' 
         onClick={onBackButtonClick}>Back</Button>
     </Stack>
   );

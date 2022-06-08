@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-// import 'react-edit-text/dist/index.css';
-// import { EditText, EditTextarea, EdiText } from 'react-edit-text'
 import EdiText from 'react-editext'
 
 
@@ -10,7 +8,7 @@ import posts from 'reducer/posts'
 import PostMenu from 'components/PostMenu'
 import Header from 'components/Header'
 import BackButton from 'components/Backbutton'
-import { StyledBackButton, Textarea, PostHeader, ElementWrapper, CardContainer, MessageContainer, BottomCardContainer } from 'components/Styles'
+import { StyledBackButton, PostHeader, ElementWrapper, CardContainer, MessageContainer, BottomCardContainer } from 'components/Styles'
 import { Button  } from '@mui/material'
 
 
@@ -40,7 +38,7 @@ const YourPosts = () => {
             if (data.success) {
                 dispatch(posts.actions.setItems(data.response));
                 dispatch(posts.actions.setError(null));
-                setUpdatedMessage(updatedMessage)
+                // setUpdatedMessage(updatedMessage)
             } else {
                 dispatch(posts.actions.setError(data.response));
                 dispatch(posts.actions.setItems([]));
@@ -48,7 +46,7 @@ const YourPosts = () => {
             
         })
     }
-
+    // Deleting a message
     const handleDeleteMsg = (id) => {
         const options = {
           method: 'DELETE',
@@ -64,7 +62,8 @@ const YourPosts = () => {
             fetchPosts()
           })
     }
-      
+    
+    // Updating a message
     const handleUpdateMsg = (id) => {
         const options = {
             method: 'PATCH',
@@ -72,17 +71,14 @@ const YourPosts = () => {
             'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                message: updatedMessage,
+                updatedMessage: updatedMessage,
             })
         }
 
         fetch(API_UPDATE(id), options)
             .then((res) => res.json())
             .then(() => fetchPosts())
-            // .finally(() => console.log(updatedMessage))
             .finally(() => setUpdatedMessage(updatedMessage))
-            // .then(() => setUpdatedMessage(updatedMessage))
-            // .finally(() => fetchPosts())
     }
     
 
@@ -104,7 +100,9 @@ const YourPosts = () => {
                     return (
                         <CardContainer key={item._id}>
                             <MessageContainer>
-                                <EdiText type="text" value={item.message} onSave={updatedMessage => setUpdatedMessage(updatedMessage)}/>
+                                <EdiText 
+                                    type="text" value={item.message} 
+                                    onSave={updatedMessage => setUpdatedMessage(updatedMessage)}/>
                                 {console.log(updatedMessage)}
                             </MessageContainer>
                             <BottomCardContainer>
