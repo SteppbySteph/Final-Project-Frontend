@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+// import 'react-edit-text/dist/index.css';
+// import { EditText, EditTextarea, EdiText } from 'react-edit-text'
+import EdiText from 'react-editext'
+
+
 import { API_URL, API_DELETE_MSG, API_UPDATE } from 'utils/utils'
 import posts from 'reducer/posts'
-
-
 import PostMenu from 'components/PostMenu'
 import Header from 'components/Header'
 import BackButton from 'components/Backbutton'
@@ -37,10 +40,12 @@ const YourPosts = () => {
             if (data.success) {
                 dispatch(posts.actions.setItems(data.response));
                 dispatch(posts.actions.setError(null));
+                setUpdatedMessage(updatedMessage)
             } else {
                 dispatch(posts.actions.setError(data.response));
                 dispatch(posts.actions.setItems([]));
             }
+            
         })
     }
 
@@ -58,25 +63,28 @@ const YourPosts = () => {
               console.log(id)
             fetchPosts()
           })
-      }
+    }
       
     const handleUpdateMsg = (id) => {
-    const options = {
-        method: 'PATCH',
-        headers: {
-        'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            message: updatedMessage,
-        })
-    }
+        const options = {
+            method: 'PATCH',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                message: updatedMessage,
+            })
+        }
 
-    fetch(API_UPDATE(id), options)
-        .then((res) => res.json())
-        .then(() => fetchPosts())
-        .finally(() => setUpdatedMessage(''))
-            // console.log(id)
-    } 
+        fetch(API_UPDATE(id), options)
+            .then((res) => res.json())
+            .then(() => fetchPosts())
+            // .finally(() => console.log(updatedMessage))
+            .finally(() => setUpdatedMessage(updatedMessage))
+            // .then(() => setUpdatedMessage(updatedMessage))
+            // .finally(() => fetchPosts())
+    }
+    
 
     return (
         <>        
@@ -95,18 +103,13 @@ const YourPosts = () => {
                  if (currentUser === item.creator.creatorId) {
                     return (
                         <CardContainer key={item._id}>
-                            {/* <Textarea 
-                            aria-label='updatedMessage'
-                            value={updatedMessage}
-                            onChange={(e) => setUpdatedMessage(e.target.value)} 
-                            // placeholder ='Share your SUP recommendation...'
-                            placeholder={item.message}
-                            /> */}
                             <MessageContainer>
-                                {item.message}
+                                <EdiText type="text" value={item.message} onSave={updatedMessage => setUpdatedMessage(updatedMessage)}/>
+                                {console.log(updatedMessage)}
                             </MessageContainer>
                             <BottomCardContainer>
-                                <Button onClick={()=> handleUpdateMsg(item._id)}variant="text"size='large'>EDIT</Button>                                    
+                                <Button onClick={()=> handleUpdateMsg(item._id)}variant="text"size='large'>SAVE EDIT</Button>
+                                                                    
                                 <Button onClick={()=> handleDeleteMsg(item._id)}variant="text"size='large'>DELETE</Button>
                             </BottomCardContainer>
                         </CardContainer>  
