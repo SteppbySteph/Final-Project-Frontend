@@ -7,7 +7,8 @@ import {
     LogoLanding, 
     NextButton, 
     StyledContent, 
-    StyledGreeting, 
+    StyledGreeting,
+    StyledGreetingBox, 
     WrapperLanding
 } from 'components/Styles'
 
@@ -23,28 +24,29 @@ const LandingPage = () => {
 
     return (
         <>  
-            {/* <HeaderStyling>
-                JS-SUP
-                <Header />
-            </HeaderStyling> */}
-
             {/* Tog bort padding-top i WrapperLanding. Header sträcker sig inte längs hela sidan */}
             <WrapperLanding>
-                <HeaderStyling>
-                    <LogoLanding>JS-SUP</LogoLanding>
-                    <Header />
-                </HeaderStyling>
+                {/* <HeaderStyling> */}
+                    {/* <LogoLanding>JS-SUP</LogoLanding> */}
+                    {/* <Header /> */}
+                {/* </HeaderStyling> */}
                 <StyledContent>
-                    <StyledGreeting>Finding your SUP inspiration</StyledGreeting>
+                    <StyledGreetingBox>
+                    <fieldset>
+                    <StyledGreeting>Find your SUP inspiration</StyledGreeting>
                     {/* <StyledGreeting>
                         Finding your SUP inspiration
                        
                     </StyledGreeting> */}
-                    <NextButton onClick={handleOnClick}>View our homepage</NextButton>
+                    <legend>
+                    <NextButton onClick={handleOnClick}>About Stand Up Paddleboard &#10095;</NextButton>
+                    </legend>
+                    </fieldset>
+                    </StyledGreetingBox>
                 </StyledContent>
-                <FooterStyling>
+                {/* <FooterStyling>
                     <Footer />
-                </FooterStyling>
+                </FooterStyling> */}
             </WrapperLanding>
             
             

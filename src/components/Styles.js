@@ -30,42 +30,52 @@ export const LogoLanding = styled.h4`
     color: #000;
     padding-left: 0.5em;
 `
-
-export const StyledGreeting = styled.h1`
+export const StyledGreetingBox = styled.div`
     display: flex;
-    text-align: center;
-    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
     background-color: black;
     opacity: 0.9;
-    /* font-family: 'Comfortaa', cursive; */
+    // font-family: 'Comfortaa', cursive;
+    // font-family: 'Poiret One', cursive;
+    font-weight: 900;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    width: 70%;
+`
+export const StyledGreeting = styled.h1`
+    padding: 0.1rem;
+    // font-family: 'Comfortaa', cursive;
     font-family: 'Poiret One', cursive;
     color: #FF007F;
     font-size: 30px;
-    border-radius: 4px;
-    margin: 40vw 5vw; 
+    font-weight: bold;
+    letter-spacing: 3px;
     animation: glow 1s ease-in-out infinite alternate;
-    /* text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6; */
+    // text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
     /* //&:hover 
     //color: #fff */
     @keyframes glow {
   from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+    text-shadow: 0 0 4px #fff, 0 0 0px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 10px #0073e6, 0 0 35px #0073e6;
   }
   to {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6, 0 0 50px #0073e6, 0 0 60px #0073e6, 0 0 70px #0073e6;
+    text-shadow: 0 0 1px #fff, 0 0 0px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6, 0 0 50px #0073e6, 0 0 20px #0073e6, 0 0 30px #0073e6;
   }
 }
 `
 
 export const NextButton = styled.button`
-    padding: 1rem;
-    background-color: #FF007F;
-    opacity: 0.85;
-    font-size: 1rem;
+    // padding: 1rem;
+    background: none;
+    font-size: 1em;
     color: #fff;
-    font-weight: 700;
-    border-radius: 4px;
-    margin: 0 10vw 10vw; 
+    font-weight: 500;
+    border: none;
+    letter-spacing: 1px;
+    font-family: 'Comfortaa', cursive;
     &:hover {
         color: #fff
     }
@@ -83,7 +93,7 @@ export const WrapperLanding = styled.div`
     // padding: 0 20px 20px;
     /* border-radius: 5px; */
     background-image: url("https://images.unsplash.com/photo-1509233725247-49e657c54213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhY2tncm91bmQlMjBpbWFnZXMlMjBiZWFjaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
-    /* background-image: url("https://images.unsplash.com/photo-1626358033353-b5f5a3ca1067?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA0fHxiYWNrZ3JvdW5kJTIwaW1hZ2VzJTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"); */
+    // /* background-image: url("https://images.unsplash.com/photo-1626358033353-b5f5a3ca1067?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA0fHxiYWNrZ3JvdW5kJTIwaW1hZ2VzJTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"); */
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
@@ -95,7 +105,7 @@ export const StyledContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    height: 100vh;
 `;
 
 //Login component + Post component
