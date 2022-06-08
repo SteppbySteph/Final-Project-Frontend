@@ -158,7 +158,8 @@ const Posts = () => {
                                         onClick={() => handlePostLikes(item._id)}
                                     >
                                         <Button variant="text"size='large'>LIKES</Button>
-                                    </LikeButton>                                     
+                                    </LikeButton> 
+                                    <p>x {item.likes}</p>                                    
                                 </LikeContainer>
                                 <p>{moment.utc(item.createdAt).format('MMM Do YY')}</p>
                             </BottomCardContainer>

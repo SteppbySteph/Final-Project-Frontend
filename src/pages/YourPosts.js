@@ -5,10 +5,10 @@ import EdiText from 'react-editext'
 
 import { API_URL, API_DELETE_MSG, API_UPDATE } from 'utils/utils'
 import posts from 'reducer/posts'
-import PostMenu from 'components/PostMenu'
+// import PostMenu from 'components/PostMenu'
 import Header from 'components/Header'
 import BackButton from 'components/Backbutton'
-import { StyledBackButton, PostHeader, ElementWrapper, CardContainer, MessageContainer, BottomCardContainer } from 'components/Styles'
+import { StyledBackButton, HeaderContainer, CardContainer, MessageContainer, BottomCardContainer } from 'components/Styles'
 import { Button  } from '@mui/material'
 
 
@@ -84,16 +84,13 @@ const YourPosts = () => {
 
     return (
         <>        
-            <PostHeader>
-                <p>JS-SUP</p>
-                <ElementWrapper>
-                    <Header />
-                    <PostMenu/>
-                </ElementWrapper>   
-            </PostHeader>
-            <StyledBackButton>
-                <BackButton />
-            </StyledBackButton>
+        <HeaderContainer>
+            JS-SUP
+            <Header />
+        </HeaderContainer>
+        <StyledBackButton>
+            <BackButton />
+        </StyledBackButton>
 
             {postItems.map((item) => {
                  if (currentUser === item.creator.creatorId) {

@@ -37,6 +37,7 @@ export const StyledGreeting = styled.h1`
     padding: 1rem;
     background-color: black;
     opacity: 0.9;
+    /* font-family: 'Comfortaa', cursive; */
     font-family: 'Poiret One', cursive;
     color: #FF007F;
     font-size: 30px;
@@ -175,6 +176,9 @@ export const PostHeader = styled.div`
     align-items: center;
     justify-items: space-between;
     padding-left: 1.5em;
+    background-color: #fff;
+    opacity: 0.75;
+    font-weight: bold;
 `
 
 export const ElementWrapper = styled.div`
@@ -190,7 +194,10 @@ export const HeaderContainer = styled.div`
     justify-content: space-between;
     // margin: 2vh 3vh;
     padding-left: 0.5em;
-    background-color: rgba(0, 0, 0, 0);
+    /* background-color: rgba(0, 0, 0, 0); */
+    background-color: #fff;
+    opacity: 0.75;
+    font-weight: bold;
 `;
 
 //Home
@@ -273,10 +280,10 @@ export const WrapperContact = styled.div`
     // justify-content: center;
     //padding: 0 20px 20px;
     // background-image: url("https://images.unsplash.com/photo-1509233725247-49e657c54213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhY2tncm91bmQlMjBpbWFnZXMlMjBiZWFjaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
-    background-image: url("https://images.unsplash.com/photo-1626358033353-b5f5a3ca1067?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA0fHxiYWNrZ3JvdW5kJTIwaW1hZ2VzJTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+    /* background-image: url("https://images.unsplash.com/photo-1626358033353-b5f5a3ca1067?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA0fHxiYWNrZ3JvdW5kJTIwaW1hZ2VzJTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
     background-repeat: no-repeat;
     background-size: cover;
-    object-fit: cover;
+    object-fit: cover; */
     
 `
 export const ContactBox = styled.div`
@@ -298,6 +305,17 @@ export const ContactBox = styled.div`
     // border: 3px solid red;
     // margin-bottom: rem; 
 
+`
+export const ButtonImageContact = styled.img`
+    width: 300px;
+    height: 300px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    border-radius: 50%;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
 `
 //Footer
 export const FooterStyling = styled.div`
