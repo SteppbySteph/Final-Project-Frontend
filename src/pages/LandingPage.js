@@ -25,11 +25,12 @@ const LandingPage = () => {
     return (
         <>  
             {/* Tog bort padding-top i WrapperLanding. Header sträcker sig inte längs hela sidan */}
+            
             <WrapperLanding>
-                {/* <HeaderStyling> */}
-                    {/* <LogoLanding>JS-SUP</LogoLanding> */}
-                    {/* <Header /> */}
-                {/* </HeaderStyling> */}
+                {/* <HeaderStyling>
+                <LogoLanding>JS-SUP</LogoLanding>
+                    <Header />
+                </HeaderStyling> */}
                 <StyledContent>
                     <StyledGreetingBox>
                     <fieldset>
@@ -39,7 +40,7 @@ const LandingPage = () => {
                        
                     </StyledGreeting> */}
                     <legend>
-                    <NextButton onClick={handleOnClick}>About Stand Up Paddleboard &#10095;</NextButton>
+                    <NextButton onClick={handleOnClick}>About Stand Up Paddleboard &#10095;&#10095;</NextButton>
                     </legend>
                     </fieldset>
                     </StyledGreetingBox>
