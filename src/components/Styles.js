@@ -228,14 +228,17 @@ export const StyledButton = styled.button`
   }
 `
 export const StyledSection = styled.section`
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
+    /* padding: 2rem; */
+
 `
 export const ImageContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    margin: 2em 0;
 `
 export const ButtonImage = styled.img`
     width: 300px;

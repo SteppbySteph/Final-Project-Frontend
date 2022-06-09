@@ -38,9 +38,9 @@ const Home = () => {
                 <LogoLanding>JS-SUP</LogoLanding>
                 <Header />
             </HeaderContainer>
-            <StyledBackButton>
+            {/* <StyledBackButton>
                 <BackButton />
-            </StyledBackButton>
+            </StyledBackButton> */}
 
             <StyledSection>
                 <ImageContainer>
