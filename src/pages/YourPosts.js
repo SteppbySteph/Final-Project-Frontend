@@ -21,7 +21,7 @@ const YourPosts = () => {
 
     useEffect(() => {
         fetchPosts()
-    }, [])
+    },[])
 
     const fetchPosts = () => {
         const options = {
