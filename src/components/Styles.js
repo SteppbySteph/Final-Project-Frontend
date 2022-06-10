@@ -122,7 +122,7 @@ export const Container = styled.div`
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2vw;
 `
 
 //Login component
@@ -140,18 +140,31 @@ export const CardContainer = styled.div`
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     word-break: break-word;
-    position: relative;
+    /* position: relative; */
 `
 export const Textarea = styled.textarea`
     height: 30vh;
-    font-size: 20px;
+    font-size: 16px;
     outline-color: #FF007F;
 `
 export const YourPostButton = styled.div`
-    margin-top: 4vw;
+    margin-top: 2vw;
 `
-export const MessageContainer = styled.p`
-    margin-bottom: 12vw;
+export const MessageContainer = styled.div`
+    margin-bottom: 9vw;
+    @media (min-width: 678px) {
+        margin-bottom: 6vw;
+    }
+     @media (min-width: 1024px) {
+        margin-bottom: 3vw;
+    }
+`
+export const StyledParagraph = styled.p`
+    font-size: 12px;
+    margin: 0;
+    @media (min-width: 678px) {
+        font-size: 16px;
+    }
 `
 
 export const BottomCardContainer = styled.div`
@@ -218,7 +231,7 @@ export const StyledButton = styled.button`
   cursor:pointer;
   background: transparent;
   border: none;
-  font-size:1rem;
+  font-size: 1rem;
   border: 3px solid white;
   border-radius: 2rem;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -228,10 +241,11 @@ export const StyledButton = styled.button`
   }
 `
 export const StyledSection = styled.section`
-    /* display: flex;
-    flex-direction: column; */
-    /* padding: 2rem; */
-
+ /* @media (min-width: 678px) {
+     display: grid;
+     justify-content: center;
+     grid-template-columns: 1fr, 1fr;
+    } */
 `
 export const ImageContainer = styled.div`
     display: flex;
@@ -265,6 +279,23 @@ export const ButtonImageButton = styled.button`
 `
 
 //Sweden, Europe, Worldwide
+export const SectionCardContainer = styled.div`
+   @media (min-width: 678px) {        
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+   }
+`
+export const CardContainerDest = styled.div`
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    word-break: break-word;
+    /* position: relative; */
+`
 export const Image = styled.img`
     width: 100%;
     max-width: 600px;

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { API_URL, API_LIKES } from 'utils/utils'
 import moment from 'moment'
-import { Container, Form, Textarea, CardContainer, YourPostButton, MessageContainer, BottomCardContainer, LikeContainer, LikeButton, PostHeader } from 'components/Styles'
+import { Container, Form, Textarea, CardContainer, YourPostButton, MessageContainer, StyledParagraph, BottomCardContainer, LikeContainer, LikeButton, PostHeader } from 'components/Styles'
 import { Button  } from '@mui/material'
 
 // import user from 'reducer/user'
@@ -147,10 +147,10 @@ const Posts = () => {
                 {postItems.map((item) => {
                     return <CardContainer key={item._id}>
                             <MessageContainer>
-                                {item.message}
+                                <p>{item.message}</p>
                             </MessageContainer>
-                                <p>{item.creator.name}</p>
-                                <p>{item.creator.email}</p>
+                                <StyledParagraph>{item.creator.name}</StyledParagraph>
+                                <StyledParagraph>{item.creator.email}</StyledParagraph>
                             <BottomCardContainer>
                                 <LikeContainer>
                                     <LikeButton
@@ -159,9 +159,9 @@ const Posts = () => {
                                     >
                                         <Button variant="text"size='large'>LIKES</Button>
                                     </LikeButton> 
-                                    <p>x {item.likes}</p>                                    
+                                    <StyledParagraph>x {item.likes}</StyledParagraph>                                    
                                 </LikeContainer>
-                                <p>{moment.utc(item.createdAt).format('MMM Do YY')}</p>
+                                <StyledParagraph>{moment.utc(item.createdAt).format('MMM Do YY')}</StyledParagraph>
                             </BottomCardContainer>
                         </CardContainer>     
                     })}

@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react"
 import data from '../data.json'
 
 import { 
-  CardContainer,
+  SectionCardContainer,
+  CardContainerDest,
   Description,
   FooterStyling,
   HeaderContainer, 
@@ -37,13 +38,15 @@ const Sweden = () => {
         </StyledBackButton>
       {/* <h1>Welcome to Sweden. Here we list you all places where you can enjoy or try your SUP skills.</h1> */}
         
-      {data.sweden.map((item) => (
-        <CardContainer>
-           <Image src={item.image} key={item.image} alt="place"/>
-           <h4 key={item.id}>{item.place}</h4>
-           <Description key={item.id}>{item.description}</Description>
-        </CardContainer>
-      ))}
+      <SectionCardContainer> 
+        {data.sweden.map((item) => (
+          <CardContainerDest>
+            <Image src={item.image} key={item.image} alt="place"/>
+            <h4 key={item.id}>{item.place}</h4>
+            <Description key={item.id}>{item.description}</Description>
+          </CardContainerDest>
+        ))}
+      </SectionCardContainer>
         {/* {list.map((item) => (
         <>
             <p key={item.id}>{item.description}</p>
