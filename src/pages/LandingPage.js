@@ -2,9 +2,9 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { 
-    FooterStyling, 
-    HeaderStyling, 
-    LogoLanding, 
+    // FooterStyling, 
+    // HeaderStyling, 
+    // LogoLanding, 
     NextButton, 
     StyledContent, 
     StyledGreeting,
@@ -12,8 +12,8 @@ import {
     WrapperLanding
 } from 'components/Styles'
 
-import Footer from 'components/Footer'
-import Header from 'components/Header'
+// import Footer from 'components/Footer'
+// import Header from 'components/Header'
 
 const LandingPage = () => {
     const navigate = useNavigate()

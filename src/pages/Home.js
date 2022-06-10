@@ -7,12 +7,9 @@ import {
     FooterStyling, 
     HeaderContainer, 
     ImageContainer, 
-    LogoLanding, 
-    StyledBackButton, 
     StyledSection
 } from 'components/Styles'
 
-import BackButton from 'components/Backbutton'
 import Footer from 'components/Footer'
 import Header from 'components/Header'
 

@@ -7,7 +7,6 @@ import {
     ContactBox, 
     FooterStyling,
     HeaderContainer, 
-    HeaderStyling, 
     WrapperContact
 } from 'components/Styles'
 

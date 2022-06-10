@@ -16,7 +16,7 @@ import { ElementWrapper } from 'components/Styles'
 
 const Posts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
-    const currentUser = useSelector((store) => store.user.username)
+    // const currentUser = useSelector((store) => store.user.username)
     const postItems = useSelector((store) => store.posts.items)
     const [newPost, setNewPost] = useState('')
     const navigate = useNavigate()
