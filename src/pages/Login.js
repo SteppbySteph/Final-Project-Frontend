@@ -68,7 +68,6 @@ const Login = () => {
     return (
         <>
             <HeaderContainer>
-                JS-SUP
                 <Header />
             </HeaderContainer>
             <StyledBackButton>

@@ -24,12 +24,14 @@ export const HeaderStyling = styled.div`
 
 `;
 
-export const LogoLanding = styled.h4`
+export const LogoLanding = styled.button`
     font-size: 1em;
     /* color: whitesmoke; */
     font-family: 'Comfortaa', cursive;
     font-weight: bold;
     letter-spacing: 0.1em;
+    border: none;
+    background-color: transparent;
 
 `
 export const StyledGreetingBox = styled.div`
@@ -51,8 +53,8 @@ export const StyledGreeting = styled.h1`
     padding: 0.1rem;
     // font-family: 'Comfortaa', cursive;
     font-family: 'Poiret One', cursive;
-    /* color: #FF007F; */
-    color: #b593cc;
+    color: #FF007F;
+    /* color: #b593cc; */
     font-size: 30px;
     font-weight: bold;
     letter-spacing: 3px;
@@ -240,11 +242,12 @@ export const StyledButton = styled.button`
    border: 2px solid white;
   }
 `
+//Testa på grid med button och bild bredvid varandra.
 export const StyledSection = styled.section`
  /* @media (min-width: 678px) {
      display: grid;
      justify-content: center;
-     grid-template-columns: 1fr, 1fr;
+     grid-template-columns: 1fr 1fr;
     } */
 `
 export const ImageContainer = styled.div`
@@ -254,6 +257,10 @@ export const ImageContainer = styled.div`
     position: relative;
     margin: 2em 0;
 `
+
+//Lägg till media queries i desktop. Gör större bilder i desktop/tablet.
+//Ev mindre i mobil
+//Göra hela bilden som knapp
 export const ButtonImage = styled.img`
     width: 300px;
     height: 300px;
@@ -272,6 +279,8 @@ export const ButtonImageButton = styled.button`
     font-weight: bold;
     color: #fff; 
     border-radius: 4px;
+    font-family: 'Comfortaa', cursive;
+    border: none;
     cursor: pointer;
     &:hover {
         color: #fff;
@@ -279,12 +288,6 @@ export const ButtonImageButton = styled.button`
 `
 
 //Sweden, Europe, Worldwide
-export const SectionCardContainer = styled.div`
-   @media (min-width: 678px) {        
-    display: grid;
-    grid-template-columns: 1fr, 1fr;
-   }
-`
 export const CardContainerDest = styled.div`
     width: 80%;
     max-width: 600px;

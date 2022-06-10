@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react"
 import data from '../data.json'
 
 import { 
-  SectionCardContainer,
   CardContainerDest,
   Description,
   FooterStyling,
@@ -30,15 +29,13 @@ const Sweden = () => {
   return (
     <div>
         <HeaderContainer>
-            JS-SUP
-            <Header />
+          <Header />
         </HeaderContainer>
         <StyledBackButton>
             <BackButton />
         </StyledBackButton>
       {/* <h1>Welcome to Sweden. Here we list you all places where you can enjoy or try your SUP skills.</h1> */}
         
-      <SectionCardContainer> 
         {data.sweden.map((item) => (
           <CardContainerDest>
             <Image src={item.image} key={item.image} alt="place"/>
@@ -46,7 +43,6 @@ const Sweden = () => {
             <Description key={item.id}>{item.description}</Description>
           </CardContainerDest>
         ))}
-      </SectionCardContainer>
         {/* {list.map((item) => (
         <>
             <p key={item.id}>{item.description}</p>

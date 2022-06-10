@@ -19,7 +19,6 @@ const Europe = () => {
   return (
     <div>
       <HeaderContainer>
-          JS-SUP
         <Header />
       </HeaderContainer>
       <StyledBackButton>

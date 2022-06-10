@@ -19,7 +19,6 @@ const Worldwide = () => {
   return (
     <div>
       <HeaderContainer>
-          JS-SUP
         <Header />
       </HeaderContainer>
       <StyledBackButton>

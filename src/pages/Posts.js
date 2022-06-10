@@ -106,7 +106,6 @@ const Posts = () => {
     return (
         <>        
             <PostHeader>
-                <p>JS-SUP</p>
                 <ElementWrapper>
                     <Header />
                     <PostMenu/>

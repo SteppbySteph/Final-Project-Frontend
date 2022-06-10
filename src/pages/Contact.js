@@ -5,9 +5,9 @@ import {
     ButtonImage,
     ButtonImageContact, 
     ContactBox, 
-    FooterStyling, 
+    FooterStyling,
+    HeaderContainer, 
     HeaderStyling, 
-    LogoLanding, 
     WrapperContact
 } from 'components/Styles'
 
@@ -18,15 +18,13 @@ import Header from 'components/Header'
 const Contact = () => {
     return(
         <>
-            {/* <HeaderContainer>
-                <h1>JS-SUP</h1>
+            <HeaderContainer>
                 <Header />
-            </HeaderContainer> */}
+            </HeaderContainer>
             <WrapperContact>
-                <HeaderStyling>
-                    <LogoLanding>JS-SUP</LogoLanding>
+                {/* <HeaderStyling>
                     <Header />
-                </HeaderStyling>
+                </HeaderStyling> */}
                 <ContactBox>
                     <h3>About the authors</h3>
                     <div>

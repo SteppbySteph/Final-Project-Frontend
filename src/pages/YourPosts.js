@@ -85,7 +85,6 @@ const YourPosts = () => {
     return (
         <>        
         <HeaderContainer>
-            JS-SUP
             <Header />
         </HeaderContainer>
         <StyledBackButton>
