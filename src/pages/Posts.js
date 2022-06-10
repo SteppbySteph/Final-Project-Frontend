@@ -31,6 +31,7 @@ const Posts = () => {
 
     useEffect(() => {
         fetchPosts()
+        //eslint-disable-next-line
     }, [])
 
     const fetchPosts = () => {

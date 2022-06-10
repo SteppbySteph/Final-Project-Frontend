@@ -21,6 +21,7 @@ const YourPosts = () => {
 
     useEffect(() => {
         fetchPosts()
+        //eslint-disable-next-line
     },[])
 
     const fetchPosts = () => {
@@ -92,8 +93,9 @@ const YourPosts = () => {
         </StyledBackButton>
 
             {postItems.map((item) => {
+                
                  if (currentUser === item.creator.creatorId) {
-                    return (
+                    return(
                         <CardContainer key={item._id}>
                             <MessageContainer>
                                 <EdiText 
@@ -107,7 +109,8 @@ const YourPosts = () => {
                                 <Button onClick={()=> handleDeleteMsg(item._id)}variant="text"size='large'>DELETE</Button>
                             </BottomCardContainer>
                         </CardContainer>  
-                 )}
+            )} else { 
+                return null }
             })}
                     
         </>
