@@ -8,6 +8,7 @@ import posts from 'reducer/posts'
 // import PostMenu from 'components/PostMenu'
 import Header from 'components/Header'
 import BackButton from 'components/Backbutton'
+import PostMenu from 'components/PostMenu'
 import { StyledBackButton, HeaderContainer, CardContainer, MessageContainer, BottomCardContainer } from 'components/Styles'
 import { Button  } from '@mui/material'
 
@@ -87,6 +88,7 @@ const YourPosts = () => {
         <>        
         <HeaderContainer>
             <Header />
+            <PostMenu/>
         </HeaderContainer>
         <StyledBackButton>
             <BackButton />

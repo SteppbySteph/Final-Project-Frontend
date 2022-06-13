@@ -71,9 +71,7 @@ export const StyledGreeting = styled.h1`
   }
 }
 `
-
 export const NextButton = styled.button`
-    // padding: 1rem;
     background: none;
     font-size: 1em;
     color: #fff;
@@ -217,15 +215,22 @@ export const HeaderContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    // margin: 2vh 3vh;
-    padding-left: 0.5em;
-    /* background-color: rgba(0, 0, 0, 0); */
-    background-color: #fff;
-    opacity: 0.75;
     font-weight: bold;
+    font-size: 1rem;
+    border-bottom: 1px solid #F8F8FA;
+    margin: 1em 2em;
 `;
 
 //Home
+
+export const HomeTitle = styled.h1`
+    font-size: 1.5rem;
+    color: #F8F8FA;
+    letter-spacing: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+`
+
 export const StyledButton = styled.button`
   margin-left: 3rem;
   padding: 0.5rem;
@@ -242,8 +247,18 @@ export const StyledButton = styled.button`
    border: 2px solid white;
   }
 `
-//Testa på grid med button och bild bredvid varandra.
+export const StyledHomeContainer = styled.div`
+//     background-color: #F8F8FA;
+//     opacity: 0.5;
+// `
+
 export const StyledSection = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5vh 0;
+    border-radius: 5px;
  /* @media (min-width: 678px) {
      display: grid;
      justify-content: center;
@@ -255,7 +270,7 @@ export const ImageContainer = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
-    margin: 2em 0;
+    /* margin: 2em 0; */
 `
 
 //Lägg till media queries i desktop. Gör större bilder i desktop/tablet.
@@ -269,6 +284,7 @@ export const ButtonImage = styled.img`
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 `
 export const ButtonImageButton = styled.button`
     position: absolute;
@@ -281,6 +297,8 @@ export const ButtonImageButton = styled.button`
     border-radius: 4px;
     font-family: 'Comfortaa', cursive;
     border: none;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    letter-spacing: 1px;
     cursor: pointer;
     &:hover {
         color: #fff;

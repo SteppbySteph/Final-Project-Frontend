@@ -28,13 +28,14 @@ const Header = () => {
             size='large' 
             variant='text' 
             onClick={handleHomeButton}
-          >
+            sx={{color:'#fff'}}>
             Home
           </Button>
           <Button 
             size='large' 
             variant="text" 
             onClick={handleOnContact}
+            sx={{color:'#fff'}}
           >
             Contact
           </Button>

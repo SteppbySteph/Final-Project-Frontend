@@ -2,7 +2,7 @@ import React from "react"
 import { Button } from "@mui/material"
 
 import { 
-    ButtonImage,
+    // ButtonImage,
     ButtonImageContact, 
     ContactBox, 
     FooterStyling,
@@ -35,7 +35,7 @@ const Contact = () => {
                         </div>
                     </div>
                     <div>
-                        <ButtonImage src="/assets/stephannie.jpg" alt="photo of author"/>
+                        <ButtonImageContact src="/assets/stephannie.jpg" alt="photo of author"/>
                         <div>
                             <p>"My biggest dream is to make it out alive from Technigo bootcamp." </p>
                             <Button href="https://www.linkedin.com/in/stephannie-medenilla/">LinkedIn</Button>

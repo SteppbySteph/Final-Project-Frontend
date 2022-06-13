@@ -1,22 +1,31 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { API_URL, API_LIKES } from 'utils/utils'
-import moment from 'moment'
-import { Container, Form, Textarea, CardContainer, YourPostButton, MessageContainer, StyledParagraph, BottomCardContainer, LikeContainer, LikeButton, PostHeader } from 'components/Styles'
 import { Button  } from '@mui/material'
+import moment from 'moment'
 
-// import user from 'reducer/user'
+import { 
+    BottomCardContainer,
+    CardContainer,
+    Container,
+    Form,
+    HeaderContainer,
+    LikeButton,
+    LikeContainer,
+    MessageContainer,
+    StyledParagraph, 
+    Textarea, 
+    YourPostButton
+} from 'components/Styles'
+
+import { API_URL, API_LIKES } from 'utils/utils'
 import posts from 'reducer/posts'
-
 import PostMenu from 'components/PostMenu'
 import Header from 'components/Header'
-import { ElementWrapper } from 'components/Styles'
 // import { Identity } from '@mui/base'
 
 const Posts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
-    // const currentUser = useSelector((store) => store.user.username)
     const postItems = useSelector((store) => store.posts.items)
     const [newPost, setNewPost] = useState('')
     const navigate = useNavigate()
@@ -79,9 +88,7 @@ const Posts = () => {
             .then(res =>res.json())
             .then(() => fetchPosts())
             .finally(() => setNewPost(''))
-            // .finally(() => console.log(newPost.creator))
       }
-    //   console.log(newPost)
 
     //Update likes via post id
     const handlePostLikes = (id) => {
@@ -106,13 +113,10 @@ const Posts = () => {
     
     return (
         <>        
-            <PostHeader>
-                <ElementWrapper>
-                    <Header />
-                    <PostMenu/>
-                </ElementWrapper>   
-            </PostHeader>
-            
+            <HeaderContainer>
+                <Header />
+                <PostMenu/>
+            </HeaderContainer>   
             <Container>
                 <Form onSubmit={handleFormSubmit}>
                     <Textarea 
@@ -126,8 +130,8 @@ const Posts = () => {
                             variant="contained"
                             type='submit'
                             disabled={newPost.length < 5 || newPost.length > 1500}
-                            >
-                                SUBMIT POST
+                        >
+                            SUBMIT POST
                         </Button>
                     </div>
                 </Form>
@@ -136,8 +140,8 @@ const Posts = () => {
                         variant="contained"
                         type='submit'
                         onClick={handleYourPosts} 
-                        >
-                            YOUR POSTS
+                    >
+                        YOUR POSTS
                     </Button>
                 </YourPostButton>
             </Container>

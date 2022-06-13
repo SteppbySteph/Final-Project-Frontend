@@ -3,7 +3,7 @@ import { Button, Menu, MenuItem, Alert } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
 
 import user from 'reducer/user'
-import { HeaderContainer } from './Styles'
+// import { HeaderContainer } from './Styles'
 
 import { API_DELETE } from 'utils/utils'
 // import { Identity } from '@mui/base'
@@ -75,10 +75,11 @@ const PostMenu = () => {
           aria-haspopup="true"
           aria-expanded={openNav ? "true" : undefined}
           onClick={openNavigation}
+          sx={{color:'#fff'}}
         >
           {currentUser}
         </Button>
-        <HeaderContainer>
+        {/* <HeaderContainer> */}
         <Menu
           id="nav-menu"
           anchorEl={anchorEl}
@@ -102,7 +103,7 @@ const PostMenu = () => {
         {statusMessage !== null && (
           <Alert severity="info">{statusMessage}</Alert>
       )} 
-      </HeaderContainer>
+      {/* </HeaderContainer> */}
      
       </>
     );

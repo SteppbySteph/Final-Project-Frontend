@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom'
 
 import { 
     ButtonImage, 
-    ButtonImageButton, 
+    ButtonImageButton,
     FooterStyling, 
-    HeaderContainer, 
-    ImageContainer, 
+    HeaderContainer,
+    HomeTitle, 
+    ImageContainer,
+    StyledHomeContainer,
     StyledSection
 } from 'components/Styles'
 
@@ -36,14 +38,13 @@ const Home = () => {
     return (
         <>
             <HeaderContainer>
-                {/* <LogoLanding onClick={handleOnLandingPage}>JS-SUP</LogoLanding> */}
                 <Header />
             </HeaderContainer>
-            {/* <StyledBackButton>
-                <BackButton />
-            </StyledBackButton> */}
-
+            <StyledHomeContainer>
             <StyledSection>
+                <HomeTitle>
+                    Select an option
+                </HomeTitle>
                 <ImageContainer>
                     <ButtonImage src="https://www.towerpaddleboards.com/images/sup-hawaii-paddleboarding.jpg" alt="paddleboards in row"/>
                     <ButtonImageButton onClick={handleOnClickLogin}>Recommendations</ButtonImageButton>
@@ -59,11 +60,12 @@ const Home = () => {
                 <ImageContainer>
                     <ButtonImage src="https://images.unsplash.com/photo-1619127076035-ffae719099a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHN0YW5kJTIwdXAlMjBwYWRkbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="front of paddleboard"/>   
                     <ButtonImageButton onClick={handleOnClickWorldwide}>Worldwide SUP destinations</ButtonImageButton>
-                </ImageContainer>
-                <FooterStyling>
-                    <Footer />
-                </FooterStyling>
+                </ImageContainer>    
             </StyledSection>
+            </StyledHomeContainer>
+            <FooterStyling>
+                <Footer />
+            </FooterStyling>
             
             
         </>
