@@ -378,39 +378,42 @@ export const ContactBox = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // height: 80vh;
-    // width: 80vw;
-    // max-width: 600px;
-    margin: 20px;
-    padding: 1.5rem;
+    max-width: 600px;
+    margin: 0 1em 1em;
+    padding: 1.5rem 0;
     border-radius: 5px;
-    // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     opacity: 0.9;
     background-color: #fff;
-
-    //red border added just for a better visual
-    // border: 3px solid red;
-    // margin-bottom: rem; 
-
 `
+
 export const ButtonImageContact = styled.img`
-    width: 300px;
-    height: 300px;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     object-fit: cover;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
+    margin: 1em 0 0.5em;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 `
+export const AboutAuthor = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 0 2.5rem;
+
+`
+export const Author = styled.h3`
+    margin-bottom: 0;
+`
+
 //Footer
 export const FooterStyling = styled.div`
     // display: flex;
     // flex-direction: row;
     // align-items: center;
     // justify-content: space-between;
-    // width: 100vw;
+    /* width: 100%; */
     text-align: center;
     padding: 1em;
     // background-color: rgba(0, 0, 0, 0);

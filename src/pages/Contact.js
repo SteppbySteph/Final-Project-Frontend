@@ -2,8 +2,9 @@ import React from "react"
 import { Button } from "@mui/material"
 
 import { 
-    // ButtonImage,
-    ButtonImageContact, 
+    Author,
+    AboutAuthor,
+    ButtonImageContact,
     ContactBox, 
     FooterStyling,
     HeaderContainer, 
@@ -22,31 +23,30 @@ const Contact = () => {
             </HeaderContainer>
             <WrapperContact>
                 <ContactBox>
-                    <h3>About the authors</h3>
+                    <h2>About the authors</h2>
+                    <ButtonImageContact src="/assets/Josefin.jpeg" alt="photo of author"/>
+                    <AboutAuthor>
+                        <Author>Josefin Eliasson</Author>
+                        <p>"I strive to be the very best of myself- and I also love SUP!"</p>
+                    </AboutAuthor>
                     <div>
-                        {/* <ButtonImageContact src="/assets/Josefin.jpeg" alt="photo of author"/> */}
-                        {/* <ButtonImageContact src="/assets/Josefin.jpeg" alt="photo of author"/> */}
-                        <div>
-                            <p>"I strive to be the very best of myself- and I also love SUP!"</p>
-                            <Button href="https://www.linkedin.com/in/josefin-eliasson-94a2a8164/">LinkedIn</Button>
-                            <Button href="https://github.com/Josse79">Github</Button>
-                        </div>
+                        <Button href="https://www.linkedin.com/in/josefin-eliasson-94a2a8164/">LinkedIn</Button>
+                        <Button href="https://github.com/Josse79">Github</Button>                    
                     </div>
+                    <ButtonImageContact src="/assets/stephannie.jpg" alt="photo of author"/>
+                    <AboutAuthor>
+                        <Author>Stephannie Medenilla</Author>
+                        <p>"My biggest dream is to make it out alive from Technigo bootcamp." </p>
+                    </AboutAuthor>
                     <div>
-                        <ButtonImageContact src="/assets/stephannie.jpg" alt="photo of author"/>
-                        <div>
-                            <p>"My biggest dream is to make it out alive from Technigo bootcamp." </p>
-                            <Button href="https://www.linkedin.com/in/stephannie-medenilla/">LinkedIn</Button>
-                            <Button href="https://github.com/SteppbySteph">Github</Button>
-                        </div>
-                    </div>
+                        <Button href="https://www.linkedin.com/in/stephannie-medenilla/">LinkedIn</Button>
+                        <Button href="https://github.com/SteppbySteph">Github</Button>
+                    </div>    
                 </ContactBox>
-                <FooterStyling>
-                    <Footer />
-                </FooterStyling>
             </WrapperContact>
-            
-               
+            <FooterStyling>
+                <Footer />
+            </FooterStyling>   
         </>
     )
 }
