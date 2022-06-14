@@ -5,6 +5,7 @@ import EdiText from 'react-editext'
 
 import { API_URL, API_DELETE_MSG, API_UPDATE } from 'utils/utils'
 import posts from 'reducer/posts'
+import Loading from 'components/Loading'
 // import PostMenu from 'components/PostMenu'
 import Header from 'components/Header'
 import BackButton from 'components/Backbutton'
@@ -18,6 +19,7 @@ const YourPosts = () => {
     const currentUser = useSelector((store) => store.user.userId)
     const postItems = useSelector((store) => store.posts.items)
     const [updatedMessage, setUpdatedMessage] = useState('')
+    const [isLoading, setIsLoading] = useState(false);
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -26,6 +28,7 @@ const YourPosts = () => {
     },[])
 
     const fetchPosts = () => {
+        setIsLoading(true)
         const options = {
             method: 'GET',
             headers: {
@@ -47,6 +50,7 @@ const YourPosts = () => {
             }
             
         })
+        setTimeout(()=> setIsLoading(false), 1000)
     }
     // Deleting a message
     const handleDeleteMsg = (id) => {
@@ -86,38 +90,38 @@ const YourPosts = () => {
 
     return (
         <>        
-        <HeaderContainer>
-            <Header />
-            <PostMenu/>
-        </HeaderContainer>
-        <StyledBackButton>
-            <BackButton />
-        </StyledBackButton>
-
-            {postItems.map((item) => {
-                
-                 if (currentUser === item.creator.creatorId) {
-                    return(
-                        <CardContainer key={item._id}>
-                            <MessageContainer>
-                                <EdiText 
-                                    type="text" value={item.message} 
-                                    onSave={updatedMessage => setUpdatedMessage(updatedMessage)}/>
-                                {console.log(updatedMessage)}
-                            </MessageContainer>
-                            <BottomCardContainer>
-                                <Button onClick={()=> handleUpdateMsg(item._id)}variant="text"size='large'>SAVE EDIT</Button>
-                                                                    
-                                <Button onClick={()=> handleDeleteMsg(item._id)}variant="text"size='large'>DELETE</Button>
-                            </BottomCardContainer>
-                        </CardContainer>  
-            )} else { 
-                return null }
-            })}
-                    
+            <HeaderContainer>
+                <Header />
+                <PostMenu/>
+            </HeaderContainer>
+            <StyledBackButton>
+                <BackButton />
+            </StyledBackButton>
+            {isLoading ? <Loading/> :
+                <>
+                    {postItems.map((item) => {
+                        
+                        if (currentUser === item.creator.creatorId) {
+                            return(
+                                <CardContainer key={item._id}>
+                                    <MessageContainer>
+                                        <EdiText 
+                                            type="text" value={item.message} 
+                                            onSave={updatedMessage => setUpdatedMessage(updatedMessage)}/>
+                                        {console.log(updatedMessage)}
+                                    </MessageContainer>
+                                    <BottomCardContainer>
+                                        <Button onClick={()=> handleUpdateMsg(item._id)}variant="text"size='large'>SAVE EDIT</Button>
+                                                                            
+                                        <Button onClick={()=> handleDeleteMsg(item._id)}variant="text"size='large'>DELETE</Button>
+                                    </BottomCardContainer>
+                                </CardContainer>  
+                    )} else { 
+                        return null }
+                    })}
+                </>
+            }            
         </>
-
-
     )
 }
 

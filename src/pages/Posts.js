@@ -22,12 +22,14 @@ import { API_URL, API_LIKES } from 'utils/utils'
 import posts from 'reducer/posts'
 import PostMenu from 'components/PostMenu'
 import Header from 'components/Header'
+import Loading from 'components/Loading'
 // import { Identity } from '@mui/base'
 
 const Posts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
     const postItems = useSelector((store) => store.posts.items)
     const [newPost, setNewPost] = useState('')
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -44,6 +46,7 @@ const Posts = () => {
     }, [])
 
     const fetchPosts = () => {
+        setIsLoading(true)
         const options = {
             method: 'GET',
             headers: {
@@ -63,6 +66,7 @@ const Posts = () => {
                 dispatch(posts.actions.setItems([]));
             }
         })
+        setTimeout(()=> setIsLoading(false), 1000)
     }
     // }, []);
 
@@ -117,7 +121,9 @@ const Posts = () => {
                 <Header />
                 <PostMenu/>
             </HeaderContainer>   
-            <Container>
+            {isLoading ? <Loading/> : 
+            <>
+                <Container>
                 <Form onSubmit={handleFormSubmit}>
                     <Textarea 
                         aria-label='newPost'
@@ -170,7 +176,8 @@ const Posts = () => {
                         </CardContainer>     
                     })}
                 
-            </div>   
+            </div>
+            </>}    
         </>
     )
 }
