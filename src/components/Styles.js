@@ -110,9 +110,9 @@ export const StyledContent = styled.div`
 
 //Login component + Post component
 export const Container = styled.div`
-    width: 80%;
+    width: 70%;
     max-width: 600px;
-    margin: 50px auto;
+    margin: 1em auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -124,17 +124,22 @@ export const Form = styled.form`
     flex-direction: column;
     gap: 2vw;
 `
-
+export const FormButtons = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+`
 //Login component
 export const StyledBackButton = styled.form`
-    margin: 2vh 3vh; 
+    /* margin: 2vh 3vh;  */
+    margin: 1em 1em;
 `
 
 //Post component
 export const CardContainer = styled.div`
-    width: 80%;
+    width: 70%;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 1em auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -145,6 +150,8 @@ export const CardContainer = styled.div`
 export const Textarea = styled.textarea`
     height: 30vh;
     font-size: 16px;
+    font-family: 'Comfortaa', cursive;
+    padding: 0.5em;
     outline-color: #FF007F;
 `
 export const YourPostButton = styled.div`
@@ -250,8 +257,7 @@ export const StyledButton = styled.button`
 export const StyledHomeContainer = styled.div`
 //     background-color: #F8F8FA;
 //     opacity: 0.5;
-// `
-
+`
 export const StyledSection = styled.section`
     display: flex;
     flex-direction: column;
@@ -396,7 +402,7 @@ export const FooterStyling = styled.div`
     opacity: 0.75;
     font-weight: lighter;
 
-`;
+`
 
 //Loading component
 export const LoadingSpinner = styled.div`

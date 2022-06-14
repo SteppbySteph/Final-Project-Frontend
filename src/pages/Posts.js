@@ -9,6 +9,7 @@ import {
     CardContainer,
     Container,
     Form,
+    FormButtons,
     HeaderContainer,
     LikeButton,
     LikeContainer,
@@ -131,7 +132,7 @@ const Posts = () => {
                         onChange={handleNewPost} 
                         placeholder ='Share your SUP recommendation...'
                     />
-                    <div>
+                    <FormButtons>
                         <Button 
                             variant="contained"
                             type='submit'
@@ -139,17 +140,18 @@ const Posts = () => {
                         >
                             SUBMIT POST
                         </Button>
-                    </div>
+                        <YourPostButton>
+                            <Button 
+                                variant="text"
+                                type='submit'
+                                onClick={handleYourPosts} 
+                            >
+                                YOUR POSTS
+                            </Button>
+                        </YourPostButton>
+                    </FormButtons>
                 </Form>
-                <YourPostButton>
-                    <Button 
-                        variant="contained"
-                        type='submit'
-                        onClick={handleYourPosts} 
-                    >
-                        YOUR POSTS
-                    </Button>
-                </YourPostButton>
+                
             </Container>
             <div>  
                 {/* {console.log(postItems)}

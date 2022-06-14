@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { Button  } from '@mui/material'
 import EdiText from 'react-editext'
 
+import { 
+    BottomCardContainer,
+    CardContainer,
+    HeaderContainer,
+    MessageContainer,
+    StyledBackButton
+} from 'components/Styles'
 
 import { API_URL, API_DELETE_MSG, API_UPDATE } from 'utils/utils'
 import posts from 'reducer/posts'
-import Loading from 'components/Loading'
-// import PostMenu from 'components/PostMenu'
-import Header from 'components/Header'
 import BackButton from 'components/Backbutton'
+import Header from 'components/Header'
+import Loading from 'components/Loading'
 import PostMenu from 'components/PostMenu'
-import { StyledBackButton, HeaderContainer, CardContainer, MessageContainer, BottomCardContainer } from 'components/Styles'
-import { Button  } from '@mui/material'
 
 
 const YourPosts = () => {
@@ -43,7 +48,6 @@ const YourPosts = () => {
             if (data.success) {
                 dispatch(posts.actions.setItems(data.response));
                 dispatch(posts.actions.setError(null));
-                // setUpdatedMessage(updatedMessage)
             } else {
                 dispatch(posts.actions.setError(data.response));
                 dispatch(posts.actions.setItems([]));
@@ -52,6 +56,7 @@ const YourPosts = () => {
         })
         setTimeout(()=> setIsLoading(false), 1000)
     }
+
     // Deleting a message
     const handleDeleteMsg = (id) => {
         const options = {
@@ -87,7 +92,6 @@ const YourPosts = () => {
             .finally(() => setUpdatedMessage(updatedMessage))
     }
     
-
     return (
         <>        
             <HeaderContainer>
@@ -100,24 +104,23 @@ const YourPosts = () => {
             {isLoading ? <Loading/> :
                 <>
                     {postItems.map((item) => {
-                        
                         if (currentUser === item.creator.creatorId) {
-                            return(
+                            return( 
                                 <CardContainer key={item._id}>
                                     <MessageContainer>
                                         <EdiText 
                                             type="text" value={item.message} 
-                                            onSave={updatedMessage => setUpdatedMessage(updatedMessage)}/>
-                                        {console.log(updatedMessage)}
+                                            onSave={updatedMessage => setUpdatedMessage(updatedMessage)}
+                                        />
+                                        {/* {console.log(updatedMessage)} */}
                                     </MessageContainer>
                                     <BottomCardContainer>
-                                        <Button onClick={()=> handleUpdateMsg(item._id)}variant="text"size='large'>SAVE EDIT</Button>
-                                                                            
+                                        <Button onClick={()=> handleUpdateMsg(item._id)}variant="text"size='large'>SAVE EDIT</Button>                          
                                         <Button onClick={()=> handleDeleteMsg(item._id)}variant="text"size='large'>DELETE</Button>
                                     </BottomCardContainer>
                                 </CardContainer>  
-                    )} else { 
-                        return null }
+                            )} else { 
+                                return null }
                     })}
                 </>
             }            

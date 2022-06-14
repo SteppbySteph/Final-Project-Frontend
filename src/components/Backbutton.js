@@ -10,7 +10,7 @@ const BackButton = () => {
     }
 
   return (
-    <Stack direction="row" spacing={0}>
+    <Stack direction="row" spacing={1}>
       <Button 
         sx={{
           // bgcolor: 'background.paper',

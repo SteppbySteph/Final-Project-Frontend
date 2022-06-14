@@ -3,10 +3,7 @@ import { Button, Menu, MenuItem, Alert } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
 
 import user from 'reducer/user'
-// import { HeaderContainer } from './Styles'
-
 import { API_DELETE } from 'utils/utils'
-// import { Identity } from '@mui/base'
 
 const PostMenu = () => {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -24,7 +21,7 @@ const PostMenu = () => {
     const handleClose = () => {
       setAnchorEl(null);
     };
-  //Hur kommer det sig att logout går vidare till login sidan utan navigate?
+ 
     const logout = () => {
       dispatch(user.actions.setAccessToken(null))
     };
@@ -38,33 +35,16 @@ const PostMenu = () => {
         },
       }
       
-
-      // fetch(API_URL(`users/${userId}`), options)
       fetch(API_DELETE(userId), options)
       .then(res => res.json())
       .then(data => {
         setStatusMessage(data.response)
         console.log(setStatusMessage(data.response))
         dispatch(user.actions.setAccessToken(null))
-        
-        // alert(data.response)
       })
       
   }   
     
-
-
-    //  const onDelete = (id) => {
-    //     // dispatch(user.actions.setAccessToken(null))
-    //     // console.log(`${displayName} has been deleted`)
-
-    //     if (createdBy === currentUser) {
-          
-    //       deleteUser({
-    //         method: "DELETE",
-    //       });
-    //     } 
-  
     return (
       <>
         {/* <LogoImage src={Logo} alt="logo navigation." /> */}
@@ -77,8 +57,9 @@ const PostMenu = () => {
           onClick={openNavigation}
           sx={{color:'#fff'}}
         >
-          {currentUser}
+          {currentUser} &#8964; 
         </Button>
+        	
         {/* <HeaderContainer> */}
         <Menu
           id="nav-menu"
