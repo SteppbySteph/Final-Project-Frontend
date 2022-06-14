@@ -110,7 +110,7 @@ export const StyledContent = styled.div`
 
 //Login component + Post component
 export const Container = styled.div`
-    width: 70%;
+    width: 80%;
     max-width: 600px;
     margin: 1em auto;
     background-color: #fff;
@@ -137,11 +137,12 @@ export const StyledBackButton = styled.form`
 
 //Post component
 export const CardContainer = styled.div`
-    width: 70%;
+    width: 80%;
     max-width: 600px;
     margin: 1em auto;
     background-color: #fff;
-    padding: 20px;
+    /* padding: 20px; */
+    padding: 1em 20px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     word-break: break-word;
@@ -158,7 +159,10 @@ export const YourPostButton = styled.div`
     margin-top: 2vw;
 `
 export const MessageContainer = styled.div`
-    margin-bottom: 9vw;
+    margin-bottom: 3em;
+    font-size: 18px;
+    /* border: 1px solid #FF007F; */
+    padding: 0 0.5em;
     @media (min-width: 678px) {
         margin-bottom: 6vw;
     }
@@ -167,8 +171,12 @@ export const MessageContainer = styled.div`
     }
 `
 export const StyledParagraph = styled.p`
-    font-size: 12px;
-    margin: 0;
+    margin: 0.3em 0;
+    /* font-size: 12px; */
+    font-size: 14px;
+    /* border: 1px solid #FF007F; */
+    padding: 0 0.7em;
+    
     @media (min-width: 678px) {
         font-size: 16px;
     }
@@ -185,7 +193,10 @@ export const BottomCardContainer = styled.div`
 `
 export const LikeContainer = styled.div`
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid #FF007F; */
     /* gap: 0.5vw; */
 `
 export const LikeButton = styled.button`

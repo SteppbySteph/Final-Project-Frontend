@@ -123,63 +123,66 @@ const Posts = () => {
                 <PostMenu/>
             </HeaderContainer>   
             {isLoading ? <Loading/> : 
-            <>
-                <Container>
-                <Form onSubmit={handleFormSubmit}>
-                    <Textarea 
-                        aria-label='newPost'
-                        value={newPost} 
-                        onChange={handleNewPost} 
-                        placeholder ='Share your SUP recommendation...'
-                    />
-                    <FormButtons>
-                        <Button 
-                            variant="contained"
-                            type='submit'
-                            disabled={newPost.length < 5 || newPost.length > 1500}
-                        >
-                            SUBMIT POST
-                        </Button>
-                        <YourPostButton>
-                            <Button 
-                                variant="text"
-                                type='submit'
-                                onClick={handleYourPosts} 
-                            >
-                                YOUR POSTS
-                            </Button>
-                        </YourPostButton>
-                    </FormButtons>
-                </Form>
-                
-            </Container>
-            <div>  
-                {/* {console.log(postItems)}
-            {console.log(postItems[1].creator)} */}
-                {postItems.map((item) => {
-                    return <CardContainer key={item._id}>
-                            <MessageContainer>
-                                <p>{item.message}</p>
-                            </MessageContainer>
-                                <StyledParagraph>{item.creator.name}</StyledParagraph>
-                                <StyledParagraph>{item.creator.email}</StyledParagraph>
-                            <BottomCardContainer>
-                                <LikeContainer>
-                                    <LikeButton
-                                        // className={item.likes > 0 ? 'likes-button clicked' : 'likes-button'}
-                                        onClick={() => handlePostLikes(item._id)}
+                <>
+                    <Container>
+                        <Form onSubmit={handleFormSubmit}>
+                            <Textarea 
+                                aria-label='newPost'
+                                value={newPost} 
+                                onChange={handleNewPost} 
+                                placeholder ='Share your SUP recommendation...'
+                            />
+                            <FormButtons>
+                                <Button 
+                                    variant="contained"
+                                    type='submit'
+                                    disabled={newPost.length < 5 || newPost.length > 1500}
+                                >
+                                    SUBMIT POST
+                                </Button>
+                                <YourPostButton>
+                                    <Button 
+                                        variant="text"
+                                        type='submit'
+                                        onClick={handleYourPosts} 
                                     >
-                                        <Button variant="text"size='large'>LIKES</Button>
-                                    </LikeButton> 
-                                    <StyledParagraph>x {item.likes}</StyledParagraph>                                    
-                                </LikeContainer>
-                                <StyledParagraph>{moment.utc(item.createdAt).format('MMM Do YY')}</StyledParagraph>
-                            </BottomCardContainer>
-                        </CardContainer>     
-                    })}
-                
-            </div>
-            </>}    
+                                        YOUR POSTS
+                                    </Button>
+                                </YourPostButton>
+                            </FormButtons>
+                        </Form>
+                        
+                    </Container>
+                    <div>
+                        {postItems.map((item) => {
+                            return <CardContainer key={item._id}>
+                                    <MessageContainer>
+                                        <p>{item.message}</p>
+                                    </MessageContainer>
+                                        <StyledParagraph>{item.creator.name}</StyledParagraph>
+                                        <StyledParagraph>{item.creator.email}</StyledParagraph>
+                                    <BottomCardContainer>
+                                        <LikeContainer>
+                                            {/* <LikeButton
+                                                // className={item.likes > 0 ? 'likes-button clicked' : 'likes-button'}
+                                                onClick={() => handlePostLikes(item._id)}
+                                            > */}
+                                                <Button 
+                                                    variant="text"
+                                                    size='medium'
+                                                    onClick={() => handlePostLikes(item._id)}
+                                                >LIKES
+                                                </Button>
+                                            {/* </LikeButton>  */}
+                                            <StyledParagraph>x {item.likes}</StyledParagraph>                                    
+                                        </LikeContainer>
+                                        <StyledParagraph>{moment.utc(item.createdAt).format('MMM Do YY')}</StyledParagraph>
+                                    </BottomCardContainer>
+                                </CardContainer>     
+                            })}     
+                    </div>
+                </>
+            }    
         </>
     )
 }
