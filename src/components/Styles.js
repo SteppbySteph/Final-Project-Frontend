@@ -295,18 +295,21 @@ export const ImageContainer = styled.div`
 //Ev mindre i mobil
 //Göra hela bilden som knapp
 export const ButtonImage = styled.img`
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     object-fit: cover;
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+    /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
+    /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24); */
 `
 export const ButtonImageButton = styled.button`
     position: absolute;
-    padding: 1rem;
+    padding: 0.7rem 0;
+    width: 190px; 
     background-color: #FF007F;
     opacity: 0.85;
     font-size: 1rem;
@@ -319,7 +322,8 @@ export const ButtonImageButton = styled.button`
     letter-spacing: 1px;
     cursor: pointer;
     &:hover {
-        color: #fff;
+        transform: scale(1.15);
+        transition: all 0.2s ease-in-out;
     }
 `
 

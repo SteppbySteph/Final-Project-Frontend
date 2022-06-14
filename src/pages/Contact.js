@@ -21,13 +21,11 @@ const Contact = () => {
                 <Header />
             </HeaderContainer>
             <WrapperContact>
-                {/* <HeaderStyling>
-                    <Header />
-                </HeaderStyling> */}
                 <ContactBox>
                     <h3>About the authors</h3>
                     <div>
-                        <ButtonImageContact src="/assets/Josefin.jpeg" alt="photo of author"/>
+                        {/* <ButtonImageContact src="/assets/Josefin.jpeg" alt="photo of author"/> */}
+                        {/* <ButtonImageContact src="/assets/Josefin.jpeg" alt="photo of author"/> */}
                         <div>
                             <p>"I strive to be the very best of myself- and I also love SUP!"</p>
                             <Button href="https://www.linkedin.com/in/josefin-eliasson-94a2a8164/">LinkedIn</Button>
