@@ -11,7 +11,7 @@ import {
     Form,
     FormButtons,
     HeaderContainer,
-    LikeButton,
+    // LikeButton,
     LikeContainer,
     MessageContainer,
     StyledParagraph, 
@@ -150,8 +150,7 @@ const Posts = () => {
                                     </Button>
                                 </YourPostButton>
                             </FormButtons>
-                        </Form>
-                        
+                        </Form> 
                     </Container>
                     <div>
                         {postItems.map((item) => {

@@ -57,7 +57,7 @@ const PostMenu = () => {
           onClick={openNavigation}
           sx={{color:'#fff'}}
         >
-          {currentUser} &#8964; 
+          {currentUser}
         </Button>
         	
         {/* <HeaderContainer> */}

@@ -1,9 +1,11 @@
 import React from 'react'
-import { Button, Stack } from '@mui/material'
+import { Button } from '@mui/material'
 import { useNavigate } from "react-router-dom";
 
-import { LogoLanding } from 'components/Styles'
-
+import { 
+  ButtonWrapper,
+  LogoLanding 
+} from 'components/Styles'
 
 const Header = () => {
     const navigate = useNavigate()
@@ -23,12 +25,13 @@ const Header = () => {
     return (
       <>
         <LogoLanding onClick={handleOnLandingPage}>JS-SUP</LogoLanding>
-        <Stack spacing={0} direction="row">
+        <ButtonWrapper>
           <Button 
             size='large' 
             variant='text' 
             onClick={handleHomeButton}
-            sx={{color:'#fff'}}>
+            sx={{color:'#fff'}}
+          >
             Home
           </Button>
           <Button 
@@ -39,7 +42,7 @@ const Header = () => {
           >
             Contact
           </Button>
-        </Stack>
+        </ButtonWrapper>
       </>  
       )
 }

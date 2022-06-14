@@ -26,12 +26,13 @@ export const HeaderStyling = styled.div`
 
 export const LogoLanding = styled.button`
     font-size: 1em;
-    /* color: whitesmoke; */
+    color: whitesmoke;
     font-family: 'Comfortaa', cursive;
     font-weight: bold;
     letter-spacing: 0.1em;
     border: none;
     background-color: transparent;
+    padding-left: 0.5em;
 
 `
 export const StyledGreetingBox = styled.div`
@@ -63,13 +64,13 @@ export const StyledGreeting = styled.h1`
     /* //&:hover 
     //color: #fff */
     @keyframes glow {
-  from {
-    text-shadow: 0 0 4px #fff, 0 0 0px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 10px #0073e6, 0 0 35px #0073e6;
-  }
-  to {
-    text-shadow: 0 0 1px #fff, 0 0 0px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6, 0 0 50px #0073e6, 0 0 20px #0073e6, 0 0 30px #0073e6;
-  }
-}
+        from {
+            text-shadow: 0 0 4px #fff, 0 0 0px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 10px #0073e6, 0 0 35px #0073e6;
+        }
+        to {
+            text-shadow: 0 0 1px #fff, 0 0 0px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6, 0 0 50px #0073e6, 0 0 20px #0073e6, 0 0 30px #0073e6;
+        }
+    }
 `
 export const NextButton = styled.button`
     background: none;
@@ -112,7 +113,7 @@ export const StyledContent = styled.div`
 export const Container = styled.div`
     width: 80%;
     max-width: 600px;
-    margin: 1em auto;
+    margin: 3em auto 0.5em;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -236,7 +237,7 @@ export const HeaderContainer = styled.div`
     font-weight: bold;
     font-size: 1rem;
     border-bottom: 1px solid #F8F8FA;
-    margin: 1em 2em;
+    margin: 1em 1em;
 `;
 
 //Home
@@ -437,4 +438,8 @@ export const LoadingSpinnerContainer = styled.div`
     justify-content: center;
     align-items: center;
     height: 350px;
+`
+export const ButtonWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
 `
