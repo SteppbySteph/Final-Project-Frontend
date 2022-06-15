@@ -1,15 +1,7 @@
 import styled from "styled-components/macro"
 
 //Landingpage
-// export const StyledGreeting = styled.div`
-//     padding: 1rem;
-//     background-color: hotpink;
-//     font-size: 24px;
-//     border-radius: 4px;
-//     margin: 40vw 5vw; 
-//     /* //&:hover 
-//     //color: #fff */
-// `
+
 export const HeaderStyling = styled.div`
     display: flex;
     flex-direction: row;
@@ -21,7 +13,6 @@ export const HeaderStyling = styled.div`
     background-color: #fff;
     opacity: 0.75;
     font-weight: bold;
-
 `;
 
 export const LogoLanding = styled.button`
@@ -42,27 +33,35 @@ export const StyledGreetingBox = styled.div`
     justify-content: center;
     padding: 1.5rem;
     background-color: #353658;
-    /* opacity: 0.95; */
-    // font-family: 'Comfortaa', cursive;
-    // font-family: 'Poiret One', cursive;
     font-weight: 900;
     letter-spacing: 1px;
     border-radius: 5px;
     width: 70%;
+    max-width: 600px;
+    @media (min-width: 678px) {
+        padding: 1em;
+        text-align: center;
+        width: 60%;
+        font-size: 1.5em;  
+    }
+     @media (min-width: 1024px) {
+        width: 50%;    
+    }
 `
 export const StyledGreeting = styled.h1`
+    text-align: center;
     padding: 0.1rem;
-    // font-family: 'Comfortaa', cursive;
     font-family: 'Poiret One', cursive;
     color: #FF007F;
-    /* color: #b593cc; */
-    font-size: 30px;
+    font-size: 1.7em;
     font-weight: bold;
     letter-spacing: 3px;
     animation: glow 1s ease-in-out infinite alternate;
-    // text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
-    /* //&:hover 
-    //color: #fff */
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+    &:hover {
+    color: #F8F8FA;
+    transition: 0.5s;
+    }
     @keyframes glow {
         from {
             text-shadow: 0 0 4px #fff, 0 0 0px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 10px #0073e6, 0 0 35px #0073e6;
@@ -70,6 +69,12 @@ export const StyledGreeting = styled.h1`
         to {
             text-shadow: 0 0 1px #fff, 0 0 0px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6, 0 0 50px #0073e6, 0 0 20px #0073e6, 0 0 30px #0073e6;
         }
+    }
+    @media (min-width: 678px) {
+        font-size: 1.5em; 
+    }
+     @media (min-width: 1024px) {
+        padding: 0.8em;
     }
 `
 export const NextButton = styled.button`
@@ -113,7 +118,7 @@ export const StyledContent = styled.div`
 export const Container = styled.div`
     width: 80%;
     max-width: 600px;
-    margin: 3em auto 0.5em;
+    margin: 1em auto 0.5em;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -137,6 +142,19 @@ export const StyledBackButton = styled.form`
 `
 
 //Post component
+export const PostParagraphContainer = styled.div`
+    text-align: center;
+    margin: 0 auto 0; 
+    width: 80%;
+    max-width: 600px;
+`
+
+export const PostsParagraph = styled.p`
+    font-size: 1.5em;
+    color: #f8f8ff;
+    letter-spacing: 1px;
+`
+
 export const CardContainer = styled.div`
     width: 80%;
     max-width: 600px;
@@ -285,10 +303,11 @@ export const StyledSection = styled.section`
 `
 export const ImageContainer = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    /* margin: 2em 0; */
+    margin: 1em 0;
 `
 
 //Lägg till media queries i desktop. Gör större bilder i desktop/tablet.
@@ -311,9 +330,9 @@ export const ButtonImageButton = styled.button`
     padding: 0.7rem 0;
     width: 190px; 
     background-color: #FF007F;
-    opacity: 0.85;
+    opacity: 0.90;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: bolder;
     color: #fff; 
     border-radius: 4px;
     font-family: 'Comfortaa', cursive;
@@ -416,7 +435,6 @@ export const FooterStyling = styled.div`
     /* width: 100%; */
     text-align: center;
     padding: 1em;
-    // background-color: rgba(0, 0, 0, 0);
     background-color: #fff;
     opacity: 0.75;
     font-weight: lighter;

@@ -14,6 +14,8 @@ import {
     // LikeButton,
     LikeContainer,
     MessageContainer,
+    PostParagraphContainer,
+    PostsParagraph,
     StyledParagraph, 
     Textarea, 
     YourPostButton
@@ -124,6 +126,11 @@ const Posts = () => {
             </HeaderContainer>   
             {isLoading ? <Loading/> : 
                 <>
+                    <PostParagraphContainer>
+                        <PostsParagraph>
+                            Share an inspirational SUP-experience or leave one below!
+                        </PostsParagraph>
+                    </PostParagraphContainer>
                     <Container>
                         <Form onSubmit={handleFormSubmit}>
                             <Textarea 
@@ -140,7 +147,7 @@ const Posts = () => {
                                 >
                                     SUBMIT POST
                                 </Button>
-                                <YourPostButton>
+                                <YourPostButton>  
                                     <Button 
                                         variant="text"
                                         type='submit'
