@@ -1,31 +1,6 @@
 import styled from "styled-components/macro"
 
 //Landingpage
-
-export const HeaderStyling = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100vw;
-    // padding: 1em;
-    // background-color: rgba(0, 0, 0, 0);
-    background-color: #fff;
-    opacity: 0.75;
-    font-weight: bold;
-`;
-
-export const LogoLanding = styled.button`
-    font-size: 1em;
-    color: whitesmoke;
-    font-family: 'Comfortaa', cursive;
-    font-weight: bold;
-    letter-spacing: 0.1em;
-    border: none;
-    background-color: transparent;
-    padding-left: 0.5em;
-
-`
 export const StyledGreetingBox = styled.div`
     display: flex;
     flex-direction: column;
@@ -85,33 +60,31 @@ export const NextButton = styled.button`
     border: none;
     letter-spacing: 1px;
     font-family: 'Comfortaa', cursive;
-    &:hover {
-        color: #fff
+    @media (min-width: 678px) {
+        font-size: 0.8em; 
+    }
+     @media (min-width: 1024px) {
+        padding: 0.5em;
     }
 `
 export const WrapperLanding = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: left;
-    justify-content: space-around;
-    /* width: 80%;
-    max-width: 600px; */
-    /* margin: 15px auto; */
-    // padding: 0 20px 20px;
-    /* background-image: url("https://images.unsplash.com/photo-1509233725247-49e657c54213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhY2tncm91bmQlMjBpbWFnZXMlMjBiZWFjaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"); */
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #FF007F;
+    background-image: url("https://images.unsplash.com/photo-1509233725247-49e657c54213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhY2tncm91bmQlMjBpbWFnZXMlMjBiZWFjaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
     /* background-image: url("https://images.unsplash.com/photo-1626358033353-b5f5a3ca1067?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA0fHxiYWNrZ3JvdW5kJTIwaW1hZ2VzJTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"); */
-    background-image: url("https://images.pexels.com/photos/7426196/pexels-photo-7426196.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    /* object-fit: cover; */
     height: 100vh;
 `
 
 export const StyledContent = styled.div`
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center;*/
 `;
 
 //Login component + Post component
@@ -467,4 +440,28 @@ export const LoadingSpinnerContainer = styled.div`
 export const ButtonWrapper = styled.div`
     display: flex;
     flex-direction: row;
+`
+export const HeaderStyling = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    // padding: 1em;
+    // background-color: rgba(0, 0, 0, 0);
+    background-color: #fff;
+    opacity: 0.75;
+    font-weight: bold;
+`;
+
+export const LogoLanding = styled.button`
+    font-size: 1em;
+    color: whitesmoke;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    background-color: transparent;
+    padding-left: 0.5em;
+
 `

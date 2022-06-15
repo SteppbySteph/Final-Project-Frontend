@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 
 import { 
     NextButton, 
-    StyledContent, 
     StyledGreeting,
     StyledGreetingBox, 
     WrapperLanding
@@ -19,16 +18,14 @@ const LandingPage = () => {
     return (
         <>  
             <WrapperLanding>
-                <StyledContent>
-                    <StyledGreetingBox>
+                <StyledGreetingBox>
                     <fieldset>
-                    <StyledGreeting>Find your SUP inspiration</StyledGreeting>
-                    <legend>
-                    <NextButton onClick={handleOnClick}>About Stand Up Paddleboard &#10095;&#10095;</NextButton>
-                    </legend>
+                        <StyledGreeting>Find your SUP inspiration</StyledGreeting>
+                        <legend>
+                            <NextButton onClick={handleOnClick}>About Stand Up Paddleboard &#10095;&#10095;</NextButton>
+                        </legend>
                     </fieldset>
-                    </StyledGreetingBox>
-                </StyledContent>
+                </StyledGreetingBox>
             </WrapperLanding>
             
             
