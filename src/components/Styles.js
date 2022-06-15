@@ -105,6 +105,20 @@ export const StyledBackButton = styled.form`
     margin: 1em 1em;
 `
 
+export const ContainerLogin = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    width: 80%;
+    max-width: 600px;
+    margin: 1em auto 0.5em;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+`
+
 //Posts component
 export const PostParagraphContainer = styled.div`
     text-align: center;

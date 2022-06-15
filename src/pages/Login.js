@@ -1,15 +1,29 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector, batch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { API_URL } from 'utils/utils'
-import { Container, Form, StyledBackButton, HeaderContainer } from 'components/Styles'
+import {
+    Alert, 
+    Button,
+    FormControl,
+    FormControlLabel,
+    Radio,
+    RadioGroup, 
+    TextField      
+}  from '@mui/material'
+
+import { 
+    ContainerLogin, 
+    Form,
+    HeaderContainer,
+    PostsParagraph,
+    PostParagraphContainer, 
+    StyledBackButton,
+} from 'components/Styles'
 
 import user from 'reducer/user'
 import Header from 'components/Header'
 import BackButton from 'components/Backbutton'
-
-import { TextField, Radio, RadioGroup, FormControlLabel, FormControl, Button, Alert }  from '@mui/material'
-
+import { API_URL } from 'utils/utils'
 
 const Login = () => {
     const [username, setUsername] = useState('')
@@ -26,8 +40,6 @@ const Login = () => {
             navigate('/posts')
         }
     }, [accessToken, navigate])
-
-    
 
     const onFormSubmit = (event) => {
         event.preventDefault()
@@ -73,7 +85,12 @@ const Login = () => {
             <StyledBackButton>
                 <BackButton />
             </StyledBackButton>
-            <Container>
+            <PostParagraphContainer>
+                <PostsParagraph>
+                    Log in below to read other users' SUP-experience or write one yourself!
+                </PostsParagraph>
+            </PostParagraphContainer>
+            <ContainerLogin>
                 <Form onSubmit={onFormSubmit}>
                     <TextField
                         id="outlined-basic"
@@ -98,7 +115,7 @@ const Login = () => {
                         value={password}
                         onChange={(e)=>setPassword(e.target.value)} 
                         required
-                    />
+                />
                     <FormControl>
                         <RadioGroup
                             aria-labelledby="demo-radio-buttons-group-label"
@@ -133,7 +150,7 @@ const Login = () => {
             {errorMessage !== null && (
                 <Alert severity="error">{errorMessage}</Alert>
             )} 
-        </Container>
+        </ContainerLogin>
     </>
     )
 }
