@@ -105,7 +105,7 @@ export const StyledBackButton = styled.form`
     margin: 1em 1em;
 `
 
-//Post component
+//Posts component
 export const PostParagraphContainer = styled.div`
     text-align: center;
     margin: 0 auto 0; 
@@ -119,18 +119,6 @@ export const PostsParagraph = styled.p`
     letter-spacing: 1px;
 `
 
-export const CardContainer = styled.div`
-    width: 80%;
-    max-width: 600px;
-    margin: 1em auto;
-    background-color: #fff;
-    /* padding: 20px; */
-    padding: 1em 20px;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    word-break: break-word;
-    /* position: relative; */
-`
 export const Textarea = styled.textarea`
     height: 30vh;
     font-size: 16px;
@@ -141,10 +129,21 @@ export const Textarea = styled.textarea`
 export const YourPostButton = styled.div`
     margin-top: 2vw;
 `
+
+export const CardContainer = styled.div`
+    width: 80%;
+    max-width: 600px;
+    margin: 1em auto;
+    background-color: #fff;
+    padding: 1em 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    word-break: break-word;
+`
+
 export const MessageContainer = styled.div`
     margin-bottom: 3em;
     font-size: 18px;
-    /* border: 1px solid #FF007F; */
     padding: 0 0.5em;
     @media (min-width: 678px) {
         margin-bottom: 6vw;
@@ -155,9 +154,7 @@ export const MessageContainer = styled.div`
 `
 export const StyledParagraph = styled.p`
     margin: 0.3em 0;
-    /* font-size: 12px; */
     font-size: 14px;
-    /* border: 1px solid #FF007F; */
     padding: 0 0.7em;
     
     @media (min-width: 678px) {
@@ -179,21 +176,8 @@ export const LikeContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /* border: 1px solid #FF007F; */
-    /* gap: 0.5vw; */
 `
-export const LikeButton = styled.button`
-    display: flex;
-    /* background-color: #EFEFEF; */
-    /* border-radius: 50%; */
-    background-color: #fff;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    padding: 0;
-    /* // width: 5vw;
-    // height: 5vw; */
-`
+
 export const PostHeader = styled.div`
     display: flex;
     flex-direction: row;
@@ -258,9 +242,6 @@ export const StyledSection = styled.section`
     }
 `
 
-
-
-
 export const ImageContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -273,9 +254,6 @@ export const ImageContainer = styled.div`
     }
 `
 
-//Lägg till media queries i desktop. Gör större bilder i desktop/tablet.
-//Ev mindre i mobil
-//Göra hela bilden som knapp
 export const ButtonImage = styled.img`
     width: 250px;
     height: 250px;
@@ -284,9 +262,8 @@ export const ButtonImage = styled.img`
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
-    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
     /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
-    /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24); */
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
 `
 export const ButtonImageButton = styled.button`
     position: absolute;
@@ -297,9 +274,9 @@ export const ButtonImageButton = styled.button`
     font-size: 1rem;
     font-weight: bolder;
     color: #fff; 
-    border-radius: 4px;
     font-family: 'Comfortaa', cursive;
     border: none;
+    border-radius: 4px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     letter-spacing: 1px;
     cursor: pointer;
@@ -404,29 +381,7 @@ export const FooterStyling = styled.div`
 
 `
 
-//Loading component
-export const LoadingSpinner = styled.div`
-width: 50px;
-    height: 50px;
-    border: 10px solid #f3f3f3; /* Light grey */
-    border-top: 10px solid #383636; /* Black */
-    border-radius: 50%;
-    animation: spinner 1.5s linear infinite;
-    @keyframes spinner {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    } 
-    }
-`
-export const LoadingSpinnerContainer = styled.div`
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    height: 350px;
-`
+
 export const ButtonWrapper = styled.div`
     display: flex;
     flex-direction: row;
@@ -455,6 +410,31 @@ export const LogoLanding = styled.button`
     padding-left: 0.5em;
 
 `
+//Loading component
+export const LoadingSpinner = styled.div`
+width: 50px;
+    height: 50px;
+    border: 10px solid #f3f3f3; /* Light grey */
+    border-top: 10px solid #383636; /* Black */
+    border-radius: 50%;
+    animation: spinner 1.5s linear infinite;
+    @keyframes spinner {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        } 
+    }
+`
+export const LoadingSpinnerContainer = styled.div`
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+`
+
+
 ///Övrigt
 export const StyledContent = styled.div`
     /* display: flex;

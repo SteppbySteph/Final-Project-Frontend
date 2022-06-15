@@ -11,7 +11,6 @@ import {
     Form,
     FormButtons,
     HeaderContainer,
-    // LikeButton,
     LikeContainer,
     MessageContainer,
     PostParagraphContainer,
@@ -21,12 +20,11 @@ import {
     YourPostButton
 } from 'components/Styles'
 
-import { API_URL, API_LIKES } from 'utils/utils'
-import posts from 'reducer/posts'
-import PostMenu from 'components/PostMenu'
 import Header from 'components/Header'
 import Loading from 'components/Loading'
-// import { Identity } from '@mui/base'
+import PostMenu from 'components/PostMenu'
+import posts from 'reducer/posts'
+import { API_URL, API_LIKES } from 'utils/utils'
 
 const Posts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
@@ -35,7 +33,6 @@ const Posts = () => {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate()
     const dispatch = useDispatch()
-
 
     useEffect(()=> {
         if(!accessToken) {
@@ -169,17 +166,12 @@ const Posts = () => {
                                         <StyledParagraph>{item.creator.email}</StyledParagraph>
                                     <BottomCardContainer>
                                         <LikeContainer>
-                                            {/* <LikeButton
-                                                // className={item.likes > 0 ? 'likes-button clicked' : 'likes-button'}
+                                            <Button 
+                                                variant="text"
+                                                size='medium'
                                                 onClick={() => handlePostLikes(item._id)}
-                                            > */}
-                                                <Button 
-                                                    variant="text"
-                                                    size='medium'
-                                                    onClick={() => handlePostLikes(item._id)}
-                                                >LIKES
-                                                </Button>
-                                            {/* </LikeButton>  */}
+                                            >LIKES
+                                            </Button>
                                             <StyledParagraph>x {item.likes}</StyledParagraph>                                    
                                         </LikeContainer>
                                         <StyledParagraph>{moment.utc(item.createdAt).format('MMM Do YY')}</StyledParagraph>
