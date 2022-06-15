@@ -72,21 +72,12 @@ export const WrapperLanding = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid #FF007F;
     background-image: url("https://images.unsplash.com/photo-1509233725247-49e657c54213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhY2tncm91bmQlMjBpbWFnZXMlMjBiZWFjaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
     /* background-image: url("https://images.unsplash.com/photo-1626358033353-b5f5a3ca1067?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA0fHxiYWNrZ3JvdW5kJTIwaW1hZ2VzJTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"); */
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
 `
-
-export const StyledContent = styled.div`
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;*/
-`;
-
 //Login component + Post component
 export const Container = styled.div`
     width: 80%;
@@ -234,53 +225,52 @@ export const HeaderContainer = styled.div`
 //Home
 
 export const HomeTitle = styled.h1`
-    font-size: 1.5rem;
+    font-size: 1.5em;
     color: #F8F8FA;
     letter-spacing: 1px;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    text-align: center;
+    margin-top: 2em;
+    @media (min-width: 678px) {
+        font-size: 1.7em;
+    }
 `
 
-export const StyledButton = styled.button`
-  margin-left: 3rem;
-  padding: 0.5rem;
-  color:white;
-  cursor:pointer;
-  background: transparent;
-  border: none;
-  font-size: 1rem;
-  border: 3px solid white;
-  border-radius: 2rem;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-
-  &:hover{
-   border: 2px solid white;
-  }
-`
-export const StyledHomeContainer = styled.div`
-//     background-color: #F8F8FA;
-//     opacity: 0.5;
-`
 export const StyledSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 5vh 0;
-    border-radius: 5px;
- /* @media (min-width: 678px) {
-     display: grid;
-     justify-content: center;
-     grid-template-columns: 1fr 1fr;
-    } */
+    margin: 2em 0;
+    @media (min-width: 678px) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 800px;
+        padding: 2em 0;
+        margin: 0 auto;
+    }
+    @media (min-width: 1124px) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: 0 auto; 
+    }
 `
+
+
+
+
 export const ImageContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    margin: 1em 0;
+    margin: 0.5em 1.5em;
+    @media (min-width: 1024px) {
+        margin: 1em 1.5em;
+    }
 `
 
 //Lägg till media queries i desktop. Gör större bilder i desktop/tablet.
@@ -464,4 +454,32 @@ export const LogoLanding = styled.button`
     background-color: transparent;
     padding-left: 0.5em;
 
+`
+///Övrigt
+export const StyledContent = styled.div`
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;*/
+`;
+
+export const StyledHomeContainer = styled.div`
+//     background-color: #F8F8FA;
+//     opacity: 0.5;
+`
+export const StyledButton = styled.button`
+  margin-left: 3rem;
+  padding: 0.5rem;
+  color:white;
+  cursor:pointer;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  border: 3px solid white;
+  border-radius: 2rem;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+  &:hover{
+   border: 2px solid white;
+  }
 `

@@ -8,7 +8,6 @@ import {
     HeaderContainer,
     HomeTitle, 
     ImageContainer,
-    StyledHomeContainer,
     StyledSection
 } from 'components/Styles'
 
@@ -37,11 +36,10 @@ const Home = () => {
             <HeaderContainer>
                 <Header />
             </HeaderContainer>
-            <StyledHomeContainer>
-                <StyledSection>
                     <HomeTitle>
                         Select an option
                     </HomeTitle>
+                <StyledSection>
                     <ImageContainer>
                         <ButtonImage src="https://www.towerpaddleboards.com/images/sup-hawaii-paddleboarding.jpg" alt="paddleboards in row"/>
                         <ButtonImageButton onClick={handleOnClickLogin}>Recommendations</ButtonImageButton>
@@ -59,12 +57,9 @@ const Home = () => {
                         <ButtonImageButton onClick={handleOnClickWorldwide}>Worldwide SUP destinations</ButtonImageButton>
                     </ImageContainer>    
                 </StyledSection>
-            </StyledHomeContainer>
             <FooterStyling>
                 <Footer />
             </FooterStyling>
-            
-            
         </>
 
     )
