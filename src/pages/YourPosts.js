@@ -8,15 +8,18 @@ import {
     CardContainer,
     HeaderContainer,
     MessageContainer,
-    StyledBackButton
+    PostsParagraph,
+    StyledBackButton,
+    TextContainer,
+    YourPostsContainer
 } from 'components/Styles'
 
-import { API_URL, API_DELETE_MSG, API_UPDATE } from 'utils/utils'
-import posts from 'reducer/posts'
 import BackButton from 'components/Backbutton'
 import Header from 'components/Header'
 import Loading from 'components/Loading'
 import PostMenu from 'components/PostMenu'
+import { API_URL, API_DELETE_MSG, API_UPDATE } from 'utils/utils'
+import posts from 'reducer/posts'
 
 
 const YourPosts = () => {
@@ -101,29 +104,38 @@ const YourPosts = () => {
             <StyledBackButton>
                 <BackButton />
             </StyledBackButton>
-            {isLoading ? <Loading/> :
-                <>
-                    {postItems.map((item) => {
-                        if (currentUser === item.creator.creatorId) {
-                            return( 
-                                <CardContainer key={item._id}>
-                                    <MessageContainer>
-                                        <EdiText 
-                                            type="text" value={item.message} 
-                                            onSave={updatedMessage => setUpdatedMessage(updatedMessage)}
-                                        />
-                                        {/* {console.log(updatedMessage)} */}
-                                    </MessageContainer>
-                                    <BottomCardContainer>
-                                        <Button onClick={()=> handleUpdateMsg(item._id)}variant="text"size='large'>SAVE EDIT</Button>                          
-                                        <Button onClick={()=> handleDeleteMsg(item._id)}variant="text"size='large'>DELETE</Button>
-                                    </BottomCardContainer>
-                                </CardContainer>  
-                            )} else { 
+            <YourPostsContainer>
+                <TextContainer>
+                    <PostsParagraph>
+                        See all your posts here and edit them whenever you want.
+                    </PostsParagraph>
+                </TextContainer>
+                {isLoading ? <Loading/> :
+                    <>   
+                        {postItems.map((item) => {
+                            if (currentUser === item.creator.creatorId) {
+                                return( 
+                                    <CardContainer key={item._id}>
+                                        <MessageContainer>
+                                            <EdiText 
+                                                type="text" value={item.message} 
+                                                onSave={updatedMessage => setUpdatedMessage(updatedMessage)}
+                                            />
+                                            {/* {console.log(updatedMessage)} */}
+                                        </MessageContainer>
+                                        <BottomCardContainer>
+                                            <Button onClick={()=> handleUpdateMsg(item._id)}variant="text"size='large'>SAVE EDIT</Button>                          
+                                            <Button onClick={()=> handleDeleteMsg(item._id)}variant="text"size='large'>DELETE</Button>
+                                        </BottomCardContainer>
+                                    </CardContainer>  )
+                            } else { 
                                 return null }
-                    })}
-                </>
-            }            
+                        })}
+                    </>
+                }
+            
+            </YourPostsContainer>
+
         </>
     )
 }

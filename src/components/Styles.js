@@ -108,7 +108,7 @@ export const StyledBackButton = styled.form`
 //Posts component
 export const PostParagraphContainer = styled.div`
     text-align: center;
-    margin: 0 auto 0; 
+    margin: 3em auto 3em; 
     width: 80%;
     max-width: 600px;
 `
@@ -176,6 +176,19 @@ export const LikeContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+`
+//YourPosts
+export const YourPostsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+`
+
+export const TextContainer = styled.div`
+    text-align: center;
+    margin: 0 2em; 
+    max-width: 600px;
 `
 
 export const PostHeader = styled.div`
