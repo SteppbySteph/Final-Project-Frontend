@@ -30,6 +30,7 @@ const Login = () => {
     const [password, setPassword] = useState ('')
     const [email, setEmail] = useState('')
     const [errorMessage, setErrorMessage] = useState(null)
+    const [regMessage, setRegMessage] = useState(null)
     const [mode, setMode] = useState('register')
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -63,6 +64,9 @@ const Login = () => {
                     dispatch(user.actions.setAccessToken(data.accessToken))
                     dispatch(user.actions.setError(null))
                     setErrorMessage(null)
+                    if (mode === 'register') {
+                        setRegMessage('Registration successful, please log in!')
+                    }
                 })
             } else {
                 batch (() => {
@@ -75,6 +79,13 @@ const Login = () => {
                 })
             }
         })
+        // if (mode === 'register') {
+        //     setRegMessage('Registration successful! Please log in.')
+        // } else if (mode === 'login') {
+            
+        // } else {
+        //     setRegMessage('Username already exists!') 
+        // }
     }
 
     return (
@@ -149,7 +160,9 @@ const Login = () => {
             </Form>
             {errorMessage !== null && (
                 <Alert severity="error">{errorMessage}</Alert>
-            )} 
+            )}
+            {regMessage !== null && (
+                <Alert severity="info">{regMessage}</Alert>)} 
         </ContainerLogin>
     </>
     )
