@@ -359,38 +359,78 @@ export const WrapperContact = styled.div`
     object-fit: cover; */
     
 `
+export const OutterContainer = styled.div`
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 2em 2em; 
+    @media (min-width: 678px) {
+        margin: 2em 5em;
+    }
+    @media (min-width: 1024px) {
+        margin: 2em 8em;
+        padding: 1em 0;
+    }
+
+`
+export const Heading = styled.h1`
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 1em;
+`
+
 export const ContactBox = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 600px;
-    margin: 0 1em 1em;
-    padding: 1.5rem 0;
-    border-radius: 5px;
+    margin: 0 1em 0;
+    padding: 1em 0;
     opacity: 0.9;
-    background-color: #fff;
+    border: 1px solid red;
+    min-width: 250px;
+    @media (min-width: 678px) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        max-width: 600px;
+        padding: 1em 0;
+        margin: 1em auto;
+    }
+    @media (min-width: 1024px) {
+        max-width: 700px;
+        margin: 0 auto; 
+    }
 `
 
-export const ButtonImageContact = styled.img`
+export const ImageContact = styled.img`
     width: 250px;
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
-    justify-content: center;
-    align-items: center;
-    margin: 1em 0 0.5em;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 `
 export const AboutAuthor = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 0 2.5rem;
-
+    margin: 0 1em;
+    border: 1px solid red;
+    align-items: center;
+    @media (min-width: 678px) {
+        max-width: 260px;
+    }
+    @media (min-width: 1024px) {
+        font-size: 1.1em;
+        max-width: 400px;
+    }    
 `
 export const Author = styled.h3`
     margin-bottom: 0;
+`
+export const AuthorLinks = styled.div`
+    border: 1px solid red;
 `
 
 //Footer
