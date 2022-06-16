@@ -365,7 +365,7 @@ export const OutterContainer = styled.div`
     background-color: #fff;
     margin: 2em 2em; 
     @media (min-width: 678px) {
-        margin: 2em 5em;
+        margin: 2em 4em;
     }
     @media (min-width: 1024px) {
         margin: 2em 8em;
@@ -394,7 +394,7 @@ export const ContactBox = styled.div`
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        max-width: 600px;
+        max-width: 700px;
         padding: 1em 0;
         margin: 1em auto;
     }
@@ -419,7 +419,8 @@ export const AboutAuthor = styled.div`
     border: 1px solid red;
     align-items: center;
     @media (min-width: 678px) {
-        max-width: 260px;
+        max-width: 270px;
+
     }
     @media (min-width: 1024px) {
         font-size: 1.1em;
