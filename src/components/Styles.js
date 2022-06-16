@@ -363,13 +363,15 @@ export const OutterContainer = styled.div`
     border: 1px solid black;
     border-radius: 5px;
     background-color: #fff;
-    margin: 2em 2em; 
+    margin: 2em 1em; 
     @media (min-width: 678px) {
-        margin: 2em 4em;
+        margin: 2em auto;
+        max-width: 600px;
     }
     @media (min-width: 1024px) {
-        margin: 2em 8em;
+        margin: 2em auto;
         padding: 1em 0;
+        max-width: 800px;
     }
 
 `
