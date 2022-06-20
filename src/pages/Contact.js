@@ -31,10 +31,7 @@ const Contact = () => {
                         <ImageContact src="/assets/Josefin.jpeg" alt="photo of author"/>
                         <AboutAuthor>
                             <Author>Josefin Eliasson</Author>
-                            <p>"I strive to be the very best of myself- and I also love SUP!"
-                            "I strive to be the very best of myself- and I also love SUP!"
-                            "I strive to be the very best of myself- and I also love SUP!"
-                            "I strive to be the very best of myself- and I also love SUP!"</p>   
+                            <p>"I strive to be the very best of myself- and I also love SUP!"</p>   
                         <div>
                             <Button href="https://www.linkedin.com/in/josefin-eliasson-94a2a8164/">LinkedIn</Button>
                             <Button href="https://github.com/Josse79">Github</Button>                    
@@ -45,9 +42,7 @@ const Contact = () => {
                         <ImageContact src="/assets/stephannie.jpg" alt="photo of author"/>
                         <AboutAuthor>
                             <Author>Stephannie Medenilla</Author>
-                            <p>"My biggest dream is to make it out alive from Technigo bootcamp."
-                            "My biggest dream is to make it out alive from Technigo bootcamp."
-                            "My biggest dream is to make it out alive from Technigo bootcamp." </p>
+                            <p>"My biggest dream is to make it out alive from Technigo bootcamp."</p>
                         <div>
                             <Button href="https://www.linkedin.com/in/stephannie-medenilla/">LinkedIn</Button>
                             <Button href="https://github.com/SteppbySteph">Github</Button>

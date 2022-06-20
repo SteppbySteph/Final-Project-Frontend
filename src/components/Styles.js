@@ -73,10 +73,9 @@ export const WrapperLanding = styled.div`
     align-items: center;
     justify-content: center;
     background-image: url("/assets/palm-background.jpg");
-    /* background-image: url("https://images.unsplash.com/photo-1509233725247-49e657c54213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhY2tncm91bmQlMjBpbWFnZXMlMjBiZWFjaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"); */
-    /* background-image: url("https://images.unsplash.com/photo-1626358033353-b5f5a3ca1067?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA0fHxiYWNrZ3JvdW5kJTIwaW1hZ2VzJTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"); */
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     height: 100vh;
 `
 //Login component + Post component
@@ -102,7 +101,6 @@ export const FormButtons = styled.div`
 `
 //Login component
 export const StyledBackButton = styled.form`
-    /* margin: 2vh 3vh;  */
     margin: 1em 1em;
 `
 
@@ -110,7 +108,6 @@ export const ContainerLogin = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
     width: 80%;
     max-width: 600px;
     margin: 1em auto 0.5em;
@@ -235,15 +232,14 @@ export const HeaderContainer = styled.div`
 `;
 
 //Home
-
 export const HomeTitle = styled.h1`
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #F8F8FA;
     letter-spacing: 1px;
     text-align: center;
-    margin-top: 2em;
+    margin: 2em 1em 0 1em;
     @media (min-width: 678px) {
-        font-size: 1.7em;
+        font-size: 1.7rem;
     }
 `
 
@@ -290,7 +286,6 @@ export const ButtonImage = styled.img`
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
-    /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
 `
 export const ButtonImageButton = styled.button`
@@ -324,7 +319,6 @@ export const CardContainerDest = styled.div`
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     word-break: break-word;
-    /* position: relative; */
 `
 export const Image = styled.img`
     width: 100%;
@@ -332,22 +326,10 @@ export const Image = styled.img`
     height: 300px;
     position: relative;
     object-fit: contain;
-    /* margin: 20px auto; */
-    /* background-color: #fff; */
-    /* padding: 20px; */
     @media (min-width: 600px) {
         height: 450px;
     }
 `
-export const Description = styled.p`
-    /* position: absolute; */
-`
-
-// export const LogoImage = styled.img`
-// width: 60px;
-// height: 60px;
-// filter: drop-shadow(0 0 22px #fff);
-// `;
 
 //Contact component
 export const WrapperContact = styled.div`
@@ -445,10 +427,10 @@ export const Author = styled.h3`
 
 //Footer
 export const FooterStyling = styled.div`
-    // display: flex;
-    // flex-direction: row;
-    // align-items: center;
-    // justify-content: space-between;
+     /* display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-between; */
     /* width: 100%; */
     text-align: center;
     padding: 1em;
@@ -520,10 +502,10 @@ export const StyledContent = styled.div`
     justify-content: center;*/
 `;
 
-export const StyledHomeContainer = styled.div`
-//     background-color: #F8F8FA;
-//     opacity: 0.5;
-`
+// export const StyledHomeContainer = styled.div`
+// //     background-color: #F8F8FA;
+// //     opacity: 0.5;
+// `
 export const StyledButton = styled.button`
   margin-left: 3rem;
   padding: 0.5rem;

@@ -42,7 +42,7 @@
             "id": 6,
             "category": "europe",
             "place": "England - Jurassic Coast",
-            "image": "/assets/england-jurassic-coast.jpeg",
+            "image": "/assets/england-jurassic-coast.jpg",
             "description": "Paddle through the Durdle Door arch and explore one of the best SUP destinations in europe with white-cliff coasts and caves."
         },
         {
@@ -87,7 +87,7 @@
             "id": 12,
             "category": "worldwide",
             "place": "USA - Lake Tahoe",
-            "image": "/assets/usa-lake-tahoe.jpeg",
+            "image": "/assets/usa-lake-tahoe.jpg",
             "description": "This largest alpine lake in North America, is perhaps the most photographed SUP location in the world. Conditions are great from late spring until early fall."
         },
         {

@@ -37,7 +37,9 @@ const Home = () => {
                 <Header />
             </HeaderContainer>
                     <HomeTitle>
-                        Select an option
+                        Welcome to an inspirational site about Stand Up Paddle Board.
+                        View others recommendations or post one yourself.
+                        You can also dive into our top destination pages.
                     </HomeTitle>
                 <StyledSection>
                     <ImageContainer>

@@ -4,7 +4,6 @@ import data from '../data.json'
 
 import { 
   CardContainerDest,
-  Description,
   FooterStyling,
   HeaderContainer, 
   Image, 
@@ -40,7 +39,7 @@ const Sweden = () => {
           <CardContainerDest>
             <Image src={item.image} key={item.image} alt="place"/>
             <h4 key={item.id}>{item.place}</h4>
-            <Description key={item.id}>{item.description}</Description>
+            <p key={item.id}>{item.description}</p>
           </CardContainerDest>
         ))}
         {/* {list.map((item) => (

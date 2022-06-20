@@ -22,7 +22,7 @@ const LandingPage = () => {
                             <fieldset>
                                 <StyledGreeting>Find your SUP inspiration</StyledGreeting>
                                 <legend>
-                                    <NextButton onClick={handleOnClick}>About Stand Up Paddleboard &#10095;&#10095;</NextButton>
+                                    <NextButton onClick={handleOnClick}>About Stand Up Paddle Board &#10095;&#10095;</NextButton>
                                 </legend>
                             </fieldset>
                         </StyledGreetingBox>
