@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector, batch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import user from 'reducer/user'
+import Header from 'components/Header'
+import BackButton from 'components/Backbutton'
+import { API_URL } from 'utils/utils'
 import {
     Alert, 
     Button,
@@ -19,11 +23,6 @@ import {
     PostParagraphContainer, 
     StyledBackButton,
 } from 'components/Styles'
-
-import user from 'reducer/user'
-import Header from 'components/Header'
-import BackButton from 'components/Backbutton'
-import { API_URL } from 'utils/utils'
 
 const Login = () => {
     const [username, setUsername] = useState('')
@@ -79,13 +78,6 @@ const Login = () => {
                 })
             }
         })
-        // if (mode === 'register') {
-        //     setRegMessage('Registration successful! Please log in.')
-        // } else if (mode === 'login') {
-            
-        // } else {
-        //     setRegMessage('Username already exists!') 
-        // }
     }
 
     return (
@@ -104,65 +96,65 @@ const Login = () => {
             <ContainerLogin>
                 <Form onSubmit={onFormSubmit}>
                     <TextField
-                        id="outlined-basic"
-                        label="Username"
-                        variant="outlined"
+                        id='outlined-basic'
+                        label='Username'
+                        variant='outlined'
                         value={username}
                         minlength={8}
                         onChange={(e)=>setUsername(e.target.value)}
                         required/>
                     <TextField
-                        id="outlined-basic"
-                        label="Email"
-                        variant="outlined"
+                        id='outlined-basic'
+                        label='Email'
+                        variant='outlined'
                         value={email}
                         onChange={(e)=>setEmail(e.target.value)}
                         required/>      
                     <TextField
-                        id="outlined-password-input"
-                        label="Password"
-                        type="password"
-                        variant="outlined"
+                        id='outlined-password-input'
+                        label='Password'
+                        type='password'
+                        variant='outlined'
                         value={password}
                         onChange={(e)=>setPassword(e.target.value)} 
                         required
                 />
                     <FormControl>
                         <RadioGroup
-                            aria-labelledby="demo-radio-buttons-group-label"
-                            defaultValue="register"
-                            name="radio-buttons-group"
+                            aria-labelledby='demo-radio-buttons-group-label'
+                            defaultValue='register'
+                            name='radio-buttons-group'
                         >
                         <FormControlLabel 
-                            value="register" 
+                            value='register' 
                             control={<Radio />} 
-                            label="Register"
-                            checked={mode === "register"}
-                            onChange={() => setMode("register")}
+                            label='Register'
+                            checked={mode === 'register'}
+                            onChange={() => setMode('register')}
                         />
 
                         <FormControlLabel 
-                            value="login" 
+                            value='login' 
                             control={<Radio />} 
-                            label="Log in"
-                            checked={mode === "login"}
-                            onChange={() => setMode("login")}
+                            label='Log in'
+                            checked={mode === 'login'}
+                            onChange={() => setMode('login')}
                         />
                         </RadioGroup>
                     </FormControl>
 
                     <Button 
-                        variant="contained"
-                        type="submit"
+                        variant='contained'
+                        type='submit'
                     >
                         Submit
                     </Button>
             </Form>
             {errorMessage !== null && (
-                <Alert severity="error">{errorMessage}</Alert>
+                <Alert severity='error'>{errorMessage}</Alert>
             )}
             {regMessage !== null && (
-                <Alert severity="info">{regMessage}</Alert>)} 
+                <Alert severity='info'>{regMessage}</Alert>)} 
         </ContainerLogin>
     </>
     )
