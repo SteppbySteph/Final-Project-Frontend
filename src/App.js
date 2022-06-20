@@ -20,9 +20,7 @@ const reducer = combineReducers({
   posts: posts.reducer
 })
 
-// const store = configureStore({reducer})
-
-const persistedStateJSON = localStorage.getItem("state")
+const persistedStateJSON = localStorage.getItem('state')
 let persistedState = {}
 
 if (persistedStateJSON) {
@@ -32,7 +30,7 @@ if (persistedStateJSON) {
 const store = configureStore({ reducer, preloadedState: persistedState })
 
 store.subscribe(() => {
-  localStorage.setItem("state", JSON.stringify(store.getState()))
+  localStorage.setItem('state', JSON.stringify(store.getState()))
 })
 
 
