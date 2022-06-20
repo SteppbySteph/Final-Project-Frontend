@@ -66,7 +66,7 @@ const Posts = () => {
                 dispatch(posts.actions.setItems([]));
             }
         })
-        setTimeout(()=> setIsLoading(false), 1000)
+        // setTimeout(()=> setIsLoading(false), 1000)
     }
     // }, []);
 
