@@ -226,10 +226,23 @@ export const HeaderContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1em;
     border-bottom: 1px solid #F8F8FA;
-    margin: 1em 1em;
-`;
+    margin: 1em 1em 0;
+    padding-top: 1.5em;
+    /* border: 1px solid red; */
+    @media (min-width: 678px) {
+        display: flex;
+        /* align-items: center;
+        justify-content: center; */
+        justify-content: space-around;
+        margin: 1em 4em 2em;
+    }
+    @media (min-width: 1024px) {
+        font-size: 1em;
+        margin: 1em 9em 2em; 
+    }
+`
 
 //Home
 export const HomeTitle = styled.h1`
@@ -239,15 +252,11 @@ export const HomeTitle = styled.h1`
     text-align: center;
     margin: 2em 1em 0 1em;
     @media (min-width: 678px) {
-        margin: 1em 5em 1em;
-        font-size: 1.7rem;
+        margin: 1em 4em 1em;
+        font-size: 1.4em;
     }
     @media (min-width: 1024px) {
-        /* display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        max-width: 800px; */
-        margin: 2em 8em 1em; 
+        margin: 2em 9em 1em; 
     }
 `
 
@@ -475,6 +484,13 @@ export const LogoLanding = styled.button`
     border: none;
     background-color: transparent;
     padding-left: 0.5em;
+    @media (min-width: 678px) {
+        margin-right: 5em;
+
+    }
+    @media (min-width: 1024px) {
+        margin-right: 7em;
+    }    
 
 `
 //Loading component
