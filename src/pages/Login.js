@@ -96,15 +96,15 @@ const Login = () => {
             <ContainerLogin>
                 <Form onSubmit={onFormSubmit}>
                     <TextField
-                        id='outlined-basic'
+                        id='outlined-username-basic'
                         label='Username'
                         variant='outlined'
                         value={username}
-                        minlength={8}
+                        minLength={8}
                         onChange={(e)=>setUsername(e.target.value)}
                         required/>
                     <TextField
-                        id='outlined-basic'
+                        id='outlined-email-basic'
                         label='Email'
                         variant='outlined'
                         value={email}

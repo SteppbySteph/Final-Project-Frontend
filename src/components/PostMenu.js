@@ -43,8 +43,9 @@ const PostMenu = () => {
       .then(data => {
         setStatusMessage(data.response)
         dispatch(user.actions.setAccessToken(null))
-      })   
-  }   
+      })
+      setTimeout(() => navigate('/'), 2000)
+    }   
     
     return (
       <>

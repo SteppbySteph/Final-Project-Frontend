@@ -33,12 +33,6 @@ const Posts = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    useEffect(()=> {
-        if(!accessToken) {
-            navigate('/')
-        }
-    }, [accessToken, navigate])
-
     useEffect(() => {
         fetchPosts()
         //eslint-disable-next-line

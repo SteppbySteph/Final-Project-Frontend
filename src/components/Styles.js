@@ -1,4 +1,4 @@
-import styled from "styled-components/macro"
+import styled from 'styled-components/macro'
 
 //Landingpage
 export const StyledGreetingBox = styled.div`
