@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import Footer from 'components/Footer'
+import Header from 'components/Header'
 
 import { 
     ButtonImage, 
@@ -10,10 +12,6 @@ import {
     ImageContainer,
     StyledSection
 } from 'components/Styles'
-
-import Footer from 'components/Footer'
-import Header from 'components/Header'
-
 
 const Home = () => {
     const navigate = useNavigate()
@@ -43,19 +41,19 @@ const Home = () => {
                     </HomeTitle>
                 <StyledSection>
                     <ImageContainer>
-                        <ButtonImage src="https://www.towerpaddleboards.com/images/sup-hawaii-paddleboarding.jpg" alt="paddleboards in row"/>
+                        <ButtonImage src='assets/paddleboards-in-row.jpeg' alt='paddleboards in row'/>
                         <ButtonImageButton onClick={handleOnClickLogin}>Recommendations</ButtonImageButton>
                     </ImageContainer>
                     <ImageContainer>
-                        <ButtonImage src="https://images.unsplash.com/photo-1601283261983-543e77949437?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhbmQlMjB1cCUyMHBhZGRsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60" alt="paddle in the sunset"/>
+                        <ButtonImage src='/assets/paddle-in-sunset.jpg' alt='paddle in the sunset'/>
                         <ButtonImageButton onClick={handleOnClickSweden}>Sweden SUP destinations</ButtonImageButton>
                     </ImageContainer>
                     <ImageContainer>
-                    <ButtonImage src="https://images.unsplash.com/photo-1478892312911-cb993bdcae76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVvcGxlJTIwd2l0aCUyMHBhZGRsZWJvYXJkc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="sup people"/>
+                        <ButtonImage src='/assets/sup-people.jpg' alt='sup people'/>
                         <ButtonImageButton onClick={handleOnClickEurope}>Europe SUP destinations</ButtonImageButton>
                     </ImageContainer>
                     <ImageContainer>
-                        <ButtonImage src="https://images.unsplash.com/photo-1619127076035-ffae719099a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHN0YW5kJTIwdXAlMjBwYWRkbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="front of paddleboard"/>   
+                        <ButtonImage src='/assets/car-paddleboards.jpg' alt='car with paddelboards'/>
                         <ButtonImageButton onClick={handleOnClickWorldwide}>Worldwide SUP destinations</ButtonImageButton>
                     </ImageContainer>    
                 </StyledSection>
@@ -63,7 +61,6 @@ const Home = () => {
                 <Footer />
             </FooterStyling>
         </>
-
     )
 }
 
