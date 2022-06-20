@@ -16,5 +16,4 @@ const posts = createSlice({
     }
 })
 
-
 export default posts
