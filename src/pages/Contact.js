@@ -3,7 +3,6 @@ import { Button } from "@mui/material"
 
 import { 
     Author,
-    AuthorLinks,
     AboutAuthor,
     ImageContact,
     ContactBox, 
@@ -36,10 +35,10 @@ const Contact = () => {
                             "I strive to be the very best of myself- and I also love SUP!"
                             "I strive to be the very best of myself- and I also love SUP!"
                             "I strive to be the very best of myself- and I also love SUP!"</p>   
-                        <AuthorLinks>
+                        <div>
                             <Button href="https://www.linkedin.com/in/josefin-eliasson-94a2a8164/">LinkedIn</Button>
                             <Button href="https://github.com/Josse79">Github</Button>                    
-                        </AuthorLinks>
+                        </div>
                         </AboutAuthor>  
                     </ContactBox>
                     <ContactBox>
@@ -49,10 +48,10 @@ const Contact = () => {
                             <p>"My biggest dream is to make it out alive from Technigo bootcamp."
                             "My biggest dream is to make it out alive from Technigo bootcamp."
                             "My biggest dream is to make it out alive from Technigo bootcamp." </p>
-                        <AuthorLinks>
+                        <div>
                             <Button href="https://www.linkedin.com/in/stephannie-medenilla/">LinkedIn</Button>
                             <Button href="https://github.com/SteppbySteph">Github</Button>
-                        </AuthorLinks>
+                        </div>
                         </AboutAuthor>  
                     </ContactBox>    
                 </OutterContainer>

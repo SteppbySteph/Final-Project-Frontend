@@ -393,7 +393,6 @@ export const ContactBox = styled.div`
     margin: 0 1em 0;
     padding: 1em 0;
     opacity: 0.9;
-    border: 1px solid red;
     min-width: 250px;
     @media (min-width: 678px) {
         display: flex;
@@ -405,14 +404,15 @@ export const ContactBox = styled.div`
         margin: 1em auto;
     }
     @media (min-width: 1024px) {
-        max-width: 700px;
+        max-width: 750px;
         margin: 0 auto; 
     }
 `
 
 export const ImageContact = styled.img`
-    width: 250px;
-    height: 250px;
+    width: 245px;
+    height: 245px;
+    padding-left: 1.5em;
     border-radius: 50%;
     object-fit: cover;
     -webkit-filter: grayscale(100%);
@@ -422,13 +422,16 @@ export const AboutAuthor = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 1em;
-    border: 1px solid red;
+    padding-left: 0,5em;
     align-items: center;
     @media (min-width: 678px) {
         max-width: 270px;
+        padding-left: 1em;
 
     }
     @media (min-width: 1024px) {
+        margin-right: 0;
+        padding-left: 1em; 
         font-size: 1.1em;
         max-width: 400px;
     }    
@@ -436,9 +439,9 @@ export const AboutAuthor = styled.div`
 export const Author = styled.h3`
     margin-bottom: 0;
 `
-export const AuthorLinks = styled.div`
-    border: 1px solid red;
-`
+// export const AuthorLinks = styled.div`
+//     border: 1px solid red;
+// `
 
 //Footer
 export const FooterStyling = styled.div`
