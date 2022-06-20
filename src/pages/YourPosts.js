@@ -2,6 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Button  } from '@mui/material'
 import EdiText from 'react-editext'
+import BackButton from 'components/Backbutton'
+import Header from 'components/Header'
+import Loading from 'components/Loading'
+import PostMenu from 'components/PostMenu'
+import posts from 'reducer/posts'
+import { API_URL, API_DELETE_MSG, API_UPDATE } from 'utils/utils'
 
 import { 
     BottomCardContainer,
@@ -14,20 +20,13 @@ import {
     YourPostsContainer
 } from 'components/Styles'
 
-import BackButton from 'components/Backbutton'
-import Header from 'components/Header'
-import Loading from 'components/Loading'
-import PostMenu from 'components/PostMenu'
-import { API_URL, API_DELETE_MSG, API_UPDATE } from 'utils/utils'
-import posts from 'reducer/posts'
-
 
 const YourPosts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
     const currentUser = useSelector((store) => store.user.userId)
     const postItems = useSelector((store) => store.posts.items)
     const [updatedMessage, setUpdatedMessage] = useState('')
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -49,18 +48,18 @@ const YourPosts = () => {
         .then(res => res.json())
         .then(data => {
             if (data.success) {
-                dispatch(posts.actions.setItems(data.response));
-                dispatch(posts.actions.setError(null));
+                dispatch(posts.actions.setItems(data.response))
+                dispatch(posts.actions.setError(null))
             } else {
-                dispatch(posts.actions.setError(data.response));
-                dispatch(posts.actions.setItems([]));
+                dispatch(posts.actions.setError(data.response))
+                dispatch(posts.actions.setItems([]))
             }
             
         })
         setTimeout(()=> setIsLoading(false), 1000)
     }
 
-    // Deleting a message
+    //Deleting a message
     const handleDeleteMsg = (id) => {
         const options = {
           method: 'DELETE',
@@ -72,12 +71,11 @@ const YourPosts = () => {
         fetch(API_DELETE_MSG(id), options)
           .then((res) => res.json())
           .then(() => {
-              console.log(id)
             fetchPosts()
           })
     }
     
-    // Updating a message
+    //Updating a message
     const handleUpdateMsg = (id) => {
         const options = {
             method: 'PATCH',
@@ -118,24 +116,36 @@ const YourPosts = () => {
                                     <CardContainer key={item._id}>
                                         <MessageContainer>
                                             <EdiText 
-                                                type="text" value={item.message} 
+                                                type='text' 
+                                                value={item.message} 
                                                 onSave={updatedMessage => setUpdatedMessage(updatedMessage)}
                                             />
-                                            {/* {console.log(updatedMessage)} */}
                                         </MessageContainer>
                                         <BottomCardContainer>
-                                            <Button onClick={()=> handleUpdateMsg(item._id)}variant="text"size='large'>SAVE EDIT</Button>                          
-                                            <Button onClick={()=> handleDeleteMsg(item._id)}variant="text"size='large'>DELETE</Button>
+                                            <Button 
+                                                onClick={()=> handleUpdateMsg(item._id)}
+                                                variant='text'
+                                                size='large'
+                                            >
+                                                SAVE EDIT
+                                            </Button>                          
+                                            <Button 
+                                                onClick={()=> handleDeleteMsg(item._id)}
+                                                variant='text'
+                                                size='large'
+                                            >
+                                                DELETE
+                                            </Button>
                                         </BottomCardContainer>
                                     </CardContainer>  )
                             } else { 
-                                return null }
+                                return null
+                            }
                         })}
                     </>
                 }
             
             </YourPostsContainer>
-
         </>
     )
 }
