@@ -3,6 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { Button  } from '@mui/material'
 import moment from 'moment'
+import Header from 'components/Header'
+import Loading from 'components/Loading'
+import PostMenu from 'components/PostMenu'
+import posts from 'reducer/posts'
+import { API_URL, API_LIKES } from 'utils/utils'
 
 import { 
     BottomCardContainer,
@@ -20,17 +25,11 @@ import {
     YourPostButton
 } from 'components/Styles'
 
-import Header from 'components/Header'
-import Loading from 'components/Loading'
-import PostMenu from 'components/PostMenu'
-import posts from 'reducer/posts'
-import { API_URL, API_LIKES } from 'utils/utils'
-
 const Posts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
     const postItems = useSelector((store) => store.posts.items)
     const [newPost, setNewPost] = useState('')
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false)
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -45,6 +44,7 @@ const Posts = () => {
         //eslint-disable-next-line
     }, [])
 
+    //Fetch all posts
     const fetchPosts = () => {
         setIsLoading(true)
         const options = {
@@ -55,20 +55,19 @@ const Posts = () => {
             }
         }
 
-        fetch(API_URL("posts"), options)
+        fetch(API_URL('posts'), options)
         .then(res => res.json())
         .then(data => {
             if (data.success) {
-                dispatch(posts.actions.setItems(data.response));
-                dispatch(posts.actions.setError(null));
+                dispatch(posts.actions.setItems(data.response))
+                dispatch(posts.actions.setError(null))
             } else {
-                dispatch(posts.actions.setError(data.response));
-                dispatch(posts.actions.setItems([]));
+                dispatch(posts.actions.setError(data.response))
+                dispatch(posts.actions.setItems([]))
             }
         })
          setTimeout(()=> setIsLoading(false), 1000)
     }
-    // }, []);
 
     const handleNewPost = (event) => {
         setNewPost(event.target.value)
@@ -77,6 +76,7 @@ const Posts = () => {
     const handleFormSubmit = (event) => {
         event.preventDefault()
 
+        //Add new post
         const options = {
             method: 'POST',
             headers: {
@@ -88,7 +88,7 @@ const Posts = () => {
             })
           }
   
-          fetch(API_URL("posts"), options)
+          fetch(API_URL('posts'), options)
             .then(res =>res.json())
             .then(() => fetchPosts())
             .finally(() => setNewPost(''))
@@ -106,7 +106,6 @@ const Posts = () => {
         fetch(API_LIKES(id), options)
           .then((res) => res.json())
           .then(() => {
-              console.log(id)
             fetchPosts()
             setIsLoading(false)
           })
@@ -139,7 +138,7 @@ const Posts = () => {
                             />
                             <FormButtons>
                                 <Button 
-                                    variant="contained"
+                                    variant='contained'
                                     type='submit'
                                     disabled={newPost.length < 5 || newPost.length > 1500}
                                 >
@@ -147,7 +146,7 @@ const Posts = () => {
                                 </Button>
                                 <YourPostButton>  
                                     <Button 
-                                        variant="text"
+                                        variant='text'
                                         type='submit'
                                         onClick={handleYourPosts} 
                                     >
@@ -168,10 +167,11 @@ const Posts = () => {
                                     <BottomCardContainer>
                                         <LikeContainer>
                                             <Button 
-                                                variant="text"
+                                                variant='text'
                                                 size='medium'
                                                 onClick={() => handlePostLikes(item._id)}
-                                            >LIKES
+                                            >
+                                                LIKES
                                             </Button>
                                             <StyledParagraph>x {item.likes}</StyledParagraph>                                    
                                         </LikeContainer>
