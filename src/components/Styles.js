@@ -239,7 +239,15 @@ export const HomeTitle = styled.h1`
     text-align: center;
     margin: 2em 1em 0 1em;
     @media (min-width: 678px) {
+        margin: 1em 5em 1em;
         font-size: 1.7rem;
+    }
+    @media (min-width: 1024px) {
+        /* display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 800px; */
+        margin: 2em 8em 1em; 
     }
 `
 
