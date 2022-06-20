@@ -72,7 +72,8 @@ export const WrapperLanding = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url("https://images.unsplash.com/photo-1509233725247-49e657c54213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhY2tncm91bmQlMjBpbWFnZXMlMjBiZWFjaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+    background-image: url("/assets/palm-background.jpg");
+    /* background-image: url("https://images.unsplash.com/photo-1509233725247-49e657c54213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhY2tncm91bmQlMjBpbWFnZXMlMjBiZWFjaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"); */
     /* background-image: url("https://images.unsplash.com/photo-1626358033353-b5f5a3ca1067?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA0fHxiYWNrZ3JvdW5kJTIwaW1hZ2VzJTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"); */
     background-repeat: no-repeat;
     background-size: cover;
@@ -330,10 +331,13 @@ export const Image = styled.img`
     max-width: 600px;
     height: 300px;
     position: relative;
-    object-fit: cover;
+    object-fit: contain;
     /* margin: 20px auto; */
     /* background-color: #fff; */
     /* padding: 20px; */
+    @media (min-width: 600px) {
+        height: 450px;
+    }
 `
 export const Description = styled.p`
     /* position: absolute; */
