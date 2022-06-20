@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Menu, MenuItem, Alert } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import user from 'reducer/user'
 import { API_DELETE } from 'utils/utils'
 
@@ -12,6 +13,8 @@ const PostMenu = () => {
     const userId = useSelector((store) => store.user.userId)
     const [statusMessage, setStatusMessage] = useState(null)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+
   
     const openNavigation = (event) => {
       setAnchorEl(event.currentTarget)
@@ -23,6 +26,7 @@ const PostMenu = () => {
  
     const logout = () => {
       dispatch(user.actions.setAccessToken(null))
+      navigate('/')
     }
     
     const onDelete = () => {
