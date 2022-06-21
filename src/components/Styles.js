@@ -99,9 +99,16 @@ export const FormButtons = styled.div`
     flex-direction: row;
     justify-content: space-between;
 `
+
 //Login component
 export const StyledBackButton = styled.form`
-    margin: 1em 1em;
+        margin: 1em 1em;
+    @media (min-width: 678px) {
+        margin-left: 4em;
+    }
+     @media (min-width: 1024px) {
+        margin-left: 8em;
+    }
 `
 
 export const ContainerLogin = styled.div`

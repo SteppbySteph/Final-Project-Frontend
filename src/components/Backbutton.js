@@ -13,10 +13,6 @@ const BackButton = () => {
     <Stack direction='row' spacing={1}>
       <Button 
         sx={{
-          // bgcolor: 'background.paper',
-          // boxShadow: 1,
-          // borderRadius: 2,
-          // p: 2,
           color: 'white',
           minWidth: 100,
         }}
