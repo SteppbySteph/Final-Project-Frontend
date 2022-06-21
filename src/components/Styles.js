@@ -237,11 +237,8 @@ export const HeaderContainer = styled.div`
     border-bottom: 1px solid #F8F8FA;
     margin: 1em 1em 0;
     padding-top: 1.5em;
-    /* border: 1px solid red; */
     @media (min-width: 678px) {
         display: flex;
-        /* align-items: center;
-        justify-content: center; */
         justify-content: space-around;
         margin: 1em 4em 2em;
     }
@@ -312,6 +309,7 @@ export const ButtonImage = styled.img`
     margin-bottom: 15px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
 `
+
 export const ButtonImageButton = styled.button`
     position: absolute;
     padding: 0.7rem 0;
@@ -344,6 +342,7 @@ export const CardContainerDest = styled.div`
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     word-break: break-word;
 `
+
 export const Image = styled.img`
     width: 100%;
     max-width: 600px;
@@ -356,24 +355,12 @@ export const Image = styled.img`
 `
 
 //Contact component
-export const WrapperContact = styled.div`
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // justify-content: center;
-    //padding: 0 20px 20px;
-    // background-image: url("https://images.unsplash.com/photo-1509233725247-49e657c54213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhY2tncm91bmQlMjBpbWFnZXMlMjBiZWFjaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
-    /* background-image: url("https://images.unsplash.com/photo-1626358033353-b5f5a3ca1067?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA0fHxiYWNrZ3JvdW5kJTIwaW1hZ2VzJTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: cover; */
-    
-`
+
 export const OutterContainer = styled.div`
-    border: 1px solid black;
     border-radius: 5px;
     background-color: #fff;
     margin: 2em 1em; 
+    padding-top: 1em;
     @media (min-width: 678px) {
         margin: 2em auto;
         max-width: 600px;
@@ -383,7 +370,6 @@ export const OutterContainer = styled.div`
         padding: 1em 0;
         max-width: 800px;
     }
-
 `
 export const Heading = styled.h1`
     font-size: 1.5em;
@@ -424,6 +410,7 @@ export const ImageContact = styled.img`
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 `
+
 export const AboutAuthor = styled.div`
     display: flex;
     flex-direction: column;
@@ -442,41 +429,31 @@ export const AboutAuthor = styled.div`
         max-width: 400px;
     }    
 `
+
 export const Author = styled.h3`
     margin-bottom: 0;
 `
-// export const AuthorLinks = styled.div`
-//     border: 1px solid red;
-// `
 
 //Footer
 export const FooterStyling = styled.div`
-     /* display: flex;
-     flex-direction: row;
-     align-items: center;
-     justify-content: space-between; */
-    /* width: 100%; */
     text-align: center;
     padding: 1em;
     background-color: #fff;
     opacity: 0.75;
     font-weight: lighter;
-
 `
-
 
 export const ButtonWrapper = styled.div`
     display: flex;
     flex-direction: row;
 `
+
 export const HeaderStyling = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100vw;
-    // padding: 1em;
-    // background-color: rgba(0, 0, 0, 0);
     background-color: #fff;
     opacity: 0.75;
     font-weight: bold;
@@ -504,8 +481,8 @@ export const LogoLanding = styled.button`
 export const LoadingSpinner = styled.div`
 width: 50px;
     height: 50px;
-    border: 10px solid #f3f3f3; /* Light grey */
-    border-top: 10px solid #383636; /* Black */
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #383636; 
     border-radius: 50%;
     animation: spinner 1.5s linear infinite;
     @keyframes spinner {
@@ -522,34 +499,4 @@ export const LoadingSpinnerContainer = styled.div`
     justify-content: center;
     align-items: center;
     height: 350px;
-`
-
-
-///Övrigt
-export const StyledContent = styled.div`
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;*/
-`;
-
-// export const StyledHomeContainer = styled.div`
-// //     background-color: #F8F8FA;
-// //     opacity: 0.5;
-// `
-export const StyledButton = styled.button`
-  margin-left: 3rem;
-  padding: 0.5rem;
-  color:white;
-  cursor:pointer;
-  background: transparent;
-  border: none;
-  font-size: 1rem;
-  border: 3px solid white;
-  border-radius: 2rem;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-
-  &:hover{
-   border: 2px solid white;
-  }
 `
