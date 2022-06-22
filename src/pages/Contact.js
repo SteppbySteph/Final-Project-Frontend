@@ -71,11 +71,11 @@ const Contact = () => {
                         </Button>
                     </div>
                     </AboutAuthor>  
-                </ContactBox>    
+                </ContactBox>   
             </OutterContainer>
             <FooterStyling>
                 <Footer />
-            </FooterStyling>     
+            </FooterStyling>
         </>
     )
 }

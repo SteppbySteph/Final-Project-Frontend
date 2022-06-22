@@ -438,15 +438,21 @@ export const Author = styled.h3`
 export const FooterStyling = styled.div`
     text-align: center;
     padding: 1em;
-    background-color: #fff;
+    /* background-color: #fff; */
     opacity: 0.75;
     font-weight: lighter;
+    border-top: 1px solid black;
+    margin: 0 1em;
+
     @media (min-width: 678px) {
         margin-bottom: 0;
+        margin: 0 4em;
 
     }
     @media (min-width: 1024px) {
         margin-bottom: 0;
+        margin: 0 8em;
+
     }    
 `
 
