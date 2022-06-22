@@ -11,5 +11,6 @@ body {
   background-size: cover;
   object-fit: cover;
   background-attachment: fixed;
+  /* overflow: hidden; */
 }
 
