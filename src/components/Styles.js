@@ -362,11 +362,11 @@ export const OutterContainer = styled.div`
     margin: 2em 1em; 
     padding-top: 1em;
     @media (min-width: 678px) {
-        margin: 2em auto;
+        margin: 3em auto;
         max-width: 600px;
     }
     @media (min-width: 1024px) {
-        margin: 2em auto;
+        margin: 3em auto;
         padding: 1em 0;
         max-width: 800px;
     }
