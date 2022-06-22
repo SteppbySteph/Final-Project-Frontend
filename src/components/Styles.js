@@ -441,6 +441,13 @@ export const FooterStyling = styled.div`
     background-color: #fff;
     opacity: 0.75;
     font-weight: lighter;
+    @media (min-width: 678px) {
+        margin-bottom: 0;
+
+    }
+    @media (min-width: 1024px) {
+        margin-bottom: 0;
+    }    
 `
 
 export const ButtonWrapper = styled.div`
