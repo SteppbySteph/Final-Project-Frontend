@@ -13,7 +13,7 @@ Hightligths of project:
 
 ## Technologies
 
-React, Redux, React-Router-Dom, Styled-components, MUI materials, Moment 
+React, Redux, React-Router-Dom, Styled-components, Material UI, Moment 
 
 ## View it live
 Frontend: https://js-sup.netlify.app/ <br>
