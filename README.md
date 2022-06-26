@@ -16,5 +16,8 @@ Hightligths of project:
 React, Redux, React-Router-Dom, Styled-components, MUI materials, Moment 
 
 ## View it live
-https://js-sup.netlify.app/
+Frontend: https://js-sup.netlify.app/
+Backend: https://sup-api-js.herokuapp.com
+
+
 
