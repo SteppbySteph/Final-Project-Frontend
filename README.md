@@ -1,19 +1,20 @@
-# Technigo React Starter App
+## Final project
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+A pair-programming project by Josefin Eliasson and Stephannie Medenilla. 
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+This project is an inspirational website about Stand-up Paddle Board. It includes a form in which the user can write and read recommendations about stand-up paddle board destinations from other users after signing up. Another feature is the presentation of other destination information created in a .json file which are mapped over to a card container.  
 
-## Usage
+Hightligths of project: 
+- authenticating users using tokens
+- handle authentication, both in the frontend and in the backend
+- securely store passwords in database with Mongo DB Cloud.
+- creating API with Heroku and Mongo DB Cloud in backend to implement requests such as: DELETE, GET, PATCH and POST.  
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
 
-Alternatively, if you don't want a new git repo on your account;
+## Technologies
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+React, Redux, React-Router-Dom, Styled-components, MUI materials, Moment 
+
+## View it live
+https://js-sup.netlify.app/
+

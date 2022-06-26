@@ -143,7 +143,7 @@ export const Textarea = styled.textarea`
     font-size: 16px;
     font-family: 'Comfortaa', cursive;
     padding: 0.5em;
-    outline-color: #FF007F;
+    outline-color: #414a4c;
 `
 export const YourPostButton = styled.div`
     margin-top: 2vw;
