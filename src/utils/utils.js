@@ -1,4 +1,7 @@
-const BASE_URL = "https://sup-api-js.herokuapp.com"
+const BASE_URL = "https://final-project-sup.onrender.com/"
+
+
+// https://sup-api-js.herokuapp.com
 
 export const API_URL = (slug) => `${BASE_URL}/${slug}`
 export const API_LIKES = (id) => `${BASE_URL}/posts/${id}/likes`
