@@ -19,5 +19,5 @@ React, Redux, React-Router-Dom, Styled-components, Material UI, Moment
 Frontend: https://js-sup.netlify.app/ <br>
 Backend: https://sup-api-js.herokuapp.com
 
-
+Currently being updated
 
