@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { Button  } from '@mui/material'
+import { Button } from '@mui/material'
 import moment from 'moment'
 
-import Header from 'components/Header'
-import Loading from 'components/Loading'
-import PostMenu from 'components/PostMenu'
-import posts from 'reducer/posts'
-import { API_URL, API_LIKES } from 'utils/utils'
+import Header from '../components/Header'
+import Loading from '../components/Loading'
+import PostMenu from '../components/PostMenu'
+import posts from '../reducer/posts'
+// import { API_URL, API_LIKES } from 'utils/utils'
 
-import { 
+import {
     BottomCardContainer,
     CardContainer,
     Container,
@@ -21,10 +21,10 @@ import {
     MessageContainer,
     PostParagraphContainer,
     PostsParagraph,
-    StyledParagraph, 
-    Textarea, 
+    StyledParagraph,
+    Textarea,
     YourPostButton
-} from 'components/Styles'
+} from '../components/Styles'
 
 const Posts = () => {
     const accessToken = useSelector((store) => store.user.accessToken)
@@ -50,18 +50,18 @@ const Posts = () => {
             }
         }
 
-        fetch(API_URL('posts'), options)
-        .then(res => res.json())
-        .then(data => {
-            if (data.success) {
-                dispatch(posts.actions.setItems(data.response))
-                dispatch(posts.actions.setError(null))
-            } else {
-                dispatch(posts.actions.setError(data.response))
-                dispatch(posts.actions.setItems([]))
-            }
-        })
-         setTimeout(()=> setIsLoading(false), 1000)
+        fetch("https://final-project-sup.onrender.com/posts", options)
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    dispatch(posts.actions.console.log(data.response))
+                    dispatch(posts.actions.setError(null))
+                } else {
+                    dispatch(posts.actions.setError(data.response))
+                    dispatch(posts.actions.setItems([]))
+                }
+            })
+        setTimeout(() => setIsLoading(false), 1000)
     }
 
     const handleNewPost = (event) => {
@@ -75,48 +75,48 @@ const Posts = () => {
         const options = {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json',
-              'Authorization': accessToken,
+                'Content-Type': 'application/json',
+                'Authorization': accessToken,
             },
             body: JSON.stringify({
                 message: newPost,
             })
-          }
-  
-          fetch(API_URL('posts'), options)
-            .then(res =>res.json())
+        }
+
+        fetch("https://final-project-sup.onrender.com/posts", options)
+            .then(res => res.json())
             .then(() => fetchPosts())
             .finally(() => setNewPost(''))
-      }
+    }
 
     //Update likes via post id
     const handlePostLikes = (id) => {
         const options = {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
         }
-    
-        fetch(API_LIKES(id), options)
-          .then((res) => res.json())
-          .then(() => {
-            fetchPosts()
-            setIsLoading(false)
-          })
-      } 
+
+        fetch(`https://final-project-sup.onrender.com/posts/${id}/likes`, options)
+            .then((res) => res.json())
+            .then(() => {
+                fetchPosts()
+                setIsLoading(false)
+            })
+    }
 
     const handleYourPosts = () => {
         navigate('/yourposts')
     }
-    
+
     return (
-        <>        
+        <>
             <HeaderContainer>
                 <Header />
-                <PostMenu/>
-            </HeaderContainer>   
-            {isLoading ? <Loading/> : 
+                <PostMenu />
+            </HeaderContainer>
+            {isLoading ? <Loading /> :
                 <>
                     <PostParagraphContainer>
                         <PostsParagraph>
@@ -125,58 +125,58 @@ const Posts = () => {
                     </PostParagraphContainer>
                     <Container>
                         <Form onSubmit={handleFormSubmit}>
-                            <Textarea 
+                            <Textarea
                                 aria-label='newPost'
-                                value={newPost} 
-                                onChange={handleNewPost} 
-                                placeholder ='Share your SUP recommendation...'
+                                value={newPost}
+                                onChange={handleNewPost}
+                                placeholder='Share your SUP recommendation...'
                             />
                             <FormButtons>
-                                <Button 
+                                <Button
                                     variant='contained'
                                     type='submit'
                                     disabled={newPost.length < 5 || newPost.length > 1500}
                                 >
                                     SUBMIT POST
                                 </Button>
-                                <YourPostButton>  
-                                    <Button 
+                                <YourPostButton>
+                                    <Button
                                         variant='text'
                                         type='submit'
-                                        onClick={handleYourPosts} 
+                                        onClick={handleYourPosts}
                                     >
                                         YOUR POSTS
                                     </Button>
                                 </YourPostButton>
                             </FormButtons>
-                        </Form> 
+                        </Form>
                     </Container>
                     <div>
                         {postItems.map((item) => {
                             return <CardContainer key={item._id}>
-                                    <MessageContainer>
-                                        <p>{item.message}</p>
-                                    </MessageContainer>
-                                        <StyledParagraph>{item.creator.name}</StyledParagraph>
-                                        <StyledParagraph>{item.creator.email}</StyledParagraph>
-                                    <BottomCardContainer>
-                                        <LikeContainer>
-                                            <Button 
-                                                variant='text'
-                                                size='medium'
-                                                onClick={() => handlePostLikes(item._id)}
-                                            >
-                                                LIKES
-                                            </Button>
-                                            <StyledParagraph>x {item.likes}</StyledParagraph>                                    
-                                        </LikeContainer>
-                                        <StyledParagraph>{moment.utc(item.createdAt).format('MMM Do YY')}</StyledParagraph>
-                                    </BottomCardContainer>
-                                </CardContainer>     
-                            })}     
+                                <MessageContainer>
+                                    <p>{item.message}</p>
+                                </MessageContainer>
+                                <StyledParagraph>{item.creator.name}</StyledParagraph>
+                                <StyledParagraph>{item.creator.email}</StyledParagraph>
+                                <BottomCardContainer>
+                                    <LikeContainer>
+                                        <Button
+                                            variant='text'
+                                            size='medium'
+                                            onClick={() => handlePostLikes(item._id)}
+                                        >
+                                            LIKES
+                                        </Button>
+                                        <StyledParagraph>x {item.likes}</StyledParagraph>
+                                    </LikeContainer>
+                                    <StyledParagraph>{moment.utc(item.createdAt).format('MMM Do YY')}</StyledParagraph>
+                                </BottomCardContainer>
+                            </CardContainer>
+                        })}
                     </div>
                 </>
-            }    
+            }
         </>
     )
 }

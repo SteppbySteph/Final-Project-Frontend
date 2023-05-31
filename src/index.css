@@ -6,11 +6,10 @@ body {
   font-family: 'Comfortaa', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("/assets/body-background.jpg");
+  background-image: url("../public/assets/body-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;
   background-attachment: fixed;
   /* overflow: hidden; */
 }
-

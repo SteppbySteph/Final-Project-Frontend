@@ -1,18 +1,30 @@
-import React from 'react'
-import data from '../data.json'
-import BackButton from 'components/Backbutton'
-import Footer from 'components/Footer'
-import Header from 'components/Header'
+import React, { useEffect, useState } from 'react'
+// import data from '../data.json'
+import BackButton from '../components/Backbutton'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
 
-import { 
-  CardContainer, 
-  FooterStyling, 
-  HeaderContainer, 
-  Image, 
-  StyledBackButton 
-} from 'components/Styles'
+import {
+  CardContainer,
+  FooterStyling,
+  HeaderContainer,
+  Image,
+  StyledBackButton
+} from '../components/Styles'
 
 const Europe = () => {
+
+  const [list, setList] = useState([])
+
+  useEffect(() => {
+    fetchThoughts();
+  }, [])
+
+  const fetchThoughts = () => {
+    fetch('https://final-project-sup.onrender.com/europe')
+      .then(res => res.json())
+      .then(data => setList(data.data))
+  }
 
   return (
     <div>
@@ -22,17 +34,17 @@ const Europe = () => {
       <StyledBackButton>
         <BackButton />
       </StyledBackButton>
-      
-      {data.europe.map((item) => (
-        <CardContainer>
-          <Image src={item.image} key={item.image} alt='place'/>
-          <h4 key={item.id}>{item.place}</h4>
-          <p key={item.id}>{item.description}</p>
+
+      {list.map((item) => (
+        <CardContainer key={item.id}>
+          <Image src={item.image} key={item.image} alt='place' />
+          <h4>{item.place}</h4>
+          <p>{item.description}</p>
         </CardContainer>
       ))}
-      
+
       <FooterStyling>
-        <Footer/>
+        <Footer />
       </FooterStyling>
     </div>
   )

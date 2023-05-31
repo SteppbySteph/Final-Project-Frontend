@@ -1,39 +1,50 @@
-import React from 'react'
-import data from '../data.json'
-import BackButton from 'components/Backbutton'
-import Footer from 'components/Footer'
-import Header from 'components/Header'
+import React, { useEffect, useState } from 'react'
+// import data from '../data.json'
+import BackButton from '../components/Backbutton'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
 
-import { 
+import {
   CardContainerDest,
   FooterStyling,
-  HeaderContainer, 
-  Image, 
-  StyledBackButton 
-} from 'components/Styles'
+  HeaderContainer,
+  Image,
+  StyledBackButton
+} from '../components/Styles'
 
 const Sweden = () => {
-   
+
+  const [list, setList] = useState([])
+
+  useEffect(() => {
+    fetchThoughts();
+  }, [])
+
+  const fetchThoughts = () => {
+    fetch('https://final-project-sup.onrender.com/sweden')
+      .then(res => res.json())
+      .then(data => setList(data.response))
+  }
+
   return (
     <div>
-        <HeaderContainer>
-          <Header />
-        </HeaderContainer>
-        <StyledBackButton>
-            <BackButton />
-        </StyledBackButton>
-        
-        {data.sweden.map((item) => (
-          <CardContainerDest>
-            <Image src={item.image} key={item.image} alt='place'/>
-            <h4 key={item.id}>{item.place}</h4>
-            <p key={item.id}>{item.description}</p>
-          </CardContainerDest>
-        ))}
+      <HeaderContainer>
+        <Header />
+      </HeaderContainer>
+      <StyledBackButton>
+        <BackButton />
+      </StyledBackButton>
+      {list.map((item) => (
+        <CardContainerDest key={item.id}>
+          <Image src={item.image} alt='place' />
+          <h4>{item.place}</h4>
+          <p>{item.description}</p>
+        </CardContainerDest>
+      ))}
 
-        <FooterStyling>
-          <Footer/>
-        </FooterStyling>
+      <FooterStyling>
+        <Footer />
+      </FooterStyling>
     </div>
   )
 }
