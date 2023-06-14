@@ -1,6 +1,6 @@
-const BASE_URL = "https://final-project-sup.onrender.com/"
 
-
+const BASE_URL = 'http://localhost:8080'
+// https://final-project-sup.onrender.com
 // https://sup-api-js.herokuapp.com
 
 export const API_URL = (slug) => `${BASE_URL}/${slug}`

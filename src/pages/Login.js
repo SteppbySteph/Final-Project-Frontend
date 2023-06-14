@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector, batch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import fetch from 'node-fetch'
+
 import user from '../reducer/user'
 import Header from '../components/Header'
 import BackButton from '../components/Backbutton'
-// import { API_URL } from 'utils/utils'
+import { API_URL } from '../utils/utils'
 import {
     Alert,
     Button,
@@ -52,7 +54,7 @@ const Login = () => {
             body: JSON.stringify({ username: username, email: email, password: password })
         }
 
-        fetch("https://final-project-sup.onrender.com/login", options)
+        fetch(API_URL(mode), options)
             .then(res => res.json())
             .then(data => {
                 if (data.success) {

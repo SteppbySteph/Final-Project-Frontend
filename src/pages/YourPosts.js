@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import EdiText from 'react-editext'
 import { Button } from '@mui/material'
+import fetch from 'node-fetch'
 
 import BackButton from '../components/Backbutton'
 import Header from '../components/Header'
@@ -32,7 +33,6 @@ const YourPosts = () => {
 
     useEffect(() => {
         fetchPosts()
-        //eslint-disable-next-line
     }, [])
 
     const fetchPosts = () => {

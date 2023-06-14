@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@mui/material'
 import moment from 'moment'
+import fetch from 'node-fetch'
 
 import Header from '../components/Header'
 import Loading from '../components/Loading'
 import PostMenu from '../components/PostMenu'
 import posts from '../reducer/posts'
-// import { API_URL, API_LIKES } from 'utils/utils'
+import { API_URL, API_LIKES } from '../utils/utils'
 
 import {
     BottomCardContainer,
@@ -36,7 +37,6 @@ const Posts = () => {
 
     useEffect(() => {
         fetchPosts()
-        //eslint-disable-next-line
     }, [])
 
     //Fetch all posts
@@ -50,11 +50,11 @@ const Posts = () => {
             }
         }
 
-        fetch("https://final-project-sup.onrender.com/posts", options)
+        fetch(API_URL('posts'), options)
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    dispatch(posts.actions.console.log(data.response))
+                    dispatch(posts.actions.setItems(data.response))
                     dispatch(posts.actions.setError(null))
                 } else {
                     dispatch(posts.actions.setError(data.response))
@@ -83,7 +83,7 @@ const Posts = () => {
             })
         }
 
-        fetch("https://final-project-sup.onrender.com/posts", options)
+        fetch(API_URL('posts'), options)
             .then(res => res.json())
             .then(() => fetchPosts())
             .finally(() => setNewPost(''))
@@ -98,7 +98,7 @@ const Posts = () => {
             },
         }
 
-        fetch(`https://final-project-sup.onrender.com/posts/${id}/likes`, options)
+        fetch(API_LIKES(id), options)
             .then((res) => res.json())
             .then(() => {
                 fetchPosts()
@@ -151,6 +151,7 @@ const Posts = () => {
                             </FormButtons>
                         </Form>
                     </Container>
+                    {/* {postItems ? <h1>hej</h1> : <h1>NEJ</h1>} */}
                     <div>
                         {postItems.map((item) => {
                             return <CardContainer key={item._id}>
